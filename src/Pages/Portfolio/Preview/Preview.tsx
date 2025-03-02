@@ -46,7 +46,7 @@ export class Preview extends React.Component<Props,{}> {
                                         rel='noopener noreferrer'
                                         title='GitHub'
                                     >
-                                        <img src='assets/social/github.svg' draggable='false'/>
+                                        <img src='assets/interface/github.svg' draggable='false'/>
                                     </a>
                                 }
                                 {this.props.project.links?.vimeo && 
@@ -57,7 +57,7 @@ export class Preview extends React.Component<Props,{}> {
                                         rel='noopener noreferrer'
                                         title='Vimeo'
                                     >
-                                        <img src='assets/social/vimeo.svg' draggable='false'/>
+                                        <img src='assets/interface/vimeo.svg' draggable='false'/>
                                     </a>
                                 }
                                 {this.props.project.links?.youtube && 
@@ -68,7 +68,7 @@ export class Preview extends React.Component<Props,{}> {
                                         rel='noopener noreferrer'
                                         title='YouTube'
                                     >
-                                        <img src='assets/social/youtube.svg' draggable='false'/>
+                                        <img src='assets/interface/youtube.svg' draggable='false'/>
                                     </a>
                                 }
                                 {this.props.project.links?.www && 
@@ -79,7 +79,7 @@ export class Preview extends React.Component<Props,{}> {
                                         rel='noopener noreferrer'
                                         title='Website'
                                     >
-                                        <img src='assets/social/www.svg' draggable='false'/>
+                                        <img src='assets/interface/www.svg' draggable='false'/>
                                     </a>
                                 }
                             </div>

@@ -52,19 +52,19 @@ export class Information extends React.Component<Props,{}> {
                     <div id='social'>
                         <div>
                             <a title='LinkedIn' className='linkedin' href='https://www.linkedin.com/in/benedictbelz/' target='_blank' rel='noopener noreferrer'>
-                                <img src='assets/social/linkedin.svg' draggable='false'/>
+                                <img src='assets/interface/linkedin.svg' draggable='false'/>
                             </a>
                             <a title='Instagram' className='instagram' href='https://www.instagram.com/benedictbelz' target='_blank' rel='noopener noreferrer'>
-                                <img src='assets/social/instagram.svg' draggable='false'/>
+                                <img src='assets/interface/instagram.svg' draggable='false'/>
                             </a>
                             <a title='Vimeo' className='vimeo' href='https://vimeo.com/benedictbelz' target='_blank' rel='noopener noreferrer'>
-                                <img src='assets/social/vimeo.svg' draggable='false'/>
+                                <img src='assets/interface/vimeo.svg' draggable='false'/>
                             </a>
                             <a title='Pinterest' className='pinterest' href='https://www.pinterest.de/benedictbelz' target='_blank' rel='noopener noreferrer'>
-                                <img src='assets/social/pinterest.svg' draggable='false'/>
+                                <img src='assets/interface/pinterest.svg' draggable='false'/>
                             </a>
                             <a title='GitHub' className='github' href='https://github.com/benedictbelz?tab=repositories' target='_blank' rel='noopener noreferrer'>
-                                <img src='assets/social/github.svg' draggable='false'/>
+                                <img src='assets/interface/github.svg' draggable='false'/>
                             </a>
                         </div>
                     </div>

@@ -2,4 +2,5 @@
 .DS_Store
 dist/
 node_modules/
-public/assets/projects
+src/@assets/projects
+src/@assets/templates

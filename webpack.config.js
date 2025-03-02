@@ -14,7 +14,7 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			General: path.resolve(__dirname, 'public'),
+			General: path.resolve(__dirname, 'src/@assets'),
 		},
 		extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
 	},
@@ -60,8 +60,11 @@ module.exports = {
 		}),
 		new CopyWebpackPlugin({
 			patterns: [
-				{ from: 'public/assets', to: 'assets' },
-				{ from: 'public/fonts', to: 'fonts' },
+				{ from: 'src/@assets/fonts', to: 'assets/fonts' },
+				{ from: 'src/@assets/icons', to: 'assets/icons' },
+				{ from: 'src/@assets/interface', to: 'assets/interface' },
+				{ from: 'src/@assets/logo', to: 'assets/logo' },
+				{ from: 'src/@assets/projects', to: 'assets/projects' },
 			]
 		})
 	],
