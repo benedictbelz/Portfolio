@@ -6,7 +6,8 @@
 	"author": "Benedict Belz",
 	"scripts": {
 		"start": "webpack serve --port 3000 --mode development --open --hot",
-		"build": "webpack --mode production"
+		"build": "webpack --mode production",
+		"prettier": "prettier . --write"
 	},
 	"dependencies": {
 		"gsap": "^3.8.0",
