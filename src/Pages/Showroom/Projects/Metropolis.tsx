@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '../../../Components/Slider/Slider';
+import { Gallery } from '../../../Components/Gallery/Gallery';
 import { Browser } from '../../../@types/browser';
 
 interface Props {
@@ -24,14 +24,14 @@ export class Metropolis extends React.Component<Props, {}> {
                         <p>Motion Design</p>
                     </div>
                 </div>
-                <Slider browser={this.props.browser}>
+                <Gallery browser={this.props.browser}>
                     <img src='assets/projects/metropolis/metropolis_01.jpg'/>
                     <img src='assets/projects/metropolis/metropolis_02.jpg'/>
                     <img src='assets/projects/metropolis/metropolis_03.jpg'/>
                     <img src='assets/projects/metropolis/metropolis_04.jpg'/>
                     <img src='assets/projects/metropolis/metropolis_05.jpg'/>
                     <img src='assets/projects/metropolis/metropolis_06.jpg'/>
-                </Slider>
+                </Gallery>
                 <div className='category text'>
                     <p>
                         This project was an exploration of the early silent movie »Metropolis« by Fritz Lang.

@@ -1,6 +1,6 @@
 @import '../../App/Variables.scss';
 
-.slider{
+.gallery {
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -8,22 +8,22 @@
     -webkit-mask-image: -webkit-radial-gradient(white, black);
     mask-image: radial-gradient(white, black);
 
-    .drag {
+    .galleryDrag {
         position: absolute;
         height: 100%;
         width: 100%;
         z-index: 200;
     }
 
-    .click {
+    .galleryClick {
         pointer-events: none;
         position: absolute;
         z-index: 300;
         height: 100%;
         width: 100%;
 
-        .left,
-        .right {
+        .galleryLeft,
+        .galleryRight {
             position: absolute;
             z-index: 100;
             display: flex;
@@ -49,16 +49,16 @@
             }
         }
 
-        .left {
+        .galleryLeft {
             left: $spacing-icon-m;
         }
 
-        .right {
+        .galleryRight {
             right: $spacing-icon-m;
         }
     }
 
-    .bullets {
+    .galleryBullets {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -89,7 +89,7 @@
         }
     }
 
-    .images {
+    .galleryImages {
         img,
         video {
             position: absolute;
@@ -103,7 +103,7 @@
         }
     }
 
-    .placeholder {
+    .galleryPlaceholder {
         opacity: 0;
         width: 100%;
 
@@ -115,27 +115,27 @@
     }
 
     &:hover {
-        .click .left,
-        .click .right {
+        .galleryClick .galleryLeft,
+        .galleryClick .galleryRight {
             transform: scale(1);
         }
     }
 
     &.transition {
-        .images img,
-        .images video {
+        .galleryImages img,
+        .galleryImages video {
             transition: left $transition-m ease,
                         right $transition-m ease;
         }
 
-        .bullets div {
+        .galleryBullets div {
             transition: background-color $transition-m ease;
         }
     }
 }
 
 #app.mobile {
-    .slider>.click {
+    .gallery > .galleryClick {
         display: none;
     }
 }

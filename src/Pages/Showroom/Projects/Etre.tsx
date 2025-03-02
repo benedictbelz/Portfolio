@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '../../../Components/Slider/Slider';
+import { Gallery } from '../../../Components/Gallery/Gallery';
 import { Browser } from '../../../@types/browser';
 
 interface Props {
@@ -34,14 +34,14 @@ export class Etre extends React.Component<Props, {}> {
                         <p>Cinema 4D</p>
                     </div>
                 </div>
-                <Slider browser={this.props.browser}>
+                <Gallery browser={this.props.browser}>
                     <img src='assets/projects/etre/etre_01.jpg'/>
                     <img src='assets/projects/etre/etre_02.jpg'/>
                     <img src='assets/projects/etre/etre_03.jpg'/>
                     <img src='assets/projects/etre/etre_04.jpg'/>
                     <img src='assets/projects/etre/etre_05.jpg'/>
                     <img src='assets/projects/etre/etre_06.jpg'/>
-                </Slider>
+                </Gallery>
                 <div className='category text'>
                     <p>
                         This project was developed as a teaser for the party collective »Être« in Vienna.

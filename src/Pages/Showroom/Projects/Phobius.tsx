@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '../../../Components/Slider/Slider';
+import { Gallery } from '../../../Components/Gallery/Gallery';
 import { Browser } from '../../../@types/browser';
 
 interface Props {
@@ -24,11 +24,11 @@ export class Phobius extends React.Component<Props, {}> {
                         <p>Motion Design</p>
                     </div>
                 </div>
-                <Slider browser={this.props.browser}>
+                <Gallery browser={this.props.browser}>
                     <img src='assets/projects/phobius/phobius_01.jpg'/>
                     <img src='assets/projects/phobius/phobius_02.jpg'/>
                     <img src='assets/projects/phobius/phobius_03.jpg'/>
-                </Slider>
+                </Gallery>
                 <div className='category text'>
                     <p>
                         This project was developed for the psychological centre »Phobius« where people are able

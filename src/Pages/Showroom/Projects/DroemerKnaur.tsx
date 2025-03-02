@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '../../../Components/Slider/Slider';
+import { Gallery } from '../../../Components/Gallery/Gallery';
 import { Browser } from '../../../@types/browser';
 
 interface Props {
@@ -41,14 +41,14 @@ export class DroemerKnaur extends React.Component<Props, {}> {
                         <p>Adobe Premiere</p>
                     </div>
                 </div>
-                <Slider browser={this.props.browser}>
+                <Gallery browser={this.props.browser}>
                     <img src='assets/projects/droemerKnaur/droemerKnaur_01.jpg'/>
                     <img src='assets/projects/droemerKnaur/droemerKnaur_02.jpg'/>
                     <img src='assets/projects/droemerKnaur/droemerKnaur_03.jpg'/>
                     <img src='assets/projects/droemerKnaur/droemerKnaur_04.jpg'/>
                     <img src='assets/projects/droemerKnaur/droemerKnaur_05.jpg'/>
                     <img src='assets/projects/droemerKnaur/droemerKnaur_06.jpg'/>
-                </Slider>
+                </Gallery>
                 <div className='category text'>
                     <p>
                         This project was developed for the German publishing house »Droemer Knaur«.

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '../../../Components/Slider/Slider';
+import { Gallery } from '../../../Components/Gallery/Gallery';
 import { Browser } from '../../../@types/browser';
 
 interface Props {
@@ -34,12 +34,12 @@ export class ArtAttech extends React.Component<Props, {}> {
                         <p>Cinema 4D</p>
                     </div>
                 </div>
-                <Slider browser={this.props.browser}>
+                <Gallery browser={this.props.browser}>
                     <img src='assets/projects/artAttech/artAttech_01.jpg'/>
                     <img src='assets/projects/artAttech/artAttech_02.jpg'/>
                     <img src='assets/projects/artAttech/artAttech_03.jpg'/>
                     <img src='assets/projects/artAttech/artAttech_04.jpg'/>
-                </Slider>
+                </Gallery>
                 <div className='category text'>
                     <p>
                         This project was developed as a teaser for the vernissage »Art Attech« in Vienna.

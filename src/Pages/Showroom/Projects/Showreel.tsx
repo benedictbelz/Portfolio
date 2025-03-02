@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '../../../Components/Slider/Slider';
+import { Gallery } from '../../../Components/Gallery/Gallery';
 import { Browser } from '../../../@types/browser';
 
 interface Props {
@@ -37,7 +37,7 @@ export class Showreel extends React.Component<Props, {}> {
                         <p>The Foundry Nuke</p>
                     </div>
                 </div>
-                <Slider browser={this.props.browser}>
+                <Gallery browser={this.props.browser}>
                     <img src='assets/projects/showreel/showreel_01.jpg'/>
                     <img src='assets/projects/showreel/showreel_02.jpg'/>
                     <img src='assets/projects/showreel/showreel_03.jpg'/>
@@ -48,7 +48,7 @@ export class Showreel extends React.Component<Props, {}> {
                     <img src='assets/projects/showreel/showreel_08.jpg'/>
                     <img src='assets/projects/showreel/showreel_09.jpg'/>
                     <img src='assets/projects/showreel/showreel_10.jpg'/>
-                </Slider>
+                </Gallery>
                 <div className='category text'>
                     <p>
                         My Showreel is a collection of different projects I worked on the last couple of years.

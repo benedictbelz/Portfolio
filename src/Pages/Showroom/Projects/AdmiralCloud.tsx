@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '../../../Components/Slider/Slider';
+import { Gallery } from '../../../Components/Gallery/Gallery';
 import { Browser } from '../../../@types/browser';
 
 interface Props {
@@ -77,7 +77,7 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                         This has enabled us to use the logo for various purposes, be it marketing brochures, the website or product branding.
                     </p>
                 </div>
-                <Slider browser={this.props.browser}>
+                <Gallery browser={this.props.browser}>
                     <img src='assets/projects/admiralCloud/infoGraphic_01.gif'/>
                     <img src='assets/projects/admiralCloud/infoGraphic_02.gif'/>
                     <img src='assets/projects/admiralCloud/infoGraphic_03.gif'/>
@@ -96,7 +96,7 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                     <img src='assets/projects/admiralCloud/infoGraphic_16.gif'/>
                     <img src='assets/projects/admiralCloud/infoGraphic_17.gif'/>
                     <img src='assets/projects/admiralCloud/infoGraphic_18.gif'/>
-                </Slider>
+                </Gallery>
                 <div className='category text'>
                     <p>
                         I animated several infographics to illustrate the different features of the product.

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '../../../Components/Slider/Slider';
+import { Gallery } from '../../../Components/Gallery/Gallery';
 import { Browser } from '../../../@types/browser';
 
 interface Props {
@@ -34,12 +34,12 @@ export class ZdfAspekte extends React.Component<Props, {}> {
                         <p>Adobe Illustrator</p>
                     </div>
                 </div>
-                <Slider browser={this.props.browser}>
+                <Gallery browser={this.props.browser}>
                     <img src='assets/projects/zdfAspekte/zdfAspekte_01.jpg'/>
                     <img src='assets/projects/zdfAspekte/zdfAspekte_02.jpg'/>
                     <img src='assets/projects/zdfAspekte/zdfAspekte_03.jpg'/>
                     <img src='assets/projects/zdfAspekte/zdfAspekte_04.jpg'/>
-                </Slider>
+                </Gallery>
                 <div className='category text'>
                     <p>
                         This project was developed for the television show »ZDF Aspekte«.

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '../../../Components/Slider/Slider';
+import { Gallery } from '../../../Components/Gallery/Gallery';
 import { Browser } from '../../../@types/browser';
 
 interface Props {
@@ -24,7 +24,7 @@ export class ShimmeringNightmare extends React.Component<Props, {}> {
                         <p>Illustration</p>
                     </div>
                 </div>
-                <Slider browser={this.props.browser}>
+                <Gallery browser={this.props.browser}>
                     <img src='assets/projects/shimmeringNightmare/shimmeringNightmare_01.jpg'/>
                     <img src='assets/projects/shimmeringNightmare/shimmeringNightmare_02.jpg'/>
                     <img src='assets/projects/shimmeringNightmare/shimmeringNightmare_03.jpg'/>
@@ -49,7 +49,7 @@ export class ShimmeringNightmare extends React.Component<Props, {}> {
                     <img src='assets/projects/shimmeringNightmare/shimmeringNightmare_22.jpg'/>
                     <img src='assets/projects/shimmeringNightmare/shimmeringNightmare_23.jpg'/>
                     <img src='assets/projects/shimmeringNightmare/shimmeringNightmare_24.jpg'/>
-                </Slider>
+                </Gallery>
                 <div className='category text'>
                     <p>
                         This project was about a little girl who discovered her father's leisure activity during the night time.

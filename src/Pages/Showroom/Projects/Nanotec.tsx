@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '../../../Components/Slider/Slider';
+import { Gallery } from '../../../Components/Gallery/Gallery';
 import { Browser } from '../../../@types/browser';
 
 interface Props {
@@ -35,7 +35,7 @@ export class Nanotec extends React.Component<Props, {}> {
                         <p>Cinema 4D</p>
                     </div>
                 </div>
-                <Slider browser={this.props.browser}>
+                <Gallery browser={this.props.browser}>
                     <img src='assets/projects/nanotec/nanotec_01.jpg'/>
                     <img src='assets/projects/nanotec/nanotec_02.jpg'/>
                     <img src='assets/projects/nanotec/nanotec_03.jpg'/>
@@ -43,7 +43,7 @@ export class Nanotec extends React.Component<Props, {}> {
                     <img src='assets/projects/nanotec/nanotec_05.jpg'/>
                     <img src='assets/projects/nanotec/nanotec_06.jpg'/>
                     <img src='assets/projects/nanotec/nanotec_07.jpg'/>
-                </Slider>
+                </Gallery>
                 <div className='category text'>
                     <p>
                         This project was about showing customers the functioning principle of a stepper motor.

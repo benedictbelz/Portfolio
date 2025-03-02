@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Browser } from '../../@types/browser';
-import './Slider.scss';
+import './Gallery.scss';
 
 interface Props {
     browser: Browser;
@@ -12,38 +12,38 @@ interface States {
     bullets: HTMLElement[] | null;
     images: HTMLElement[] | null;
     length: number | null;
-    showTransition: boolean;
+    transition: boolean;
 }
 
-export class Slider extends React.Component<Props, States> {
-    private slider: React.RefObject<HTMLDivElement>;
+export class Gallery extends React.Component<Props, States> {
+    private gallery: React.RefObject<HTMLDivElement>;
 
     constructor(props: any) {
         super(props);
-        this.slider = React.createRef();
+        this.gallery = React.createRef();
         this.state = {
             current: 0,
             bullets: null,
             images: null,
             length: React.Children.toArray(this.props.children).length,
-            showTransition: false,
+            transition: false,
         }
     }
 
     componentDidMount() {
-        this.initSlider();
+        this.initGallery();
     }
 
-    private initSlider() {
-        // IF NO SLIDER RETURN
-        if (!this.slider.current) {
+    private initGallery() {
+        // IF NO GALLERY RETURN
+        if (!this.gallery.current) {
             return;
         }
-        // GET ELEMENTS
+        // DEFINE VARIABLES
         const { current } = this.getOrder();
-        const bullets = this.slider.current.querySelector('.bullets');
-        const images = this.slider.current.querySelector('.images');
-        // SET STATE
+        const bullets = this.gallery.current.querySelector('.galleryBullets');
+        const images = this.gallery.current.querySelector('.galleryImages');
+        // UPDATE STATE
         this.setState({
             bullets: bullets ? Array.from(bullets.children) as HTMLElement[] : null,
             images: images ? Array.from(images.children) as HTMLElement[] : null
@@ -55,14 +55,8 @@ export class Slider extends React.Component<Props, States> {
     }
 
     private initDrag() {
-        // IF NO SLIDER RETURN
-        if (!this.slider.current) {
-            return;
-        }
-        // GET DRAG ELEMENT
-        const drag: HTMLElement = this.slider.current.querySelector('.drag');
-        // IF NO DRAG RETURN
-        if (!drag) {
+        // IF NO GALLERY RETURN
+        if (!this.gallery.current) {
             return;
         }
         // DEFINE VARIABLES
@@ -71,7 +65,7 @@ export class Slider extends React.Component<Props, States> {
         let destination: number;
         // DEFINE START
         const start = (position: number) => {
-            if (this.state.showTransition) {
+            if (this.state.transition) {
                 return;
             }
             active = true;
@@ -79,7 +73,7 @@ export class Slider extends React.Component<Props, States> {
         }
         // DEFINE MOVE
         const move = (position: number) => {
-            if (!active || this.state.showTransition || !this.state.images) {
+            if (!active || this.state.transition || !this.state.images) {
                 return;
             }
             destination = position - origin;
@@ -90,7 +84,7 @@ export class Slider extends React.Component<Props, States> {
         }
         // DEFINE END
         const end = () => {
-            if (!active || this.state.showTransition) {
+            if (!active || this.state.transition) {
                 return;
             }
             active = false;
@@ -102,15 +96,17 @@ export class Slider extends React.Component<Props, States> {
                 this.currentImage();
             }
         }
+        // DEFINE DRAG ELEMENT
+        const drag: HTMLElement = this.gallery.current.querySelector('.galleryDrag');
         // IF DESKTOP
-        if (this.props.browser.device === 'Desktop') {
+        if (drag && this.props.browser.device === 'Desktop') {
             drag.addEventListener('mousedown', event => start(event.clientX));
             drag.addEventListener('mousemove', event => move(event.clientX));
             drag.addEventListener('mouseup', () => end());
             drag.addEventListener('mouseout', () => end());
         }
         // IF MOBILE
-        else if (this.props.browser.device === 'Mobile') {
+        else if (drag && this.props.browser.device === 'Mobile') {
             drag.addEventListener('touchstart', event => start(event.touches[0].clientX));
             drag.addEventListener('touchmove', event => move(event.touches[0].clientX));
             drag.addEventListener('touchend', () => end());
@@ -118,7 +114,7 @@ export class Slider extends React.Component<Props, States> {
     }
 
     private getOrder() {
-        // DEFINE ORDER
+        // DEFINE VARIABLES
         let current, next, previous;
         // CURRENT IMAGE
         current = this.state.current;
@@ -151,7 +147,7 @@ export class Slider extends React.Component<Props, States> {
                 this.state.bullets[index].className = '';
             }
         }
-        // SET BULLETS
+        // UPDATE BULLETS
         this.state.bullets[position].classList.add('current');
     }
 
@@ -160,9 +156,9 @@ export class Slider extends React.Component<Props, States> {
         if (!this.state.images) {
             return;
         }
-        // GET ORDER
+        // DEFINE VARIABLES
         const { previous, current, next } = this.getOrder();
-        // CHANGE IMAGES
+        // UPDATE IMAGES
         this.state.images[previous].className = 'show';
         this.state.images[previous].style.left = '-100%';
         this.state.images[current].className = 'show';
@@ -172,15 +168,15 @@ export class Slider extends React.Component<Props, States> {
     }
 
     private previousImage() {
-        // RETURN WHEN TRANSITION IS ACTIVE OR NO IMAGES
-        if (this.state.showTransition || !this.state.images) {
+        // IF NO IMAGES OR TRANSITION IS ACTIVE
+        if (!this.state.images || this.state.transition) {
             return;
         }
         // ACTIVATE TRANSITION
-        this.setState({ showTransition: true }, () => {
-            // GET ORDER
+        this.setState({ transition: true }, () => {
+            // DEFINE VARIABLES
             let { current, next, previous } = this.getOrder();
-            // CHANGE IMAGES
+            // UPDATE IMAGES
             this.state.images[previous].style.left = '0%';
             this.state.images[current].style.left = '100%';
             this.state.images[next].style.left = '200%';
@@ -190,13 +186,13 @@ export class Slider extends React.Component<Props, States> {
             if (current < 0) {
                 current = current + this.state.length;
             }
-            // SET BULLETS
+            // UPDATE BULLETS
             setTimeout(() => {
                 this.setBullets(current);
             }, 250)
-            // DEACTIVATE TRANSITION & UPDATE IMAGES
+            // DEACTIVATE TRANSITION
             setTimeout(() => {
-                this.setState({ current, showTransition: false }, () => {
+                this.setState({ current, transition: false }, () => {
                     this.setImages()
                 });
             }, 500);
@@ -204,33 +200,33 @@ export class Slider extends React.Component<Props, States> {
     }
 
     private currentImage() {
-        // RETURN WHEN TRANSITION IS ACTIVE OR NO IMAGES
-        if (this.state.showTransition || !this.state.images) {
+        // IF NO IMAGES OR TRANSITION IS ACTIVE
+        if (!this.state.images || this.state.transition) {
             return;
         }
         // ACTIVATE TRANSITION
-        this.setState({ showTransition: true }, () => {
-            // GET ORDER
+        this.setState({ transition: true }, () => {
+            // DEFINE VARIABLES
             let { current, next, previous } = this.getOrder();
-            // CHANGE IMAGES
+            // UPDATE IMAGES
             this.state.images[previous].style.left = '-100%';
             this.state.images[current].style.left = '0%';
             this.state.images[next].style.left = '100%';
             // DEACTIVATE TRANSITION
-            setTimeout(() => this.setState({ showTransition: false }), 500);
+            setTimeout(() => this.setState({ transition: false }), 500);
         });
     }
 
     private nextImage() {
         // RETURN WHEN TRANSITION IS ACTIVE OR NO IMAGES
-        if (this.state.showTransition || !this.state.images) {
+        if (this.state.transition || !this.state.images) {
             return;
         }
         // ACTIVATE TRANSITION
-        this.setState({ showTransition: true }, () => {
-            // GET ORDER
+        this.setState({ transition: true }, () => {
+            // DEFINE VARIABLES
             let { current, next, previous } = this.getOrder();
-            // CHANGE IMAGES
+            // UPDATE IMAGES
             this.state.images[previous].style.left = '-200%';
             this.state.images[current].style.left = '-100%';
             this.state.images[next].style.left = '0%';
@@ -240,13 +236,13 @@ export class Slider extends React.Component<Props, States> {
             if (current >= this.state.length) {
                 current = current - this.state.length;
             }
-            // SET BULLETS
+            // UPDATE BULLETS
             setTimeout(() => {
                 this.setBullets(current);
             }, 250)
-            // DEACTIVATE TRANSITION & UPDATE IMAGES
+            // DEACTIVATE TRANSITION
             setTimeout(() => {
-                this.setState({ current, showTransition: false }, () => {
+                this.setState({ current, transition: false }, () => {
                     this.setImages()
                 });
             }, 500);
@@ -255,25 +251,25 @@ export class Slider extends React.Component<Props, States> {
 
 	render() {
 		return (
-            <div ref={this.slider} className={['category', 'slider', this.state.showTransition ? 'transition' : ''].filter(x => x).join(' ')}>
-                <div className='drag'/>
-                <div className='click'>
-                    <div className='left'>
+            <div ref={this.gallery} className={['category', 'gallery', this.state.transition ? 'transition' : ''].filter(x => x).join(' ')}>
+                <div className='galleryDrag'/>
+                <div className='galleryClick'>
+                    <div className='galleryLeft'>
                         <img onClick={() => this.previousImage()} src='assets/interface/sliderLeft.svg'/>
                     </div>
-                    <div className='right'>
+                    <div className='galleryRight'>
                         <img onClick={() => this.nextImage()} src='assets/interface/sliderRight.svg'/>
                     </div>
                 </div>
-                <div className={'bullets'}>
+                <div className={'galleryBullets'}>
                     {[...Array(this.state.length)].map((bullet, index) => {
                         return <div key={index} data-index={index} className='bullet'/>
                     })}
                 </div>
-                <div className='images'>
+                <div className='galleryImages'>
                     {this.props.children}
                 </div>
-                <div className='placeholder'>
+                <div className='galleryPlaceholder'>
                     {React.Children.toArray(this.props.children)[0]}
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '../../../Components/Slider/Slider';
+import { Gallery } from '../../../Components/Gallery/Gallery';
 import { Browser } from '../../../@types/browser';
 
 interface Props {
@@ -24,13 +24,13 @@ export class Lockdown extends React.Component<Props, {}> {
                         <p>Motion Design</p>
                     </div>
                 </div>
-                <Slider browser={this.props.browser}>
+                <Gallery browser={this.props.browser}>
                     <img src='assets/projects/lockdown/lockdown_01.jpg'/>
                     <img src='assets/projects/lockdown/lockdown_02.jpg'/>
                     <img src='assets/projects/lockdown/lockdown_03.jpg'/>
                     <img src='assets/projects/lockdown/lockdown_04.jpg'/>
                     <img src='assets/projects/lockdown/lockdown_05.jpg'/>
-                </Slider>
+                </Gallery>
                 <div className='category text'>
                     <p>
                         The idea of this project arose during the coronavirus quarantine.
