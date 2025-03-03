@@ -1,53 +1,59 @@
 @font-face {
-	font-family: 'Web';
-	src: local('Helvetica Neue UltraLight'),
-         local('HelveticaNeue-UltraLight'),
-		 url('assets/fonts/HelveticaNeue-UltraLight.woff2') format('woff2');
-	font-weight: 100;
-	font-display: swap;
+    font-family: 'Web';
+    src:
+        local('Helvetica Neue UltraLight'),
+        local('HelveticaNeue-UltraLight'),
+        url('assets/fonts/HelveticaNeue-UltraLight.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
 }
 
 @font-face {
-	font-family: 'Web';
-	src: local('Helvetica Neue Thin'),
-         local('HelveticaNeue-Thin'),
-		 url('assets/fonts/HelveticaNeue-Thin.woff2') format('woff2');
-	font-weight: 200;
-	font-display: swap;
+    font-family: 'Web';
+    src:
+        local('Helvetica Neue Thin'),
+        local('HelveticaNeue-Thin'),
+        url('assets/fonts/HelveticaNeue-Thin.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
 }
 
 @font-face {
-	font-family: 'Web';
-	src: local('Helvetica Neue Light'),
-         local('HelveticaNeue-Light'),
-		 url('assets/fonts/HelveticaNeue-Light.woff2') format('woff2');
-	font-weight: 300;
-	font-display: swap;
+    font-family: 'Web';
+    src:
+        local('Helvetica Neue Light'),
+        local('HelveticaNeue-Light'),
+        url('assets/fonts/HelveticaNeue-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
 }
 
 @font-face {
-	font-family: 'Web';
-	src: local('Helvetica Neue'),
-         local('HelveticaNeue'),
-		 url('assets/fonts/HelveticaNeue.woff2') format('woff2');
-	font-weight: 400;
-	font-display: swap;
+    font-family: 'Web';
+    src:
+        local('Helvetica Neue'),
+        local('HelveticaNeue'),
+        url('assets/fonts/HelveticaNeue.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
-	font-family: 'Web';
-	src: local('Helvetica Neue Bold'),
-         local('HelveticaNeue-Bold'),
-		 url('assets/fonts/HelveticaNeue-Bold.woff2') format('woff2');
-	font-weight: 700;
-	font-display: swap;
+    font-family: 'Web';
+    src:
+        local('Helvetica Neue Bold'),
+        local('HelveticaNeue-Bold'),
+        url('assets/fonts/HelveticaNeue-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
 }
 
 @font-face {
-	font-family: 'Din Condensed';
-	src: local('Din Condensed'),
-         local('DinCondensed'),
-		 url('assets/fonts/DinCondensed.woff2') format('woff2');
-	font-weight: 400;
-	font-display: swap;
+    font-family: 'Din Condensed';
+    src:
+        local('Din Condensed'),
+        local('DinCondensed'),
+        url('assets/fonts/DinCondensed.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
 }

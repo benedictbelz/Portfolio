@@ -7,34 +7,35 @@
     .wrapper {
         box-sizing: border-box;
         margin: 0 auto;
-        transition: padding $transition-s ease,
-                    width $transition-s ease;
+        transition:
+            padding $transition-s ease,
+            width $transition-s ease;
         padding-top: $spacing-header;
         padding-bottom: $spacing-l;
         width: $spacing-wrapper;
 
-        h1{
+        h1 {
             margin-bottom: $spacing-m;
         }
 
-        h2{
+        h2 {
             margin-top: $spacing-m;
             margin-bottom: $spacing-m;
         }
 
         #address::after {
             content: 'Benedict Belz \A Senefelderstr. 15 \A 10437 Berlin';
-	        white-space: pre;
+            white-space: pre;
         }
 
-        #data::after{
+        #data::after {
             content: 'Phone: +49 163 3938055 \A E-Mail: info@benedictbelz.eu \A Internet: www.benedictbelz.eu';
-	        white-space: pre;
+            white-space: pre;
         }
     }
 
     @media (max-width: $media-s) {
-        .wrapper{
+        .wrapper {
             width: 100%;
             padding: $spacing-header $spacing-m $spacing-l $spacing-m;
         }

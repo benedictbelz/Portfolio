@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as THREE from 'three';
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
 import { gsap } from 'gsap';
 import './Logo.scss';
@@ -9,10 +9,8 @@ interface Props {
     isLoading: boolean;
     isRendered: Function;
 }
-export class Logo extends React.Component<Props,{}> {
-
+export class Logo extends React.Component<Props, {}> {
     componentDidMount() {
-
         /******************************/
         /*          GENERAL           */
         /******************************/
@@ -26,7 +24,7 @@ export class Logo extends React.Component<Props,{}> {
         camera.position.set(20, 20, 20);
         camera.lookAt(scene.position);
         // CREATE LIGHT
-        const light = new THREE.AmbientLight(0xFFFFFF, 1);
+        const light = new THREE.AmbientLight(0xffffff, 1);
         scene.add(light);
 
         /******************************/
@@ -51,13 +49,13 @@ export class Logo extends React.Component<Props,{}> {
             material.preload();
             objLoader.setMaterials(material);
             objLoader.load('logoFront.obj', object => logoFront.add(object));
-        })
+        });
         // LOAD OBJECT
         mtlLoader.load('logoBack.mtl', material => {
             material.preload();
             objLoader.setMaterials(material);
             objLoader.load('logoBack.obj', object => logoBack.add(object));
-        })
+        });
 
         /******************************/
         /*           RENDER           */
@@ -75,7 +73,7 @@ export class Logo extends React.Component<Props,{}> {
             requestAnimationFrame(render);
             // RENDER
             renderer.render(scene, camera);
-        }
+        };
         render();
         this.props.isRendered();
 
@@ -97,22 +95,26 @@ export class Logo extends React.Component<Props,{}> {
             timeline.to(logoFront.position, { duration: 0, y: -0.25, ease: 'power2.easeOut' });
             timeline.to(logoBack.position, { duration: 0, y: 0.25, ease: 'power2.easeOut' });
             timeline.to(group.rotation, { duration: 1.5, y: THREE.MathUtils.degToRad(0), ease: 'power2.easeOut' });
-            timeline.to(logoFront.position, { duration: 1.5, y: 0, ease:'power2.easeOut' }, '-=1.5');
+            timeline.to(logoFront.position, { duration: 1.5, y: 0, ease: 'power2.easeOut' }, '-=1.5');
             timeline.to(logoBack.position, { duration: 1.5, y: 0, ease: 'power2.easeOut' }, '-=1.5');
             // CREATE MOUSE
             const mouse = new THREE.Vector2();
             // ANIMATE MOUSE
-            setTimeout(() => window.addEventListener('mousemove', function (event) {
-                mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-                mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
-                gsap.to(group.rotation, { duration: 2, y: mouse.x / 5, ease: 'power2.easeOut' });
-                gsap.to(logoFront.position, { duration: 2, y: -mouse.y / 20, ease: 'power2.easeOut' });
-                gsap.to(logoBack.position, { duration: 2, y: mouse.y / 20, ease: 'power2.easeOut' });
-            }), 1250);
+            setTimeout(
+                () =>
+                    window.addEventListener('mousemove', function (event) {
+                        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+                        gsap.to(group.rotation, { duration: 2, y: mouse.x / 5, ease: 'power2.easeOut' });
+                        gsap.to(logoFront.position, { duration: 2, y: -mouse.y / 20, ease: 'power2.easeOut' });
+                        gsap.to(logoBack.position, { duration: 2, y: mouse.y / 20, ease: 'power2.easeOut' });
+                    }),
+                1250
+            );
         }
     }
 
-	render() {
-		return <></>
-	}
+    render() {
+        return <></>;
+    }
 }

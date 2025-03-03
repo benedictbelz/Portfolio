@@ -7,8 +7,9 @@
     .wrapper {
         box-sizing: border-box;
         margin: 0 auto;
-        transition: padding $transition-s ease,
-                    width $transition-s ease;
+        transition:
+            padding $transition-s ease,
+            width $transition-s ease;
         padding-top: $spacing-header;
         padding-bottom: $spacing-l;
         width: $spacing-wrapper;
@@ -18,9 +19,10 @@
             margin: 0 auto;
             margin-bottom: $spacing-l;
             width: $spacing-picture;
-            transition: padding $transition-m ease,
-                        width $transition-m ease;
-    
+            transition:
+                padding $transition-m ease,
+                width $transition-m ease;
+
             img {
                 border-radius: 50%;
                 width: 100%;
@@ -74,7 +76,7 @@
     }
 
     @media (max-width: $media-s) {
-        .wrapper{
+        .wrapper {
             width: 100%;
             padding: $spacing-header $spacing-m $spacing-l $spacing-m;
         }
@@ -86,7 +88,6 @@
             width: 100%;
         }
     }
-
 }
 
 #app.desktop #information {

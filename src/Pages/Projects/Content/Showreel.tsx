@@ -38,26 +38,33 @@ export class Showreel extends React.Component<Props, {}> {
                     </div>
                 </div>
                 <Gallery browser={this.props.browser}>
-                    <img src='assets/projects/showreel/showreel_01.jpg'/>
-                    <img src='assets/projects/showreel/showreel_02.jpg'/>
-                    <img src='assets/projects/showreel/showreel_03.jpg'/>
-                    <img src='assets/projects/showreel/showreel_04.jpg'/>
-                    <img src='assets/projects/showreel/showreel_05.jpg'/>
-                    <img src='assets/projects/showreel/showreel_06.jpg'/>
-                    <img src='assets/projects/showreel/showreel_07.jpg'/>
-                    <img src='assets/projects/showreel/showreel_08.jpg'/>
-                    <img src='assets/projects/showreel/showreel_09.jpg'/>
-                    <img src='assets/projects/showreel/showreel_10.jpg'/>
+                    <img src='assets/projects/showreel/showreel_01.jpg' />
+                    <img src='assets/projects/showreel/showreel_02.jpg' />
+                    <img src='assets/projects/showreel/showreel_03.jpg' />
+                    <img src='assets/projects/showreel/showreel_04.jpg' />
+                    <img src='assets/projects/showreel/showreel_05.jpg' />
+                    <img src='assets/projects/showreel/showreel_06.jpg' />
+                    <img src='assets/projects/showreel/showreel_07.jpg' />
+                    <img src='assets/projects/showreel/showreel_08.jpg' />
+                    <img src='assets/projects/showreel/showreel_09.jpg' />
+                    <img src='assets/projects/showreel/showreel_10.jpg' />
                 </Gallery>
                 <div className='category text'>
                     <p>
-                        My Showreel is a collection of different projects I worked on the last couple of years.
-                        It consists of motion designs and visual effects which were created for clients, collaborators and own purposes.
-                        It includes movies like »Am Himmel der Tag«, »Fear the Walking Dead« or »Live By Night«.
+                        My Showreel is a collection of different projects I worked on the last couple of years. It consists of motion designs and visual effects
+                        which were created for clients, collaborators and own purposes. It includes movies like »Am Himmel der Tag«, »Fear the Walking Dead« or
+                        »Live By Night«.
                     </p>
                 </div>
                 <div className='category video'>
-                    <video src='assets/projects/showreel/showreel.mp4' preload='metadata' poster='assets/projects/showreel/showreel_07.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
+                    <video
+                        src='assets/projects/showreel/showreel.mp4'
+                        preload='metadata'
+                        poster='assets/projects/showreel/showreel_07.jpg'
+                        controls
+                        disablePictureInPicture
+                        controlsList='nodownload noremoteplayback'
+                    />
                 </div>
             </div>
         );

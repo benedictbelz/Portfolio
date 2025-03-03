@@ -34,22 +34,21 @@ export class MMPro extends React.Component<{}, {}> {
                     </div>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/mmpro/media.png' style={{ borderRadius: 0 }}/>
+                    <img src='assets/projects/mmpro/media.png' style={{ borderRadius: 0 }} />
                 </div>
                 <div className='category text'>
                     <p>
-                        This website was a project for the film production company »MMPro Media AG«.
-                        Their service offers corporate films across Germany and around the world with
-                        1.400 film crews in 126 countries.
+                        This website was a project for the film production company »MMPro Media AG«. Their service offers corporate films across Germany and
+                        around the world with 1.400 film crews in 126 countries.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/mmpro/logo.jpg'/>
+                    <img src='assets/projects/mmpro/logo.jpg' />
                 </div>
                 <div className='category text'>
                     <p>
-                        The logo is simple and straightforward and usually combined with triangular planes in a transparent blue color.
-                        The frequently presented world map represents the global reach of the company.
+                        The logo is simple and straightforward and usually combined with triangular planes in a transparent blue color. The frequently presented
+                        world map represents the global reach of the company.
                     </p>
                 </div>
                 <div className='category video'>
@@ -57,13 +56,13 @@ export class MMPro extends React.Component<{}, {}> {
                 </div>
                 <div className='category text'>
                     <p>
-                        For the homepage we designed an animation that invites the user to discover all different fields of expertise.
-                        In this case, the design is kept clear and easily understandable.
+                        For the homepage we designed an animation that invites the user to discover all different fields of expertise. In this case, the design
+                        is kept clear and easily understandable.
                     </p>
                 </div>
                 <div className='category design'>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#1488CA' }}>
+                        <div style={{ color: '#FFFFFF', background: '#1488CA' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>7689 C</p>
@@ -100,7 +99,7 @@ export class MMPro extends React.Component<{}, {}> {
                         </div>
                     </div>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#544F4F' }}>
+                        <div style={{ color: '#FFFFFF', background: '#544F4F' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>Black 7 C</p>
@@ -151,13 +150,12 @@ export class MMPro extends React.Component<{}, {}> {
                 </div>
                 <div className='category text'>
                     <p>
-                        The fundamental colors consist of a soft black and white with an additional blue accent.
-                        The font »Nunito Sans« is clear and  well-readable and emphasizes the restrained design.
-                        The menu is embedded on all pages and allows an easy navigation.
+                        The fundamental colors consist of a soft black and white with an additional blue accent. The font »Nunito Sans« is clear and
+                        well-readable and emphasizes the restrained design. The menu is embedded on all pages and allows an easy navigation.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/mmpro/mmpro_01.jpg'/>
+                    <img src='assets/projects/mmpro/mmpro_01.jpg' />
                 </div>
             </div>
         );

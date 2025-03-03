@@ -39,74 +39,70 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                     </div>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/admiralCloud/media.png' style={{ borderRadius: 0 }}/>
+                    <img src='assets/projects/admiralCloud/media.png' style={{ borderRadius: 0 }} />
                 </div>
                 <div className='category text'>
                     <p>
-                        This website was a project for the company »AdmiralCloud AG«.
-                        Their main product is a »Digital Asset Management« which includes a media
+                        This website was a project for the company »AdmiralCloud AG«. Their main product is a »Digital Asset Management« which includes a media
                         management system, a collaboration tool and additional presentation possibilities.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/admiralCloud/logo_01.jpg'/>
+                    <img src='assets/projects/admiralCloud/logo_01.jpg' />
                 </div>
                 <div className='category text'>
                     <p>
-                        The original logo was a combination of the letters »A« and »C« forming a loop as a
-                        metaphor for the unlimited possibilities in the media magagement system.
-                        Furthermore, it symbolizes a cloud as well.
+                        The original logo was a combination of the letters »A« and »C« forming a loop as a metaphor for the unlimited possibilities in the media
+                        magagement system. Furthermore, it symbolizes a cloud as well.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/admiralCloud/logo_02.jpg'/>
+                    <img src='assets/projects/admiralCloud/logo_02.jpg' />
                 </div>
                 <div className='category text'>
                     <p>
-                        We wanted to modernize the logo to improve readibility. In this way, both letters should be
-                        clearly legible and the overall look appearing and straightforward. I tried different color
-                        palettes and played around with different shapes.
+                        We wanted to modernize the logo to improve readibility. In this way, both letters should be clearly legible and the overall look
+                        appearing and straightforward. I tried different color palettes and played around with different shapes.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/admiralCloud/logo_03.jpg'/>
+                    <img src='assets/projects/admiralCloud/logo_03.jpg' />
                 </div>
                 <div className='category text'>
                     <p>
-                        We decided to go with the most simple approach and created a colorful and flat version of the logo. 
-                        This has enabled us to use the logo for various purposes, be it marketing brochures, the website or product branding.
+                        We decided to go with the most simple approach and created a colorful and flat version of the logo. This has enabled us to use the logo
+                        for various purposes, be it marketing brochures, the website or product branding.
                     </p>
                 </div>
                 <Gallery browser={this.props.browser}>
-                    <img src='assets/projects/admiralCloud/infoGraphic_01.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_02.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_03.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_04.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_05.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_06.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_07.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_08.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_09.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_10.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_11.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_12.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_13.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_14.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_15.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_16.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_17.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_18.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_01.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_02.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_03.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_04.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_05.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_06.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_07.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_08.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_09.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_10.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_11.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_12.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_13.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_14.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_15.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_16.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_17.gif' />
+                    <img src='assets/projects/admiralCloud/infoGraphic_18.gif' />
                 </Gallery>
                 <div className='category text'>
                     <p>
-                        I animated several infographics to illustrate the different features of the product.
-                        All the individual graphics are attached at the upper side of each page to offer a quick understanding.
-                        We chose the »GIF« format to ensure an accurate representation of each color.
+                        I animated several infographics to illustrate the different features of the product. All the individual graphics are attached at the
+                        upper side of each page to offer a quick understanding. We chose the »GIF« format to ensure an accurate representation of each color.
                     </p>
                 </div>
                 <div className='category design'>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#19324B' }}>
+                        <div style={{ color: '#FFFFFF', background: '#19324B' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>533 C</p>
@@ -143,7 +139,7 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                         </div>
                     </div>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#90A0AF' }}>
+                        <div style={{ color: '#FFFFFF', background: '#90A0AF' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>7543 C</p>
@@ -180,7 +176,7 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                         </div>
                     </div>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#4BAFFA' }}>
+                        <div style={{ color: '#FFFFFF', background: '#4BAFFA' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>2915 C</p>
@@ -217,7 +213,7 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                         </div>
                     </div>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#FFAA28' }}>
+                        <div style={{ color: '#FFFFFF', background: '#FFAA28' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>1235 C</p>
@@ -268,21 +264,21 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                 </div>
                 <div className='category text'>
                     <p>
-                        We used a dark blue and a soft grey as fundamental colors and introduced a light blue
-                        and juicy orange as accent colors. The font for the website is »Arial« which ensures an easy readibility.
+                        We used a dark blue and a soft grey as fundamental colors and introduced a light blue and juicy orange as accent colors. The font for
+                        the website is »Arial« which ensures an easy readibility.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/admiralCloud/admiralCloud_01.jpg'/>
+                    <img src='assets/projects/admiralCloud/admiralCloud_01.jpg' />
                 </div>
                 <div className='category text'>
                     <p>
-                        All pages contain the same navigation and header which also introduce the particular functionality of the product.
-                        The whole concept is orientated torwards »Flat Design« which offers clarity and a simple comprehension.
+                        All pages contain the same navigation and header which also introduce the particular functionality of the product. The whole concept is
+                        orientated torwards »Flat Design« which offers clarity and a simple comprehension.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/admiralCloud/admiralCloud_02.jpg'/>
+                    <img src='assets/projects/admiralCloud/admiralCloud_02.jpg' />
                 </div>
             </div>
         );

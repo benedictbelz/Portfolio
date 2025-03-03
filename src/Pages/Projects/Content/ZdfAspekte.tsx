@@ -35,20 +35,26 @@ export class ZdfAspekte extends React.Component<Props, {}> {
                     </div>
                 </div>
                 <Gallery browser={this.props.browser}>
-                    <img src='assets/projects/zdfAspekte/zdfAspekte_01.jpg'/>
-                    <img src='assets/projects/zdfAspekte/zdfAspekte_02.jpg'/>
-                    <img src='assets/projects/zdfAspekte/zdfAspekte_03.jpg'/>
-                    <img src='assets/projects/zdfAspekte/zdfAspekte_04.jpg'/>
+                    <img src='assets/projects/zdfAspekte/zdfAspekte_01.jpg' />
+                    <img src='assets/projects/zdfAspekte/zdfAspekte_02.jpg' />
+                    <img src='assets/projects/zdfAspekte/zdfAspekte_03.jpg' />
+                    <img src='assets/projects/zdfAspekte/zdfAspekte_04.jpg' />
                 </Gallery>
                 <div className='category text'>
                     <p>
-                        This project was developed for the television show »ZDF Aspekte«.
-                        It's about the ongoing debate in Germany about the headscarf ban which is a quite controverse topic.
-                        The clip tries to show the current legal situation in Germany and its future prospects.
+                        This project was developed for the television show »ZDF Aspekte«. It's about the ongoing debate in Germany about the headscarf ban which
+                        is a quite controverse topic. The clip tries to show the current legal situation in Germany and its future prospects.
                     </p>
                 </div>
                 <div className='category video'>
-                    <video src='assets/projects/zdfAspekte/zdfAspekte.mp4' preload='metadata' poster='assets/projects/zdfAspekte/zdfAspekte_02.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
+                    <video
+                        src='assets/projects/zdfAspekte/zdfAspekte.mp4'
+                        preload='metadata'
+                        poster='assets/projects/zdfAspekte/zdfAspekte_02.jpg'
+                        controls
+                        disablePictureInPicture
+                        controlsList='nodownload noremoteplayback'
+                    />
                 </div>
             </div>
         );

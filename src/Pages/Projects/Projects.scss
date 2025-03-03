@@ -7,8 +7,9 @@
     .wrapper {
         box-sizing: border-box;
         margin: 0 auto;
-        transition: padding $transition-s ease,
-                    width $transition-s ease;
+        transition:
+            padding $transition-s ease,
+            width $transition-s ease;
         padding-top: $spacing-header;
         padding-bottom: $spacing-l;
         width: $spacing-wrapper;
@@ -25,7 +26,7 @@
                 height: 200px;
                 width: 100%;
 
-                >div:first-child {
+                > div:first-child {
                     box-sizing: border-box;
                     display: flex;
                     justify-content: space-between;
@@ -42,34 +43,34 @@
                         margin-right: $spacing-s;
                     }
 
-                    >div:nth-child(1),
-                    >div:nth-child(4) {
+                    > div:nth-child(1),
+                    > div:nth-child(4) {
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         align-items: flex-start;
                     }
 
-                    >div:nth-child(2),
-                    >div:nth-child(3) {
+                    > div:nth-child(2),
+                    > div:nth-child(3) {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                     }
                 }
 
-                >div:last-child {
+                > div:last-child {
                     display: flex;
                     flex-direction: row;
                     height: $spacing-l;
                     width: 100%;
 
-                    >div {
+                    > div {
                         height: 100%;
                         width: 20%;
                     }
                 }
             }
-            
+
             .font {
                 box-sizing: border-box;
                 display: flex;
@@ -77,10 +78,10 @@
                 justify-content: center;
                 height: 200px;
                 width: 100%;
-                background: #FFFFFF;
+                background: #ffffff;
                 padding: 0 $spacing-l;
 
-                >div {
+                > div {
                     overflow: hidden;
                     display: flex;
                     font-size: $font-size-xxl;
@@ -131,23 +132,22 @@
     }
 
     @media (max-width: $media-s) {
-        .wrapper{
+        .wrapper {
             width: 100%;
             padding: $spacing-header $spacing-m $spacing-l $spacing-m;
 
             .design {
-                .color>div:first-child,
+                .color > div:first-child,
                 .font {
                     padding: 0 $spacing-m;
                 }
 
-                .color>div:first-child,
-                .color>div:last-child
-                .font {
+                .color > div:first-child,
+                .color > div:last-child .font {
                     font-size: $font-size-xs;
                 }
 
-                .font>div{
+                .font > div {
                     font-size: $font-size-xl;
                 }
             }
@@ -157,8 +157,8 @@
     @media (max-width: $media-xs) {
         .wrapper {
             .design {
-                .color>div:first-child>div:nth-child(1),
-                .color>div:first-child>div:nth-child(2) {
+                .color > div:first-child > div:nth-child(1),
+                .color > div:first-child > div:nth-child(2) {
                     display: none;
                 }
             }

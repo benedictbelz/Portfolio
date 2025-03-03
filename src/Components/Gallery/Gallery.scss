@@ -124,8 +124,9 @@
     &.transition {
         .galleryImages img,
         .galleryImages video {
-            transition: left $transition-m ease,
-                        right $transition-m ease;
+            transition:
+                left $transition-m ease,
+                right $transition-m ease;
         }
 
         .galleryBullets div {

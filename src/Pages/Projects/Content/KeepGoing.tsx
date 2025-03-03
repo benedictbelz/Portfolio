@@ -31,28 +31,26 @@ export class KeepGoing extends React.Component<{}, {}> {
                     </div>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/keepGoing/media.png' style={{ borderRadius: 0 }}/>
+                    <img src='assets/projects/keepGoing/media.png' style={{ borderRadius: 0 }} />
                 </div>
                 <div className='category text'>
                     <p>
-                        »Keep Going« was developed as a travel blog and included different  posts of countries,
-                        travel tips and shopping products. I wanted to create a clear and box-like design 
-                        which would match the composition of vintage newspapers.
+                        »Keep Going« was developed as a travel blog and included different posts of countries, travel tips and shopping products. I wanted to
+                        create a clear and box-like design which would match the composition of vintage newspapers.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/keepGoing/logo.gif'/>
+                    <img src='assets/projects/keepGoing/logo.gif' />
                 </div>
                 <div className='category text'>
                     <p>
-                        The logo design transformed into an animation if it was hovered by the user.
-                        The wings of the airplane represented the letter »K« while the route formed the letter »G«.
-                        I tried to keep the design as readable but at the same time as expressive as possible.
+                        The logo design transformed into an animation if it was hovered by the user. The wings of the airplane represented the letter »K« while
+                        the route formed the letter »G«. I tried to keep the design as readable but at the same time as expressive as possible.
                     </p>
                 </div>
                 <div className='category design'>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#83C8EA' }}>
+                        <div style={{ color: '#FFFFFF', background: '#83C8EA' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>297 U</p>
@@ -89,7 +87,7 @@ export class KeepGoing extends React.Component<{}, {}> {
                         </div>
                     </div>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#E25A5A' }}>
+                        <div style={{ color: '#FFFFFF', background: '#E25A5A' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>P 55-6 U</p>
@@ -140,23 +138,22 @@ export class KeepGoing extends React.Component<{}, {}> {
                 </div>
                 <div className='category text'>
                     <p>
-                        Most of the webpage is held in black and white, but the addition of blue and
-                        red pastel colors relieved the monotone look. I decided to use those colors wisely
-                        to leave most of the focus on the pictures. The font »Helvetica« required to emphasize the clear appearance.
+                        Most of the webpage is held in black and white, but the addition of blue and red pastel colors relieved the monotone look. I decided to
+                        use those colors wisely to leave most of the focus on the pictures. The font »Helvetica« required to emphasize the clear appearance.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/keepGoing/keepGoing_01.jpg'/>
+                    <img src='assets/projects/keepGoing/keepGoing_01.jpg' />
                 </div>
                 <div className='category text'>
                     <p>
-                        All pages contained the same navigation and included a search function and a burger menu in case of mobile usage.
-                        All blog collections covered links for sharing and were sorted into their individual categories.
-                        The User Experience was designed in a straightforward classical approach to avoid unnecessary disorientation.
+                        All pages contained the same navigation and included a search function and a burger menu in case of mobile usage. All blog collections
+                        covered links for sharing and were sorted into their individual categories. The User Experience was designed in a straightforward
+                        classical approach to avoid unnecessary disorientation.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/keepGoing/keepGoing_02.jpg'/>
+                    <img src='assets/projects/keepGoing/keepGoing_02.jpg' />
                 </div>
             </div>
         );

@@ -6,9 +6,9 @@ export type Project = {
         vimeo?: string;
         youtube?: string;
         www?: string;
-    }
+    };
     title: string;
     type: Selection;
-}
+};
 
 export type Selection = 'All' | 'Digital' | 'Film' | 'Art';

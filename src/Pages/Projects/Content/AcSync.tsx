@@ -32,43 +32,45 @@ export class AcSync extends React.Component<{}, {}> {
                     </div>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/acSync/media.png' style={{ borderRadius: 0 }}/>
+                    <img src='assets/projects/acSync/media.png' style={{ borderRadius: 0 }} />
                 </div>
                 <div className='category text'>
                     <p>
-                        This was a project for the company »AdmiralCloud AG«.
-                        Their main product is a »Digital Asset Management« which can be used
-                        to store and manage files such as images, movies, audios or documents.
-                        Among other things, it enables organizing, finding, editing 
-                        and publishing various files from all over the world.
+                        This was a project for the company »AdmiralCloud AG«. Their main product is a »Digital Asset Management« which can be used to store and
+                        manage files such as images, movies, audios or documents. Among other things, it enables organizing, finding, editing and publishing
+                        various files from all over the world.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/acSync/client.jpg' style={{ borderRadius: 5 }}/>
+                    <img src='assets/projects/acSync/client.jpg' style={{ borderRadius: 5 }} />
                 </div>
                 <div className='category text'>
                     <p>
-                        To provide a better integration we developed »AC Sync«, which synchronizes data 
-                        from the »Digital Asset Management« to a desktop device so that customers can
-                        access and edit files independently of their network connection. This was developed
-                        for MacOS and Windows and works in a way like »Dropbox« which offers custom functionalities
-                        like creating »Download« or »Upload« folders.
+                        To provide a better integration we developed »AC Sync«, which synchronizes data from the »Digital Asset Management« to a desktop device
+                        so that customers can access and edit files independently of their network connection. This was developed for MacOS and Windows and
+                        works in a way like »Dropbox« which offers custom functionalities like creating »Download« or »Upload« folders.
                     </p>
                 </div>
                 <div className='category video'>
-                    <video src='assets/projects/acSync/acSync_01.mp4' preload='metadata' poster='assets/projects/acSync/acSync_01.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
+                    <video
+                        src='assets/projects/acSync/acSync_01.mp4'
+                        preload='metadata'
+                        poster='assets/projects/acSync/acSync_01.jpg'
+                        controls
+                        disablePictureInPicture
+                        controlsList='nodownload noremoteplayback'
+                    />
                 </div>
                 <div className='category text'>
                     <p>
-                        For the user interface design we kept the color palette similar to the »Digital Asset Management«.
-                        We used a dark blue and a soft grey as fundamental colors and introduced a light blue
-                        and juicy orange as accent colors. Most importantly we established high contrast between all
-                        colors and picked »Roboto« to ensure easy readibility.
+                        For the user interface design we kept the color palette similar to the »Digital Asset Management«. We used a dark blue and a soft grey
+                        as fundamental colors and introduced a light blue and juicy orange as accent colors. Most importantly we established high contrast
+                        between all colors and picked »Roboto« to ensure easy readibility.
                     </p>
                 </div>
                 <div className='category design'>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#19324B' }}>
+                        <div style={{ color: '#FFFFFF', background: '#19324B' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>533 C</p>
@@ -105,7 +107,7 @@ export class AcSync extends React.Component<{}, {}> {
                         </div>
                     </div>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#4BAFFA' }}>
+                        <div style={{ color: '#FFFFFF', background: '#4BAFFA' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>2915 C</p>
@@ -142,7 +144,7 @@ export class AcSync extends React.Component<{}, {}> {
                         </div>
                     </div>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#FFAA28' }}>
+                        <div style={{ color: '#FFFFFF', background: '#FFAA28' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>1235 C</p>
@@ -179,7 +181,7 @@ export class AcSync extends React.Component<{}, {}> {
                         </div>
                     </div>
                     <div className='color'>
-                        <div style={{color: '#19324B', background: '#E1E6EB' }}>
+                        <div style={{ color: '#19324B', background: '#E1E6EB' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>656 C</p>
@@ -216,7 +218,7 @@ export class AcSync extends React.Component<{}, {}> {
                         </div>
                     </div>
                     <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#FF0027' }}>
+                        <div style={{ color: '#FFFFFF', background: '#FF0027' }}>
                             <div>
                                 <p className='bold'>Pantone</p>
                                 <p>185 C</p>
@@ -267,29 +269,40 @@ export class AcSync extends React.Component<{}, {}> {
                 </div>
                 <div className='category text'>
                     <p>
-                        The »Upload« folders allow customizations like »Tags« and »Security Groups«
-                        to structure uploaded files accordingly in the »Digital Asset Management«.
-                        Futhermore, it's possible to let »AC Sync« upload all files from the folder periodically
-                        in a time span of one minute, one hour or one day. All files are scanned beforehad and
-                        uploaded only when they are not already inlcuded in the »Digital Asset Management«
-                        or have been changed manually by the user.
+                        The »Upload« folders allow customizations like »Tags« and »Security Groups« to structure uploaded files accordingly in the »Digital
+                        Asset Management«. Futhermore, it's possible to let »AC Sync« upload all files from the folder periodically in a time span of one
+                        minute, one hour or one day. All files are scanned beforehad and uploaded only when they are not already inlcuded in the »Digital Asset
+                        Management« or have been changed manually by the user.
                     </p>
                 </div>
                 <div className='category video'>
-                    <video src='assets/projects/acSync/acSync_02.mp4' preload='metadata' poster='assets/projects/acSync/acSync_02.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
+                    <video
+                        src='assets/projects/acSync/acSync_02.mp4'
+                        preload='metadata'
+                        poster='assets/projects/acSync/acSync_02.jpg'
+                        controls
+                        disablePictureInPicture
+                        controlsList='nodownload noremoteplayback'
+                    />
                 </div>
                 <div className='category text'>
                     <p>
-                        The »Download« folders allow filter options like »Dates«, »Names« or »Types« to download
-                        files accordingly for each folder. If changes have been made in the »Digital Asset Management«
-                        the files get updated or replaced automatically. As for »Upload« folders, it's possible to check for updates
-                        periodically in a time span of one minute, one hour or one day. The »Digital Asset Management« also
-                        provides a feature to open specific files automatically in a preferred software like »Adobe Photoshop«
-                        or »Microsoft Excel« to edit them easily on the go.
+                        The »Download« folders allow filter options like »Dates«, »Names« or »Types« to download files accordingly for each folder. If changes
+                        have been made in the »Digital Asset Management« the files get updated or replaced automatically. As for »Upload« folders, it's possible
+                        to check for updates periodically in a time span of one minute, one hour or one day. The »Digital Asset Management« also provides a
+                        feature to open specific files automatically in a preferred software like »Adobe Photoshop« or »Microsoft Excel« to edit them easily on
+                        the go.
                     </p>
                 </div>
                 <div className='category video'>
-                    <video src='assets/projects/acSync/acSync_03.mp4' preload='metadata' poster='assets/projects/acSync/acSync_03.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
+                    <video
+                        src='assets/projects/acSync/acSync_03.mp4'
+                        preload='metadata'
+                        poster='assets/projects/acSync/acSync_03.jpg'
+                        controls
+                        disablePictureInPicture
+                        controlsList='nodownload noremoteplayback'
+                    />
                 </div>
             </div>
         );

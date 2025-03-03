@@ -29,9 +29,10 @@
             position: absolute;
             opacity: 0;
             width: 0%;
-            transition: opacity $transition-m ease,
-                        transform $transition-s ease,
-                        width $transition-m ease;
+            transition:
+                opacity $transition-m ease,
+                transform $transition-s ease,
+                width $transition-m ease;
 
             &.show {
                 opacity: 1;
@@ -43,14 +44,30 @@
 
 #app.desktop #header {
     #headerLeft:hover {
-        #logoBack { transform: translateX(5%); }
-        #logoFront { transform: translateX(-5%); }
-        #arrowUp { transform: scale(1.25); }
+        #logoBack {
+            transform: translateX(5%);
+        }
+
+        #logoFront {
+            transform: translateX(-5%);
+        }
+
+        #arrowUp {
+            transform: scale(1.25);
+        }
     }
 
     #headerRight:hover {
-        #informationFront { transform: translateY(-5%); }
-        #arrowLeft { transform: scale(1.25); }
-        #arrowRight { transform: scale(1.25); }
+        #informationFront {
+            transform: translateY(-5%);
+        }
+
+        #arrowLeft {
+            transform: scale(1.25);
+        }
+        
+        #arrowRight {
+            transform: scale(1.25);
+        }
     }
 }

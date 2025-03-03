@@ -6,7 +6,7 @@
     box-sizing: border-box;
     box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-shadow;
     border-radius: $border-radius-l;
-    
+
     .previewContent {
         position: relative;
         overflow: hidden;
@@ -29,7 +29,7 @@
             }
         }
 
-        .previewDescription {        
+        .previewDescription {
             position: absolute;
             z-index: 100;
             display: flex;
@@ -41,19 +41,20 @@
             overflow: hidden;
             transition: background-color $transition-s ease;
             background-color: transparent;
-    
+
             > p {
                 pointer-events: none;
                 text-align: center;
                 color: $color-white;
                 font-weight: $font-weight-regular;
-                transition: opacity $transition-s ease,
-                            transform $transition-s ease;
+                transition:
+                    opacity $transition-s ease,
+                    transform $transition-s ease;
                 transform: scale(0.5);
                 opacity: 0;
             }
         }
-    
+
         .previewLink {
             position: absolute;
             z-index: 200;
@@ -61,7 +62,7 @@
             left: 0;
             margin: $spacing-m;
             display: flex;
-    
+
             a {
                 display: block;
                 height: $spacing-icon-m;
@@ -69,7 +70,7 @@
                 opacity: 0;
                 transition: transform $transition-s ease;
                 transform: scale(0);
-    
+
                 img {
                     width: 100%;
                     transition: transform $transition-s ease;
@@ -82,7 +83,7 @@
                 }
             }
         }
-    
+
         .previewImage {
             display: flex;
             justify-content: center;
@@ -91,14 +92,14 @@
             width: 100%;
             border-radius: $border-radius-l;
             overflow: hidden;
-    
+
             img {
                 width: 100%;
             }
         }
     }
 
-    &.white .previewContent .previewLabel{
+    &.white .previewContent .previewLabel {
         filter: invert(1);
     }
 
@@ -136,16 +137,16 @@
 
     .previewContent:hover {
         transform: scale(1.025);
-    
+
         .previewDescription {
             background-color: $color-black-transparent;
-    
+
             > p {
                 opacity: 1;
                 transform: scale(1);
             }
         }
-    
+
         .previewLink a {
             opacity: 1;
             transform: scale(1);

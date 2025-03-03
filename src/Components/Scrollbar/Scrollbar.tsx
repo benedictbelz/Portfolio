@@ -18,7 +18,7 @@ export class Scrollbar extends React.Component<Props, States> {
     state: States = {
         element: null,
         scroll: 0
-    }
+    };
 
     componentDidMount() {
         this.initScrollbar();
@@ -43,7 +43,7 @@ export class Scrollbar extends React.Component<Props, States> {
         // DEFINE VARIABLES
         let height = this.state.element.scrollHeight - this.state.element.clientHeight;
         let scroll = this.state.element.scrollTop;
-        let percentage = Math.floor(scroll/height*1000)/1000;
+        let percentage = Math.floor((scroll / height) * 1000) / 1000;
         // CHECK BOUNDARY
         if (percentage <= 0 || isNaN(percentage)) {
             percentage = 0;
@@ -55,25 +55,23 @@ export class Scrollbar extends React.Component<Props, States> {
         this.setState({ scroll: percentage });
     }
 
-	render() {
-		return (
+    render() {
+        return (
             <div id={this.props.id}>
                 {this.props.browser.device === 'Mobile' && this.props.children}
-                {this.props.browser.device === 'Desktop' &&
+                {this.props.browser.device === 'Desktop' && (
                     <>
-                        <div className={[
-                            'scrollbar',
-                            this.state.element ? this.state.element.id : '',
-                            this.props.color === 'Black' ? 'black' : 'white'
-                        ].filter((x) => x).join(' ')}>
-                            <div style={ { transform: 'scaleY(' + this.state.scroll + ')' } }/>
+                        <div
+                            className={['scrollbar', this.state.element ? this.state.element.id : '', this.props.color === 'Black' ? 'black' : 'white']
+                                .filter(x => x)
+                                .join(' ')}
+                        >
+                            <div style={{ transform: 'scaleY(' + this.state.scroll + ')' }} />
                         </div>
-                        <div className='content'>
-                            {this.props.children}
-                        </div>
+                        <div className='content'>{this.props.children}</div>
                     </>
-                }
+                )}
             </div>
         );
-	}
+    }
 }

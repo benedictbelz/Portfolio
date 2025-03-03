@@ -26,8 +26,8 @@ export class Gallery extends React.Component<Props, States> {
             bullets: null,
             images: null,
             length: React.Children.toArray(this.props.children).length,
-            transition: false,
-        }
+            transition: false
+        };
     }
 
     componentDidMount() {
@@ -44,14 +44,17 @@ export class Gallery extends React.Component<Props, States> {
         const bullets = this.gallery.current.querySelector('.galleryBullets');
         const images = this.gallery.current.querySelector('.galleryImages');
         // UPDATE STATE
-        this.setState({
-            bullets: bullets ? Array.from(bullets.children) as HTMLElement[] : null,
-            images: images ? Array.from(images.children) as HTMLElement[] : null
-        }, () => {
-            this.initDrag();
-            this.setBullets(current);
-            this.setImages();
-        });
+        this.setState(
+            {
+                bullets: bullets ? (Array.from(bullets.children) as HTMLElement[]) : null,
+                images: images ? (Array.from(images.children) as HTMLElement[]) : null
+            },
+            () => {
+                this.initDrag();
+                this.setBullets(current);
+                this.setImages();
+            }
+        );
     }
 
     private initDrag() {
@@ -70,7 +73,7 @@ export class Gallery extends React.Component<Props, States> {
             }
             active = true;
             origin = position;
-        }
+        };
         // DEFINE MOVE
         const move = (position: number) => {
             if (!active || this.state.transition || !this.state.images) {
@@ -81,7 +84,7 @@ export class Gallery extends React.Component<Props, States> {
             this.state.images[previous].style.left = 'calc(-100% + ' + destination + 'px)';
             this.state.images[current].style.left = destination + 'px';
             this.state.images[next].style.left = 'calc(100% + ' + destination + 'px)';
-        }
+        };
         // DEFINE END
         const end = () => {
             if (!active || this.state.transition) {
@@ -95,7 +98,7 @@ export class Gallery extends React.Component<Props, States> {
             } else {
                 this.currentImage();
             }
-        }
+        };
         // DEFINE DRAG ELEMENT
         const drag: HTMLElement = this.gallery.current.querySelector('.galleryDrag');
         // IF DESKTOP
@@ -141,7 +144,7 @@ export class Gallery extends React.Component<Props, States> {
         }
         // DELETE CLASS NAME FOR ALL BULLETS
         for (let index = 0; index < this.state.length; index++) {
-            if (index >= Math.floor(position/10)*10 && index < (Math.floor(position/10)*10)+10) {
+            if (index >= Math.floor(position / 10) * 10 && index < Math.floor(position / 10) * 10 + 10) {
                 this.state.bullets[index].className = 'show';
             } else {
                 this.state.bullets[index].className = '';
@@ -189,11 +192,11 @@ export class Gallery extends React.Component<Props, States> {
             // UPDATE BULLETS
             setTimeout(() => {
                 this.setBullets(current);
-            }, 250)
+            }, 250);
             // DEACTIVATE TRANSITION
             setTimeout(() => {
                 this.setState({ current, transition: false }, () => {
-                    this.setImages()
+                    this.setImages();
                 });
             }, 500);
         });
@@ -239,40 +242,36 @@ export class Gallery extends React.Component<Props, States> {
             // UPDATE BULLETS
             setTimeout(() => {
                 this.setBullets(current);
-            }, 250)
+            }, 250);
             // DEACTIVATE TRANSITION
             setTimeout(() => {
                 this.setState({ current, transition: false }, () => {
-                    this.setImages()
+                    this.setImages();
                 });
             }, 500);
         });
     }
 
-	render() {
-		return (
+    render() {
+        return (
             <div ref={this.gallery} className={['category', 'gallery', this.state.transition ? 'transition' : ''].filter(x => x).join(' ')}>
-                <div className='galleryDrag'/>
+                <div className='galleryDrag' />
                 <div className='galleryClick'>
                     <div className='galleryLeft'>
-                        <img onClick={() => this.previousImage()} src='assets/interface/sliderLeft.svg'/>
+                        <img onClick={() => this.previousImage()} src='assets/interface/sliderLeft.svg' />
                     </div>
                     <div className='galleryRight'>
-                        <img onClick={() => this.nextImage()} src='assets/interface/sliderRight.svg'/>
+                        <img onClick={() => this.nextImage()} src='assets/interface/sliderRight.svg' />
                     </div>
                 </div>
                 <div className={'galleryBullets'}>
                     {[...Array(this.state.length)].map((bullet, index) => {
-                        return <div key={index} data-index={index} className='bullet'/>
+                        return <div key={index} data-index={index} className='bullet' />;
                     })}
                 </div>
-                <div className='galleryImages'>
-                    {this.props.children}
-                </div>
-                <div className='galleryPlaceholder'>
-                    {React.Children.toArray(this.props.children)[0]}
-                </div>
+                <div className='galleryImages'>{this.props.children}</div>
+                <div className='galleryPlaceholder'>{React.Children.toArray(this.props.children)[0]}</div>
             </div>
         );
-	}
+    }
 }
