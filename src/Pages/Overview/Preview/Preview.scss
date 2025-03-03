@@ -1,20 +1,20 @@
 @import '../../../App/Variables.scss';
 
-.project {
+.preview {
     cursor: pointer;
     display: none;
     box-sizing: border-box;
     box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-shadow;
     border-radius: $border-radius-l;
     
-    .wrapper {
+    .previewContent {
         position: relative;
         overflow: hidden;
         border-radius: $border-radius-l;
         transition: transform $transition-s ease;
         transform: scale(1);
 
-        .label {
+        .previewLabel {
             box-sizing: border-box;
             pointer-events: none;
             position: absolute;
@@ -29,7 +29,7 @@
             }
         }
 
-        .description {        
+        .previewDescription {        
             position: absolute;
             z-index: 100;
             display: flex;
@@ -42,7 +42,7 @@
             transition: background-color $transition-s ease;
             background-color: transparent;
     
-            .title {
+            > p {
                 pointer-events: none;
                 text-align: center;
                 color: $color-white;
@@ -54,7 +54,7 @@
             }
         }
     
-        .link {
+        .previewLink {
             position: absolute;
             z-index: 200;
             bottom: 0;
@@ -83,7 +83,7 @@
             }
         }
     
-        .image {
+        .previewImage {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -98,7 +98,7 @@
         }
     }
 
-    &.white .wrapper .label{
+    &.white .previewContent .previewLabel{
         filter: invert(1);
     }
 
@@ -110,13 +110,13 @@
         opacity: 0;
     }
 
-    &.fade {
-        animation-name: fade;
+    &.animation {
+        animation-name: animation;
         animation-duration: $transition-l;
         animation-timing-function: ease-out;
         animation-fill-mode: backwards;
 
-        @keyframes fade {
+        @keyframes animation {
             0% {
                 transform: scale(0);
                 opacity: 0;
@@ -129,30 +129,30 @@
     }
 }
 
-#app.desktop .project {
-    .link a img:hover {
+#app.desktop .preview {
+    .previewLink a img:hover {
         transform: scale(1.25);
     }
 
-    .wrapper:hover {
+    .previewContent:hover {
         transform: scale(1.025);
     
-        .description {
+        .previewDescription {
             background-color: $color-black-transparent;
     
-            .title {
+            > p {
                 opacity: 1;
                 transform: scale(1);
             }
         }
     
-        .link a {
+        .previewLink a {
             opacity: 1;
             transform: scale(1);
         }
     }
 
-    &.black .wrapper:hover .label {
+    &.black .previewContent:hover .previewLabel {
         transition: filter 0.25s ease;
         filter: invert(1);
     }

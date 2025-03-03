@@ -8,8 +8,7 @@ interface Props {
 }
 
 export class Information extends React.Component<Props,{}> {
-
-    calculateAge() {
+    private calculateAge() {
         const today = new Date();
         const birth = new Date('1991-04-09');
         const year = today.getFullYear() - birth.getFullYear();
@@ -23,7 +22,7 @@ export class Information extends React.Component<Props,{}> {
 
 	render() {
 		return (
-            <Scrollbar color='White' browser={this.props.browser} id='information'>
+            <Scrollbar browser={this.props.browser} color='White' id='information'>
                 <div className='wrapper'>
                     <div id='picture'>
                         <img src='assets/interface/profile.jpg' draggable='false' />

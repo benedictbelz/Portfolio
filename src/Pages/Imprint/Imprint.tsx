@@ -10,7 +10,7 @@ interface Props {
 export class Imprint extends React.Component<Props,{}> {
 	render() {
 		return (
-            <Scrollbar color='White' browser={this.props.browser} id='imprint'>
+            <Scrollbar browser={this.props.browser} color='White' id='imprint'>
                 <div className='wrapper'>
                     <h1>
                         Information according to<br/>

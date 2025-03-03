@@ -1,6 +1,6 @@
 @import '../../App/Variables.scss';
 
-#portfolio {
+#overview {
     box-sizing: border-box;
 
     #selection {
@@ -57,13 +57,13 @@
                 opacity: 0;
             }
 
-            &.fade {
-                animation-name: fade;
+            &.animation {
+                animation-name: animation;
                 animation-duration: $transition-l;
                 animation-timing-function: ease-out;
                 animation-fill-mode: backwards;
 
-                @keyframes fade {
+                @keyframes animation {
                     0% {
                         transform: scale(0);
                         opacity: 0;
@@ -96,7 +96,7 @@
         }
     }
 
-    #projects {
+    #previews {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         gap: $spacing-m;
@@ -122,25 +122,25 @@
     }
 
     @media (max-width: $media-xl) {
-        #projects {
+        #previews {
             grid-template-columns: 1fr 1fr 1fr 1fr;
         }
     }
 
     @media (max-width: $media-l) {
-        #projects {
+        #previews {
             grid-template-columns: 1fr 1fr 1fr;
         }
     }
 
     @media (max-width: $media-m) {
-        #projects {
+        #previews {
             grid-template-columns: 1fr 1fr;
         }
     }
 
     @media (max-width: $media-s) {
-        #projects {
+        #previews {
             grid-template-columns: 1fr;
         }
 
@@ -170,7 +170,7 @@
     }
 }
 
-#app.desktop #portfolio {
+#app.desktop #overview {
     #selection li:hover {
         transform: scale(1.1);
     }

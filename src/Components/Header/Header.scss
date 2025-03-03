@@ -14,7 +14,8 @@
     align-items: center;
     padding: 0 $spacing-m;
 
-    div {
+    #headerLeft,
+    #headerRight {
         position: relative;
         cursor: pointer;
         pointer-events: all;
@@ -41,13 +42,13 @@
 }
 
 #app.desktop #header {
-    div:first-child:hover {
+    #headerLeft:hover {
         #logoBack { transform: translateX(5%); }
         #logoFront { transform: translateX(-5%); }
         #arrowUp { transform: scale(1.25); }
     }
 
-    div:last-child:hover {
+    #headerRight:hover {
         #informationFront { transform: translateY(-5%); }
         #arrowLeft { transform: scale(1.25); }
         #arrowRight { transform: scale(1.25); }

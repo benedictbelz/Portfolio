@@ -80,7 +80,7 @@ a {
         transform: translate(100%, 0%);
     }
 
-    #showroom {
+    #projects {
         transform: translate(-100%, 0%);
     }
 
@@ -93,7 +93,7 @@ a {
             transform: translate(0%, 0%);
         }
 
-        #portfolio { 
+        #overview { 
             transform: translate(-100%, 0%);
         }
     }
@@ -103,23 +103,23 @@ a {
             transform: translate(0%, 0%);
         }
 
-        #portfolio {
+        #overview {
             transform: translate(-100%, 0%);
         }
     }
 
-    &.portfolio {
-        #portfolio {
+    &.overview {
+        #overview {
             transform: translate(0%, 0%);
         }
     }
 
-    &.showroom {
-        #portfolio {
+    &.projects {
+        #overview {
             transform: translate(100%, 0%);
         }
 
-        #showroom {
+        #projects {
             transform: translate(0%, 0%);
         }
     }
@@ -128,7 +128,7 @@ a {
         #header { transform: translate(0%, 100vh) }
         #welcome { transform: translate(0%, 0%); }
 
-        #portfolio {
+        #overview {
             transform: translate(0%, 100%);
         }
     }
@@ -137,8 +137,8 @@ a {
         #header,
         #imprint,
         #information,
-        #portfolio,
-        #showroom,
+        #overview,
+        #projects,
         #welcome {
             transition: transform $transition-l ease;
         }
@@ -147,8 +147,8 @@ a {
     &.desktop {
         #imprint,
         #information,
-        #portfolio,
-        #showroom,
+        #overview,
+        #projects,
         #welcome {
             position: absolute;
             height: 100%;
@@ -157,8 +157,8 @@ a {
 
         #imprint>.content,
         #information>.content,
-        #portfolio>.content,
-        #showroom>.content {
+        #overview>.content,
+        #projects>.content {
             overflow-y: auto;
             height: 100%;
             width: 100%;
@@ -199,8 +199,8 @@ a {
     &.mobile {
         #imprint,
         #information,
-        #portfolio,
-        #showroom,
+        #overview,
+        #projects,
         #welcome {
             position: absolute;
             overflow-y: auto;

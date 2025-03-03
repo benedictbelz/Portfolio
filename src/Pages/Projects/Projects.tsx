@@ -1,25 +1,24 @@
 import * as React from 'react';
 import { Loader } from '../../Components/Loader/Loader';
 import { Scrollbar } from '../../Components/Scrollbar/Scrollbar';
-import { AcSync } from './Projects/AcSync';
-import { AdmiralCloud } from './Projects/AdmiralCloud';
-import { ArtAttech } from './Projects/ArtAttech';
-import { DroemerKnaur } from './Projects/DroemerKnaur';
-import { Etre } from './Projects/Etre';
-import { KeepGoing } from './Projects/KeepGoing';
-import { Lockdown } from './Projects/Lockdown';
-import { Metropolis } from './Projects/Metropolis';
-import { MMPro } from './Projects/MMPro';
-import { Nanotec } from './Projects/Nanotec';
-import { Phobius } from './Projects/Phobius';
-import { PersonalWebsite } from './Projects/PersonalWebsite';
-import { ShimmeringNightmare } from './Projects/ShimmeringNightmare';
-import { Showreel } from './Projects/Showreel';
-import { ZdfAspekte } from './Projects/ZdfAspekte';
-
-import { Project } from '../../@types/project';
-import './Showroom.scss';
+import { AcSync } from './Content/AcSync';
+import { AdmiralCloud } from './Content/AdmiralCloud';
+import { ArtAttech } from './Content/ArtAttech';
+import { DroemerKnaur } from './Content/DroemerKnaur';
+import { Etre } from './Content/Etre';
+import { KeepGoing } from './Content/KeepGoing';
+import { Lockdown } from './Content/Lockdown';
+import { Metropolis } from './Content/Metropolis';
+import { MMPro } from './Content/MMPro';
+import { Nanotec } from './Content/Nanotec';
+import { Phobius } from './Content/Phobius';
+import { PersonalWebsite } from './Content/PersonalWebsite';
+import { ShimmeringNightmare } from './Content/ShimmeringNightmare';
+import { Showreel } from './Content/Showreel';
+import { ZdfAspekte } from './Content/ZdfAspekte';
 import { Browser } from '../../@types/browser';
+import { Project } from '../../@types/project';
+import './Projects.scss';
 
 interface Props {
     browser: Browser;
@@ -32,8 +31,7 @@ interface States {
     loadedProjects: string[];
 }
 
-export class Showroom extends React.Component<Props, States> {
-
+export class Projects extends React.Component<Props, States> {
     state: States = {
         isLoading: true,
         percentage: 0,
@@ -54,7 +52,7 @@ export class Showroom extends React.Component<Props, States> {
     }
 
     async loadMedia() {
-        let images = document.querySelectorAll('#showroom img') as unknown as HTMLImageElement[];
+        let images = document.querySelectorAll('#projects img') as unknown as HTMLImageElement[];
         const loadImages = async () => await new Promise<void>(resolve => {
             if (images.length === 0) {
                 resolve();
@@ -83,7 +81,7 @@ export class Showroom extends React.Component<Props, States> {
 
 	render() {
 		return (
-            <Scrollbar color='White' browser={this.props.browser} id='showroom'>
+            <Scrollbar browser={this.props.browser} color='White' id='projects'>
                 <Loader color='Black' isLoading={this.state.isLoading} percentage={this.state.percentage}/>
                 {this.props.currentProject && this.props.currentProject.title === 'AC Sync' && <AcSync/>}
                 {this.props.currentProject && this.props.currentProject.title === 'AdmiralCloud' && <AdmiralCloud browser={this.props.browser}/>}

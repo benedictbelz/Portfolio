@@ -11,7 +11,7 @@
     align-items: center;
     opacity: 0;
 
-    #circle {
+    .loaderCircle {
         box-sizing: border-box;
         position: absolute;
         height: $spacing-loader;
@@ -44,7 +44,7 @@
         color: $color-white;
         background-color: $color-black;
 
-        #circle {
+        .loaderCircle {
             border-top: $border-circle solid $color-white;
             border-right: $border-circle solid $color-white;
             border-bottom: $border-circle solid $color-white;
@@ -56,7 +56,7 @@
         color: $color-black;
         background-color: $color-white;
 
-        #circle {
+        .loaderCircle {
             border-top: $border-circle solid $color-black;
             border-right: $border-circle solid $color-black;
             border-bottom: $border-circle solid $color-black;

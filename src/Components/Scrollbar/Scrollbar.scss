@@ -30,8 +30,8 @@
     #imprint>.content,
     #information>.content,
     #legal>.content,
-    #portfolio>.content,
-    #showroom>.content {
+    #overview>.content,
+    #projects>.content {
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
@@ -40,8 +40,8 @@
     #imprint>.content::-webkit-scrollbar,
     #information>.content::-webkit-scrollbar,
     #legal>.content::-webkit-scrollbar,
-    #portfolio>.content::-webkit-scrollbar,
-    #showroom>.content::-webkit-scrollbar {
+    #overview>.content::-webkit-scrollbar,
+    #projects>.content::-webkit-scrollbar {
         display: none;
         background-color: transparent;
         height: 0;

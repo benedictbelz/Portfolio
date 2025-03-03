@@ -15,39 +15,36 @@ interface States {
 }
 
 export class Scrollbar extends React.Component<Props, States> {
-
-    constructor(props: any) {
-        super(props);
-
-        this.state = {
-            element: null,
-            scroll: 0
-        }
-
-        setTimeout(() => this.initScrollbar());
+    state: States = {
+        element: null,
+        scroll: 0
     }
 
-    initScrollbar() {
+    componentDidMount() {
+        this.initScrollbar();
+    }
+
+    private initScrollbar() {
         // IF MOBILE RETURN
         if (this.props.browser.device === 'Mobile') {
             return;
         }
-        // GET ELEMENT
+        // DEFINE VARIABLES
         const element = document.querySelector('#' + this.props.id + '>.content') as unknown as HTMLElement;
-        // SET ELEMENT
+        // UPDATE STATE
         this.setState({ element });
-        // EVENT LISTENER SCROLL
-        element.addEventListener('scroll', () => this.update());
-        // EVENT LISTENER RESIZE
-        window.addEventListener('resize', () => this.update());
+        // ADD EVENT LISTENER SCROLL
+        element.addEventListener('scroll', () => this.updateScrollbar());
+        // ADD EVENT LISTENER RESIZE
+        window.addEventListener('resize', () => this.updateScrollbar());
     }
 
-    update() {
-        // GET VARIABLES
+    private updateScrollbar() {
+        // DEFINE VARIABLES
         let height = this.state.element.scrollHeight - this.state.element.clientHeight;
         let scroll = this.state.element.scrollTop;
         let percentage = Math.floor(scroll/height*1000)/1000;
-        // BOUNDARY
+        // CHECK BOUNDARY
         if (percentage <= 0 || isNaN(percentage)) {
             percentage = 0;
         }

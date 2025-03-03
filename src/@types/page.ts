@@ -1,1 +1,1 @@
-export type Page = 'Imprint' | 'Information' | 'Portfolio' | 'Showroom' | 'Welcome';
+export type Page = 'Imprint' | 'Information' | 'Overview' | 'Projects' | 'Welcome';

@@ -4,8 +4,8 @@ import { Header } from '../Components/Header/Header';
 import { Welcome } from '../Pages/Welcome/Welcome';
 import { Imprint } from '../Pages/Imprint/Imprint';
 import { Information } from '../Pages/Information/Information';
-import { Showroom } from '../Pages/Showroom/Showroom';
-import { Portfolio } from '../Pages/Portfolio/Portfolio';
+import { Overview } from '../Pages/Overview/Overview';
+import { Projects } from '../Pages/Projects/Projects';
 import { getProjects } from '../@presets/projects';
 import { Browser } from '../@types/browser';
 import { Page } from '../@types/page';
@@ -61,7 +61,7 @@ class App extends React.Component<{}, States> {
     }
 
     clickEnter() {
-		this.setState({ currentPage: 'Portfolio', isTransition: true });
+		this.setState({ currentPage: 'Overview', isTransition: true });
 		setTimeout(() => this.setState({ isTransition: false, showWelcome: false }), 1000);
 	}
 
@@ -70,14 +70,14 @@ class App extends React.Component<{}, States> {
 	}
 
 	clickRight() {
-		if (this.state.currentPage === 'Portfolio') {
+		if (this.state.currentPage === 'Overview') {
 			this.setState({ currentPage: 'Information', isTransition: true });
 		}
 		if (this.state.currentPage === 'Imprint' || this.state.currentPage === 'Information') {
-			this.setState({ currentPage: 'Portfolio', isTransition: true });
+			this.setState({ currentPage: 'Overview', isTransition: true });
 		}
-		if (this.state.currentPage === 'Showroom') {
-			this.setState({ currentPage: 'Portfolio', isTransition: true });
+		if (this.state.currentPage === 'Projects') {
+			this.setState({ currentPage: 'Overview', isTransition: true });
 			setTimeout(() => this.setState({ currentProject: null }), 1000);
 		}
 		setTimeout(() => this.setState({ isTransition: false }), 1000);
@@ -88,7 +88,7 @@ class App extends React.Component<{}, States> {
 	}
 
 	clickProject(project: Project) {
-		this.setState({ currentPage: 'Showroom', isTransition: true, currentProject: project });
+		this.setState({ currentPage: 'Projects', isTransition: true, currentProject: project });
 	}
 
 	render() {
@@ -100,8 +100,8 @@ class App extends React.Component<{}, States> {
 					this.state.browser.device === 'Desktop' ? 'desktop' : 'mobile',
 					this.state.currentPage === 'Imprint' ? 'imprint' : '',
 					this.state.currentPage === 'Information' ? 'information' : '',
-					this.state.currentPage === 'Portfolio' ? 'portfolio' : '',
-					this.state.currentPage === 'Showroom' ? 'showroom' : '',
+					this.state.currentPage === 'Overview' ? 'overview' : '',
+					this.state.currentPage === 'Projects' ? 'projects' : '',
 					this.state.currentPage === 'Welcome' ? 'welcome' : ''
 				].filter(x => x).join(' ')}
 			>
@@ -122,11 +122,11 @@ class App extends React.Component<{}, States> {
 				<Information
 					browser={this.state.browser}
 				/>
-				<Showroom 
+				<Projects 
 					browser={this.state.browser}
 					currentProject={this.state.currentProject}
 				/>
-				<Portfolio
+				<Overview
 					clickImprint={() => this.clickImprint()}
 					clickProject={(project: Project) => this.clickProject(project)}
 					browser={this.state.browser}

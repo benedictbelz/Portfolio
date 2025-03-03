@@ -6,25 +6,24 @@ import './Preview.scss';
 interface Props {
     browser: Browser;
     clickProject: Function;
-    currentSelection: Selection;
+    selection: Selection;
     project: Project;
 }
 
 export class Preview extends React.Component<Props,{}> {
-
     render() {
         return (
             <div 
                 className={[
-                    'project',
-                    this.props.project.type === this.props.currentSelection || this.props.currentSelection === 'All' ? 'show' : '',
+                    'preview',
+                    this.props.project.type === this.props.selection || this.props.selection === 'All' ? 'show' : '',
                     this.props.project.icon === 'White' ? 'white' : '',
                     this.props.project.icon === 'Black' ? 'black' : ''
                 ].filter(x => x).join(' ')}
                 onClick={() => { if (this.props.browser.device === 'Mobile') this.props.clickProject(); }}
             >
-                <div className='wrapper'>
-                    <div className='label'>
+                <div className='previewContent'>
+                    <div className='previewLabel'>
                         {this.props.project.type === 'Art' && <img src='assets/interface/art.svg' draggable='false'/>}
                         {this.props.project.type === 'Digital' && <img src='assets/interface/digital.svg' draggable='false'/>}
                         {this.props.project.type === 'Film' && <img src='assets/interface/film.svg' draggable='false'/>}
@@ -32,12 +31,12 @@ export class Preview extends React.Component<Props,{}> {
                     {this.props.browser.device === 'Desktop' &&
                         <>
                             <div 
-                                className='description'
+                                className='previewDescription'
                                 onClick={() => { if (this.props.browser.device === 'Desktop') this.props.clickProject(); }}
                             >
-                                <p className='title uppercase'>{this.props.project.title}</p>
+                                <p className='uppercase'>{this.props.project.title}</p>
                             </div>
-                            <div className='link'>
+                            <div className='previewLink'>
                                 {this.props.project.links?.github && 
                                     <a 
                                         className='github'
@@ -85,7 +84,7 @@ export class Preview extends React.Component<Props,{}> {
                             </div>
                         </>
                     }
-                    <div className='image'>
+                    <div className='previewImage'>
                         <img src={this.props.project.image} draggable='false'/>
                     </div>
                 </div>
