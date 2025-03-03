@@ -12,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 $spacing-m;
+    padding: 0 25px;
 
     #headerLeft,
     #headerRight {
@@ -22,8 +22,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: $spacing-icon-l;
-        width: $spacing-icon-l;
+        height: 75px;
+        width: 75px;
 
         img {
             position: absolute;
@@ -40,34 +40,34 @@
             }
         }
     }
-}
 
-#app.desktop #header {
-    #headerLeft:hover {
-        #logoBack {
-            transform: translateX(5%);
+    @media(hover: hover) {
+        #headerLeft:hover {
+            #logoBack {
+                transform: translateX(5%);
+            }
+    
+            #logoFront {
+                transform: translateX(-5%);
+            }
+    
+            #arrowUp {
+                transform: scale(1.25);
+            }
         }
-
-        #logoFront {
-            transform: translateX(-5%);
-        }
-
-        #arrowUp {
-            transform: scale(1.25);
-        }
-    }
-
-    #headerRight:hover {
-        #informationFront {
-            transform: translateY(-5%);
-        }
-
-        #arrowLeft {
-            transform: scale(1.25);
-        }
-
-        #arrowRight {
-            transform: scale(1.25);
-        }
+    
+        #headerRight:hover {
+            #informationFront {
+                transform: translateY(-5%);
+            }
+    
+            #arrowLeft {
+                transform: scale(1.25);
+            }
+    
+            #arrowRight {
+                transform: scale(1.25);
+            }
+        } 
     }
 }

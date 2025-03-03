@@ -39,7 +39,7 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                     </div>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/admiralCloud/media.png' style={{ borderRadius: 0 }} />
+                    <img src='assets/projects/admiralCloud/media.png' />
                 </div>
                 <div className='category text'>
                     <p>

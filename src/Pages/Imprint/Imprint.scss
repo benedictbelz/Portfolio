@@ -11,16 +11,16 @@
             padding $transition-s ease,
             width $transition-s ease;
         padding-top: $spacing-header;
-        padding-bottom: $spacing-l;
+        padding-bottom: 50px;
         width: $spacing-wrapper;
 
         h1 {
-            margin-bottom: $spacing-m;
+            margin-bottom: 25px;
         }
 
         h2 {
-            margin-top: $spacing-m;
-            margin-bottom: $spacing-m;
+            margin-top: 25px;
+            margin-bottom: 25px;
         }
 
         #address::after {
@@ -37,7 +37,7 @@
     @media (max-width: $media-s) {
         .wrapper {
             width: 100%;
-            padding: $spacing-header $spacing-m $spacing-l $spacing-m;
+            padding: $spacing-header 25px 50px 25px;
         }
     }
 }

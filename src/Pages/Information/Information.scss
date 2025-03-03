@@ -11,13 +11,13 @@
             padding $transition-s ease,
             width $transition-s ease;
         padding-top: $spacing-header;
-        padding-bottom: $spacing-l;
+        padding-bottom: 50px;
         width: $spacing-wrapper;
 
         #picture {
             box-sizing: border-box;
             margin: 0 auto;
-            margin-bottom: $spacing-l;
+            margin-bottom: 50px;
             width: $spacing-picture;
             transition:
                 padding $transition-m ease,
@@ -30,7 +30,7 @@
         }
 
         #introduction {
-            margin-bottom: $spacing-l;
+            margin-bottom: 50px;
         }
 
         #contact div {
@@ -39,16 +39,16 @@
             align-items: center;
 
             img {
-                margin-right: $spacing-s * 2;
-                width: $spacing-icon-xs;
+                margin-right: 20px;
+                width: 20px;
             }
 
             &:first-of-type {
-                margin-bottom: $spacing-s * 2;
+                margin-bottom: 20px;
             }
 
             &:last-of-type {
-                margin-bottom: $spacing-l;
+                margin-bottom: 50px;
             }
         }
 
@@ -56,11 +56,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 20px;
 
             a {
                 display: inline-block;
-                height: $spacing-icon-m;
-                width: $spacing-icon-m;
+                height: 40px;
+                width: 40px;
                 transition: transform $transition-s ease;
                 transform: scale(1);
 
@@ -68,8 +69,10 @@
                     width: 100%;
                 }
 
-                &:not(:last-of-type) {
-                    margin-right: $spacing-s;
+                @media(hover: hover) {
+                    &:hover {
+                        transform: scale(1.25);
+                    }
                 }
             }
         }
@@ -78,20 +81,14 @@
     @media (max-width: $media-s) {
         .wrapper {
             width: 100%;
-            padding: $spacing-header $spacing-m $spacing-l $spacing-m;
+            padding: $spacing-header 25px 50px 25px;
         }
     }
 
     @media (max-width: $media-xs) {
         .wrapper #picture {
-            padding: 0 $spacing-l;
+            padding: 0 50px;
             width: 100%;
         }
-    }
-}
-
-#app.desktop #information {
-    #social a:hover {
-        transform: scale(1.25);
     }
 }

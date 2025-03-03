@@ -7,6 +7,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 10px;
         flex-wrap: wrap;
         flex-direction: row;
         font-size: $font-size-m;
@@ -19,30 +20,27 @@
         li {
             box-sizing: border-box;
             cursor: pointer;
-            border-radius: $border-radius-s;
             overflow: hidden;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 10px;
             height: $spacing-button;
+            padding: 0 15px;
+            font-weight: $font-weight-regular;
             box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-shadow;
             transition: transform $transition-s ease;
             transform: scale(1);
-            padding-left: $spacing-s;
-            padding-right: $spacing-s;
-            font-weight: $font-weight-regular;
 
             img {
-                height: $spacing-icon-xs;
+                height: 17.5px;
             }
 
-            p {
-                margin-left: $spacing-s;
-            }
-
-            &:not(:last-of-type) {
-                margin-right: $spacing-s;
+            &.all {
+                img {
+                    height: 15px;
+                }
             }
 
             &.current {
@@ -75,6 +73,12 @@
                     }
                 }
             }
+
+            @media(hover: hover) {
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
         }
     }
 
@@ -82,10 +86,10 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin-top: $spacing-s * 1.5;
-        padding-left: $spacing-m;
-        padding-right: $spacing-m;
-        padding-bottom: $spacing-m;
+        margin-top: 15px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 25px;
         font-weight: $font-weight-regular;
 
         .divider {
@@ -93,15 +97,15 @@
             border-radius: 50%;
             height: $border-underline * 2;
             width: $border-underline * 2;
-            margin: 0 $spacing-s;
+            margin: 0 10px;
         }
     }
 
     #previews {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        gap: $spacing-m;
-        padding: 0 $spacing-m;
+        gap: 25px;
+        padding: 0 25px;
     }
 
     #footer {
@@ -119,7 +123,7 @@
             border-radius: 50%;
             height: $border-underline * 2;
             width: $border-underline * 2;
-            margin: 0 $spacing-s;
+            margin: 0 10px;
         }
     }
 
@@ -149,13 +153,13 @@
         #selection {
             height: fit-content;
             margin-top: $spacing-header;
-            margin-bottom: $spacing-m * 2;
+            margin-bottom: 50px;
         }
 
         #footer {
-            height: $spacing-m;
-            margin-top: $spacing-m;
-            margin-bottom: $spacing-m;
+            height: 25px;
+            margin-top: 25px;
+            margin-bottom: 25px;
         }
     }
 
@@ -169,11 +173,5 @@
                 display: none;
             }
         }
-    }
-}
-
-#app.desktop #overview {
-    #selection li:hover {
-        transform: scale(1.1);
     }
 }

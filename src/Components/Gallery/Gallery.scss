@@ -38,23 +38,25 @@
                 cursor: pointer;
                 pointer-events: all;
                 border-radius: 50%;
-                width: $spacing-icon-s;
+                width: 30px;
                 box-shadow: 0 0 $box-shadow-blur * 2 $box-shadow-spread $color-black-shadow;
                 transition: transform $transition-m ease;
                 transform: scale(1);
 
-                &:hover {
-                    transform: scale(1.25);
+                @media(hover: hover) {
+                    &:hover {
+                        transform: scale(1.25);
+                    }
                 }
             }
         }
 
         .galleryLeft {
-            left: $spacing-icon-m;
+            left: 40px;
         }
 
         .galleryRight {
-            right: $spacing-icon-m;
+            right: 40px;
         }
     }
 
@@ -65,7 +67,7 @@
         position: absolute;
         z-index: 100;
         width: 100%;
-        bottom: $spacing-m;
+        bottom: 25px;
 
         div {
             display: none;
@@ -76,7 +78,7 @@
             background-color: $color-white-transparent;
 
             &:not(:last-child) {
-                margin-right: $spacing-xs;
+                margin-right: 5px;
             }
 
             &.current {
@@ -114,13 +116,6 @@
         }
     }
 
-    &:hover {
-        .galleryClick .galleryLeft,
-        .galleryClick .galleryRight {
-            transform: scale(1);
-        }
-    }
-
     &.transition {
         .galleryImages img,
         .galleryImages video {
@@ -133,10 +128,19 @@
             transition: background-color $transition-m ease;
         }
     }
-}
 
-#app.mobile {
-    .gallery > .galleryClick {
-        display: none;
+    @media(hover: hover) {
+        &:hover {
+            .galleryClick .galleryLeft,
+            .galleryClick .galleryRight {
+                transform: scale(1);
+            }
+        }
+    }
+
+    @media(hover: none) {
+        .galleryClick {
+            display: none;
+        }
     }
 }

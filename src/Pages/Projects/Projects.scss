@@ -6,18 +6,22 @@
 
     .wrapper {
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
         margin: 0 auto;
         transition:
             padding $transition-s ease,
             width $transition-s ease;
         padding-top: $spacing-header;
-        padding-bottom: $spacing-l;
+        padding-bottom: 50px;
         width: $spacing-wrapper;
 
         .design {
             overflow: hidden;
             width: 100%;
-            border-radius: $border-radius-l;
             border: 1px solid $color-white;
 
             .color {
@@ -33,14 +37,14 @@
                     align-items: center;
                     height: 80%;
                     width: 100%;
-                    padding: 0 $spacing-l;
+                    padding: 0 50px;
                     font-size: $font-size-m;
                     font-weight: $font-weight-regular;
 
                     .bold {
                         text-transform: uppercase;
                         letter-spacing: 2.5px;
-                        margin-right: $spacing-s;
+                        margin-right: 10px;
                     }
 
                     > div:nth-child(1),
@@ -61,7 +65,7 @@
                 > div:last-child {
                     display: flex;
                     flex-direction: row;
-                    height: $spacing-l;
+                    height: 50px;
                     width: 100%;
 
                     > div {
@@ -79,7 +83,7 @@
                 height: 200px;
                 width: 100%;
                 background: #ffffff;
-                padding: 0 $spacing-l;
+                padding: 0 50px;
 
                 > div {
                     overflow: hidden;
@@ -100,7 +104,6 @@
 
             img {
                 display: block;
-                border-radius: $border-radius-l;
                 width: 100%;
             }
         }
@@ -108,11 +111,11 @@
         .information {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: $spacing-m;
+            gap: 25px;
             width: 100%;
 
             .uppercase {
-                margin-bottom: $spacing-xs;
+                margin-bottom: 5px;
             }
         }
 
@@ -121,25 +124,20 @@
 
             video {
                 display: block;
-                border-radius: $border-radius-l;
                 width: 100%;
             }
-        }
-
-        .category:not(:last-of-type) {
-            margin-bottom: $spacing-l;
         }
     }
 
     @media (max-width: $media-s) {
         .wrapper {
             width: 100%;
-            padding: $spacing-header $spacing-m $spacing-l $spacing-m;
+            padding: $spacing-header 25px 50px 25px;
 
             .design {
                 .color > div:first-child,
                 .font {
-                    padding: 0 $spacing-m;
+                    padding: 0 25px;
                 }
 
                 .color > div:first-child,

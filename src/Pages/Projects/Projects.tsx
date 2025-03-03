@@ -3,13 +3,7 @@ import { Loader } from '../../Components/Loader/Loader';
 import { Scrollbar } from '../../Components/Scrollbar/Scrollbar';
 import { AcSync } from './Content/AcSync';
 import { AdmiralCloud } from './Content/AdmiralCloud';
-import { ArtAttech } from './Content/ArtAttech';
 import { DroemerKnaur } from './Content/DroemerKnaur';
-import { Etre } from './Content/Etre';
-import { KeepGoing } from './Content/KeepGoing';
-import { Lockdown } from './Content/Lockdown';
-import { Metropolis } from './Content/Metropolis';
-import { MMPro } from './Content/MMPro';
 import { Nanotec } from './Content/Nanotec';
 import { Phobius } from './Content/Phobius';
 import { PersonalWebsite } from './Content/PersonalWebsite';
@@ -86,13 +80,7 @@ export class Projects extends React.Component<Props, States> {
                 <Loader color='black' loading={this.state.loading} percentage={this.state.percentage} />
                 {this.props.project && this.props.project.title === 'AC Sync' && <AcSync />}
                 {this.props.project && this.props.project.title === 'AdmiralCloud' && <AdmiralCloud browser={this.props.browser} />}
-                {this.props.project && this.props.project.title === 'Art Attech' && <ArtAttech browser={this.props.browser} />}
                 {this.props.project && this.props.project.title === 'Droemer Knaur' && <DroemerKnaur browser={this.props.browser} />}
-                {this.props.project && this.props.project.title === 'Être' && <Etre browser={this.props.browser} />}
-                {this.props.project && this.props.project.title === 'Keep Going' && <KeepGoing />}
-                {this.props.project && this.props.project.title === 'Lockdown' && <Lockdown browser={this.props.browser} />}
-                {this.props.project && this.props.project.title === 'Metropolis' && <Metropolis browser={this.props.browser} />}
-                {this.props.project && this.props.project.title === 'MMPro' && <MMPro />}
                 {this.props.project && this.props.project.title === 'Nanotec' && <Nanotec browser={this.props.browser} />}
                 {this.props.project && this.props.project.title === 'Personal Website' && <PersonalWebsite />}
                 {this.props.project && this.props.project.title === 'Phobius' && <Phobius browser={this.props.browser} />}

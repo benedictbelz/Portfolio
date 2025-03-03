@@ -2,13 +2,13 @@
 /************ COLOR ***********/
 /******************************/
 
-$color-white: #ffffff;
-$color-white-transparent: #ffffff80;
-$color-white-shadow: #ffffff40;
+$color-white: rgba(255, 255, 255, 1);
+$color-white-transparent: rgba(255, 255, 255, 0.5);
+$color-white-shadow: rgba(255, 255, 255, 0.125);
 
-$color-black: #141414;
-$color-black-transparent: #141414bf;
-$color-black-shadow: #14141440;
+$color-black: rgba(20, 20, 20, 1);
+$color-black-transparent: rgba(20, 20, 20, 0.75);
+$color-black-shadow: rgba(20, 20, 20, 0.125);
 
 /******************************/
 /********** FONT-SIZE *********/
@@ -35,15 +35,6 @@ $font-weight-bold: 700;
 /*********** SPACING **********/
 /******************************/
 
-$spacing-xs: 5px;
-$spacing-s: 10px;
-$spacing-m: 25px;
-$spacing-l: 50px;
-$spacing-icon-xs: 20px;
-$spacing-icon-s: 30px;
-$spacing-icon-m: 40px;
-$spacing-icon-l: 75px;
-$spacing-icon-xl: 100px;
 $spacing-bullet: 5px;
 $spacing-button: 45px;
 $spacing-header: 150px;

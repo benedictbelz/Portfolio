@@ -5,12 +5,10 @@
     display: none;
     box-sizing: border-box;
     box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-shadow;
-    border-radius: $border-radius-l;
 
     .previewContent {
         position: relative;
         overflow: hidden;
-        border-radius: $border-radius-l;
         transition: transform $transition-s ease;
         transform: scale(1);
 
@@ -19,10 +17,10 @@
             pointer-events: none;
             position: absolute;
             z-index: 150;
-            top: $spacing-m;
-            right: $spacing-m;
-            height: $spacing-icon-xs;
-            width: $spacing-icon-xs;
+            top: 25px;
+            right: 25px;
+            height: 20px;
+            width: 20px;
 
             img {
                 width: 100%;
@@ -37,7 +35,6 @@
             align-items: center;
             height: 100%;
             width: 100%;
-            border-radius: $border-radius-l;
             overflow: hidden;
             transition: background-color $transition-s ease;
             background-color: transparent;
@@ -60,13 +57,16 @@
             z-index: 200;
             bottom: 0;
             left: 0;
-            margin: $spacing-m;
+            margin: 25px;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
 
             a {
                 display: block;
-                height: $spacing-icon-m;
-                width: $spacing-icon-m;
+                height: 35px;
+                width: 35px;
                 opacity: 0;
                 transition: transform $transition-s ease;
                 transform: scale(0);
@@ -77,10 +77,6 @@
                     transform: scale(1);
                     filter: invert(1);
                 }
-
-                &:not(:last-of-type) {
-                    margin-right: $spacing-s;
-                }
             }
         }
 
@@ -90,7 +86,6 @@
             align-items: center;
             height: 100%;
             width: 100%;
-            border-radius: $border-radius-l;
             overflow: hidden;
 
             img {
@@ -128,33 +123,33 @@
             }
         }
     }
-}
 
-#app.desktop .preview {
-    .previewLink a img:hover {
-        transform: scale(1.25);
-    }
-
-    .previewContent:hover {
-        transform: scale(1.025);
-
-        .previewDescription {
-            background-color: $color-black-transparent;
-
-            > p {
+    @media(hover: hover) {
+        .previewLink a img:hover {
+            transform: scale(1.125);
+        }
+    
+        .previewContent:hover {
+            transform: scale(1.025);
+    
+            .previewDescription {
+                background-color: $color-black-transparent;
+    
+                > p {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+    
+            .previewLink a {
                 opacity: 1;
                 transform: scale(1);
             }
         }
-
-        .previewLink a {
-            opacity: 1;
-            transform: scale(1);
+    
+        &.black .previewContent:hover .previewLabel {
+            transition: filter 0.25s ease;
+            filter: invert(1);
         }
-    }
-
-    &.black .previewContent:hover .previewLabel {
-        transition: filter 0.25s ease;
-        filter: invert(1);
     }
 }

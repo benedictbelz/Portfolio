@@ -88,7 +88,7 @@ export class Overview extends React.Component<Props, States> {
                         return (
                             <li
                                 key={selection}
-                                className={this.state.selection === selection ? 'current' : ''}
+                                className={[selection.toLowerCase(), this.state.selection === selection && 'current'].filter(x => x).join(' ')}
                                 onClick={() => {
                                     if (this.state.selection !== selection) {
                                         this.setState({ selection: selection });

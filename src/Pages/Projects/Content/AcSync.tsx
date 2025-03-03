@@ -32,7 +32,7 @@ export class AcSync extends React.Component<{}, {}> {
                     </div>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/acSync/media.png' style={{ borderRadius: 0 }} />
+                    <img src='assets/projects/acSync/media.png' />
                 </div>
                 <div className='category text'>
                     <p>
@@ -42,7 +42,7 @@ export class AcSync extends React.Component<{}, {}> {
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/acSync/client.jpg' style={{ borderRadius: 5 }} />
+                    <img src='assets/projects/acSync/client.jpg' />
                 </div>
                 <div className='category text'>
                     <p>

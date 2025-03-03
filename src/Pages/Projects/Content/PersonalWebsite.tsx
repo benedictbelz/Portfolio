@@ -21,7 +21,7 @@ export class PersonalWebsite extends React.Component<{}, {}> {
                     </div>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/personalWebsite/media.png' style={{ borderRadius: 0 }} />
+                    <img src='assets/projects/personalWebsite/media.png' />
                 </div>
                 <div className='category text'>
                     <p>
