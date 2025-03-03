@@ -10,13 +10,13 @@ interface Props {
 }
 
 interface States {
-    element: HTMLElement | null;
     scroll: number;
 }
 
 export class Scrollbar extends React.Component<Props, States> {
+    private content: React.RefObject<HTMLDivElement> = React.createRef();
+
     state: States = {
-        element: null,
         scroll: 0
     };
 
@@ -24,25 +24,29 @@ export class Scrollbar extends React.Component<Props, States> {
         this.initScrollbar();
     }
 
+    componentWillUnmount(): void {
+        window.removeEventListener('resize', this.updateScrollbar);
+        this.content.current?.removeEventListener('scroll', this.updateScrollbar);
+    }
+
     private initScrollbar() {
-        // IF MOBILE RETURN
-        if (this.props.browser.device === 'Mobile') {
+        // IF NO CONTENT OR MOBILE RETURN
+        if (!this.content.current || this.props.browser.device === 'Mobile') {
+            return;
+        }
+        // ADD EVENT LISTENERS
+        window.addEventListener('resize', this.updateScrollbar);
+        this.content.current.addEventListener('scroll', this.updateScrollbar);
+    }
+
+    private updateScrollbar = () => {
+        // IF NO CONTENT RETURN
+        if (!this.content.current) {
             return;
         }
         // DEFINE VARIABLES
-        const element = document.querySelector('#' + this.props.id + '>.content') as unknown as HTMLElement;
-        // UPDATE STATE
-        this.setState({ element });
-        // ADD EVENT LISTENER SCROLL
-        element.addEventListener('scroll', () => this.updateScrollbar());
-        // ADD EVENT LISTENER RESIZE
-        window.addEventListener('resize', () => this.updateScrollbar());
-    }
-
-    private updateScrollbar() {
-        // DEFINE VARIABLES
-        let height = this.state.element.scrollHeight - this.state.element.clientHeight;
-        let scroll = this.state.element.scrollTop;
+        let height = this.content.current.scrollHeight - this.content.current.clientHeight;
+        let scroll = this.content.current.scrollTop;
         let percentage = Math.floor((scroll / height) * 1000) / 1000;
         // CHECK BOUNDARY
         if (percentage <= 0 || isNaN(percentage)) {
@@ -61,10 +65,10 @@ export class Scrollbar extends React.Component<Props, States> {
                 {this.props.browser.device === 'Mobile' && this.props.children}
                 {this.props.browser.device === 'Desktop' && (
                     <>
-                        <div className={['scrollbar', this.state.element && this.state.element.id, this.props.color].filter(x => x).join(' ')}>
+                        <div className={['scrollbar', this.props.color].filter(x => x).join(' ')}>
                             <div style={{ transform: 'scaleY(' + this.state.scroll + ')' }} />
                         </div>
-                        <div className='content'>{this.props.children}</div>
+                        <div ref={this.content} className='content'>{this.props.children}</div>
                     </>
                 )}
             </div>

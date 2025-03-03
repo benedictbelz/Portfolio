@@ -7,6 +7,7 @@ import { Information } from '../Pages/Information/Information';
 import { Overview } from '../Pages/Overview/Overview';
 import { Projects } from '../Pages/Projects/Projects';
 import { Browser } from '../@types/browser';
+import { Page } from '../@types/page';
 import { Project } from '../@types/project';
 import './App.scss';
 
@@ -37,7 +38,6 @@ class App extends React.Component<{}, States> {
 
     componentDidUpdate(prevProps: any, prevState: States): void {
         if (this.state.browser.page !== prevState.browser.page) {
-            this.setState({ transition: true });
             setTimeout(() => this.setState({ transition: false }), 1000);
         }
         if (this.state.browser.page === 'Overview' && prevState.browser.page === 'Welcome') {
@@ -111,7 +111,7 @@ class App extends React.Component<{}, States> {
     };
 
     private handleEnter() {
-        this.setState({ browser: { ...this.state.browser, page: 'Overview' } });
+        this.handlePage('Overview');
     }
 
     private handleLeft() {
@@ -120,22 +120,23 @@ class App extends React.Component<{}, States> {
 
     private handleRight() {
         if (this.state.browser.page === 'Overview') {
-            this.setState({ browser: { ...this.state.browser, page: 'Information' } });
-        }
-        if (this.state.browser.page === 'Imprint' || this.state.browser.page === 'Information') {
-            this.setState({ browser: { ...this.state.browser, page: 'Overview' } });
-        }
-        if (this.state.browser.page === 'Projects') {
-            this.setState({ browser: { ...this.state.browser, page: 'Overview' } });
+            this.handlePage('Information');
+        } else if (this.state.browser.page === 'Imprint' || this.state.browser.page === 'Information' || this.state.browser.page === 'Projects') {
+            this.handlePage('Overview');
         }
     }
 
     private handleImprint() {
-        this.setState({ browser: { ...this.state.browser, page: 'Imprint' } });
+        this.handlePage('Imprint');
     }
 
     private handleProject(project: Project) {
-        this.setState({ browser: { ...this.state.browser, page: 'Projects' }, project: project });
+        this.setState({ project: project });
+        this.handlePage('Projects');
+    }
+
+    private handlePage(page: Page) {
+        this.setState({ browser: { ...this.state.browser, page }, transition: true });
     }
 
     render() {
