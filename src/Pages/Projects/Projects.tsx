@@ -22,36 +22,36 @@ import './Projects.scss';
 
 interface Props {
     browser: Browser;
-    currentProject: Project | null;
+    project: Project | null;
 }
 
 interface States {
-    isLoading: boolean;
+    loading: boolean;
     percentage: number;
     loadedProjects: string[];
 }
 
 export class Projects extends React.Component<Props, States> {
     state: States = {
-        isLoading: true,
+        loading: true,
         percentage: 0,
         loadedProjects: []
     };
 
     componentDidUpdate(prevProps: any) {
         if (
-            this.props.currentProject &&
-            ((this.props.currentProject && !prevProps.currentProject) || this.props.currentProject.title !== prevProps.currentProject.title) &&
-            !this.state.loadedProjects.includes(this.props.currentProject.title)
+            this.props.project &&
+            ((this.props.project && !prevProps.project) || this.props.project.title !== prevProps.project.title) &&
+            !this.state.loadedProjects.includes(this.props.project.title)
         ) {
             setTimeout(() => {
-                this.setState({ isLoading: true, loadedProjects: [this.props.currentProject.title, ...this.state.loadedProjects] });
+                this.setState({ loading: true, loadedProjects: [this.props.project.title, ...this.state.loadedProjects] });
                 this.loadMedia();
             });
         }
     }
 
-    async loadMedia() {
+    private async loadMedia() {
         let images = document.querySelectorAll('#projects img') as unknown as HTMLImageElement[];
         const loadImages = async () =>
             await new Promise<void>(resolve => {
@@ -77,30 +77,28 @@ export class Projects extends React.Component<Props, States> {
                 load();
             });
         await loadImages();
-        this.setState({ isLoading: false, percentage: 100 });
+        this.setState({ loading: false, percentage: 100 });
     }
 
     render() {
         return (
-            <Scrollbar browser={this.props.browser} color='White' id='projects'>
-                <Loader color='Black' isLoading={this.state.isLoading} percentage={this.state.percentage} />
-                {this.props.currentProject && this.props.currentProject.title === 'AC Sync' && <AcSync />}
-                {this.props.currentProject && this.props.currentProject.title === 'AdmiralCloud' && <AdmiralCloud browser={this.props.browser} />}
-                {this.props.currentProject && this.props.currentProject.title === 'Art Attech' && <ArtAttech browser={this.props.browser} />}
-                {this.props.currentProject && this.props.currentProject.title === 'Droemer Knaur' && <DroemerKnaur browser={this.props.browser} />}
-                {this.props.currentProject && this.props.currentProject.title === 'Être' && <Etre browser={this.props.browser} />}
-                {this.props.currentProject && this.props.currentProject.title === 'Keep Going' && <KeepGoing />}
-                {this.props.currentProject && this.props.currentProject.title === 'Lockdown' && <Lockdown browser={this.props.browser} />}
-                {this.props.currentProject && this.props.currentProject.title === 'Metropolis' && <Metropolis browser={this.props.browser} />}
-                {this.props.currentProject && this.props.currentProject.title === 'MMPro' && <MMPro />}
-                {this.props.currentProject && this.props.currentProject.title === 'Nanotec' && <Nanotec browser={this.props.browser} />}
-                {this.props.currentProject && this.props.currentProject.title === 'Personal Website' && <PersonalWebsite />}
-                {this.props.currentProject && this.props.currentProject.title === 'Phobius' && <Phobius browser={this.props.browser} />}
-                {this.props.currentProject && this.props.currentProject.title === 'Shimmering Nightmare' && (
-                    <ShimmeringNightmare browser={this.props.browser} />
-                )}
-                {this.props.currentProject && this.props.currentProject.title === 'Showreel' && <Showreel browser={this.props.browser} />}
-                {this.props.currentProject && this.props.currentProject.title === 'ZDF Aspekte' && <ZdfAspekte browser={this.props.browser} />}
+            <Scrollbar browser={this.props.browser} color='white' id='projects'>
+                <Loader color='black' loading={this.state.loading} percentage={this.state.percentage} />
+                {this.props.project && this.props.project.title === 'AC Sync' && <AcSync />}
+                {this.props.project && this.props.project.title === 'AdmiralCloud' && <AdmiralCloud browser={this.props.browser} />}
+                {this.props.project && this.props.project.title === 'Art Attech' && <ArtAttech browser={this.props.browser} />}
+                {this.props.project && this.props.project.title === 'Droemer Knaur' && <DroemerKnaur browser={this.props.browser} />}
+                {this.props.project && this.props.project.title === 'Être' && <Etre browser={this.props.browser} />}
+                {this.props.project && this.props.project.title === 'Keep Going' && <KeepGoing />}
+                {this.props.project && this.props.project.title === 'Lockdown' && <Lockdown browser={this.props.browser} />}
+                {this.props.project && this.props.project.title === 'Metropolis' && <Metropolis browser={this.props.browser} />}
+                {this.props.project && this.props.project.title === 'MMPro' && <MMPro />}
+                {this.props.project && this.props.project.title === 'Nanotec' && <Nanotec browser={this.props.browser} />}
+                {this.props.project && this.props.project.title === 'Personal Website' && <PersonalWebsite />}
+                {this.props.project && this.props.project.title === 'Phobius' && <Phobius browser={this.props.browser} />}
+                {this.props.project && this.props.project.title === 'Shimmering Nightmare' && <ShimmeringNightmare browser={this.props.browser} />}
+                {this.props.project && this.props.project.title === 'Showreel' && <Showreel browser={this.props.browser} />}
+                {this.props.project && this.props.project.title === 'ZDF Aspekte' && <ZdfAspekte browser={this.props.browser} />}
             </Scrollbar>
         );
     }

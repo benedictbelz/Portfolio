@@ -5,7 +5,7 @@ import './Scrollbar.scss';
 interface Props {
     browser: Browser;
     children: React.ReactNode;
-    color: 'Black' | 'White';
+    color: 'black' | 'white';
     id: string;
 }
 
@@ -61,11 +61,7 @@ export class Scrollbar extends React.Component<Props, States> {
                 {this.props.browser.device === 'Mobile' && this.props.children}
                 {this.props.browser.device === 'Desktop' && (
                     <>
-                        <div
-                            className={['scrollbar', this.state.element ? this.state.element.id : '', this.props.color === 'Black' ? 'black' : 'white']
-                                .filter(x => x)
-                                .join(' ')}
-                        >
+                        <div className={['scrollbar', this.state.element && this.state.element.id, this.props.color].filter(x => x).join(' ')}>
                             <div style={{ transform: 'scaleY(' + this.state.scroll + ')' }} />
                         </div>
                         <div className='content'>{this.props.children}</div>

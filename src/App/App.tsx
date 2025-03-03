@@ -6,40 +6,72 @@ import { Imprint } from '../Pages/Imprint/Imprint';
 import { Information } from '../Pages/Information/Information';
 import { Overview } from '../Pages/Overview/Overview';
 import { Projects } from '../Pages/Projects/Projects';
-import { getProjects } from '../@presets/projects';
 import { Browser } from '../@types/browser';
-import { Page } from '../@types/page';
 import { Project } from '../@types/project';
 import './App.scss';
 
 interface States {
     browser: Browser;
-    currentPage: Page;
-    currentProject: Project | null;
-    isTransition: boolean;
-    projects: Project[];
-    showWelcome: boolean;
+    project: Project | null;
+    transition: boolean;
+    welcome: boolean;
 }
 
 class App extends React.Component<{}, States> {
     state: States = {
         browser: this.mountBrowser(),
-        currentPage: 'Welcome',
-        currentProject: null,
-        isTransition: false,
-        projects: getProjects(),
-        showWelcome: true
+        project: null,
+        transition: false,
+        welcome: true
     };
 
-    mountBrowser() {
+    componentDidMount() {
+        window.addEventListener('resize', this.handleResize);
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    componentDidUpdate(prevProps: any, prevState: States): void {
+        if (this.state.browser.page !== prevState.browser.page) {
+            this.setState({ transition: true });
+            setTimeout(() => this.setState({ transition: false }), 1000);
+        }
+        if (this.state.browser.page === 'Overview' && prevState.browser.page === 'Welcome') {
+            setTimeout(() => this.setState({ welcome: false }), 1000);
+        }
+        if (this.state.browser.page === 'Overview' && prevState.browser.page === 'Projects') {
+            setTimeout(() => this.setState({ project: null }), 1000);
+        }
+    }
+
+    private mountBrowser() {
         // DEFINE VARIABLES
-        let device: Browser['device'], type: Browser['type'];
+        let device: Browser['device'],
+            direction: Browser['direction'],
+            height: Browser['height'],
+            page: Browser['page'],
+            scroll: Browser['scroll'],
+            type: Browser['type'],
+            width: Browser['width'];
         // INITIALIZE DEVICE
         if ('ontouchstart' in window || 'onmsgesturechange' in window) {
             device = 'Mobile';
         } else {
             device = 'Desktop';
         }
+        // INITIALIZE DIRECTION
+        direction = 'None';
+        // INITIALIZE HEIGHT AND WIDTH
+        height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        // INITIALIZE PAGE
+        page = 'Welcome';
+        // INITIALIZE SCROLL
+        scroll = 0;
         // INITIALIZE TYPE
         if (navigator.userAgent.indexOf('Chrome') > -1) {
             type = 'Chrome';
@@ -55,38 +87,55 @@ class App extends React.Component<{}, States> {
             type = 'Unknown';
         }
         // RETURN VARIABLES
-        return { device, type };
+        return { device, direction, height, page, scroll, type, width };
     }
 
-    clickEnter() {
-        this.setState({ currentPage: 'Overview', isTransition: true });
-        setTimeout(() => this.setState({ isTransition: false, showWelcome: false }), 1000);
+    private handleResize = () => {
+        // DEFINE VARIABLES
+        let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        // UPDATE STATE
+        this.setState({ browser: { ...this.state.browser, height, width } });
+    };
+
+    private handleScroll = (event: any) => {
+        // DEFINE VARIABLES
+        let scroll = document.documentElement.scrollTop;
+        let direction: Browser['direction'] = 'Down';
+        // GET DIRECTION
+        if (scroll < this.state.browser.scroll) {
+            direction = 'Up';
+        }
+        // UPDATE STATE
+        this.setState({ browser: { ...this.state.browser, direction, scroll } });
+    };
+
+    private handleEnter() {
+        this.setState({ browser: { ...this.state.browser, page: 'Overview' } });
     }
 
-    clickLeft() {
+    private handleLeft() {
         window.location.reload();
     }
 
-    clickRight() {
-        if (this.state.currentPage === 'Overview') {
-            this.setState({ currentPage: 'Information', isTransition: true });
+    private handleRight() {
+        if (this.state.browser.page === 'Overview') {
+            this.setState({ browser: { ...this.state.browser, page: 'Information' } });
         }
-        if (this.state.currentPage === 'Imprint' || this.state.currentPage === 'Information') {
-            this.setState({ currentPage: 'Overview', isTransition: true });
+        if (this.state.browser.page === 'Imprint' || this.state.browser.page === 'Information') {
+            this.setState({ browser: { ...this.state.browser, page: 'Overview' } });
         }
-        if (this.state.currentPage === 'Projects') {
-            this.setState({ currentPage: 'Overview', isTransition: true });
-            setTimeout(() => this.setState({ currentProject: null }), 1000);
+        if (this.state.browser.page === 'Projects') {
+            this.setState({ browser: { ...this.state.browser, page: 'Overview' } });
         }
-        setTimeout(() => this.setState({ isTransition: false }), 1000);
     }
 
-    clickImprint() {
-        this.setState({ currentPage: 'Imprint', isTransition: true });
+    private handleImprint() {
+        this.setState({ browser: { ...this.state.browser, page: 'Imprint' } });
     }
 
-    clickProject(project: Project) {
-        this.setState({ currentPage: 'Projects', isTransition: true, currentProject: project });
+    private handleProject(project: Project) {
+        this.setState({ browser: { ...this.state.browser, page: 'Projects' }, project: project });
     }
 
     render() {
@@ -94,28 +143,26 @@ class App extends React.Component<{}, States> {
             <div
                 id='app'
                 className={[
-                    this.state.isTransition ? 'transition' : '',
+                    this.state.transition ? 'transition' : '',
                     this.state.browser.device === 'Desktop' ? 'desktop' : 'mobile',
-                    this.state.currentPage === 'Imprint' ? 'imprint' : '',
-                    this.state.currentPage === 'Information' ? 'information' : '',
-                    this.state.currentPage === 'Overview' ? 'overview' : '',
-                    this.state.currentPage === 'Projects' ? 'projects' : '',
-                    this.state.currentPage === 'Welcome' ? 'welcome' : ''
+                    this.state.browser.page === 'Imprint' ? 'imprint' : '',
+                    this.state.browser.page === 'Information' ? 'information' : '',
+                    this.state.browser.page === 'Overview' ? 'overview' : '',
+                    this.state.browser.page === 'Projects' ? 'projects' : '',
+                    this.state.browser.page === 'Welcome' ? 'welcome' : ''
                 ]
                     .filter(x => x)
                     .join(' ')}
             >
-                {this.state.showWelcome && <Welcome clickEnter={() => this.clickEnter()} browser={this.state.browser} />}
-                <Header clickLeft={() => this.clickLeft()} clickRight={() => this.clickRight()} currentPage={this.state.currentPage} />
+                {this.state.welcome && <Welcome handleEnter={() => this.handleEnter()} browser={this.state.browser} />}
+                <Header browser={this.state.browser} handleLeft={() => this.handleLeft()} handleRight={() => this.handleRight()} />
                 <Imprint browser={this.state.browser} />
                 <Information browser={this.state.browser} />
-                <Projects browser={this.state.browser} currentProject={this.state.currentProject} />
+                <Projects browser={this.state.browser} project={this.state.project} />
                 <Overview
-                    clickImprint={() => this.clickImprint()}
-                    clickProject={(project: Project) => this.clickProject(project)}
+                    handleImprint={() => this.handleImprint()}
+                    handleProject={(project: Project) => this.handleProject(project)}
                     browser={this.state.browser}
-                    currentPage={this.state.currentPage}
-                    projects={this.state.projects}
                 />
             </div>
         );

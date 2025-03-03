@@ -1,5 +1,5 @@
 export type Project = {
-    icon: 'Black' | 'White';
+    icon: 'black' | 'white';
     image: string;
     links?: {
         github?: string;

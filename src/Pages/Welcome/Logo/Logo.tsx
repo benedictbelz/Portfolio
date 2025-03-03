@@ -6,8 +6,8 @@ import { gsap } from 'gsap';
 import './Logo.scss';
 
 interface Props {
-    isLoading: boolean;
-    isRendered: Function;
+    loading: boolean;
+    handleRender: Function;
 }
 export class Logo extends React.Component<Props, {}> {
     componentDidMount() {
@@ -75,14 +75,14 @@ export class Logo extends React.Component<Props, {}> {
             renderer.render(scene, camera);
         };
         render();
-        this.props.isRendered();
+        this.props.handleRender();
 
         /******************************/
         /*         ANIMATION          */
         /******************************/
 
         const interval = setInterval(() => {
-            if (this.props.isLoading) {
+            if (this.props.loading) {
                 clearInterval(interval);
                 setTimeout(() => startAnimation(), 500);
             }

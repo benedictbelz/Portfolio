@@ -3,25 +3,25 @@ import { Project } from '../@types/project';
 export function getProjects(): Project[] {
     return [
         {
-            icon: 'Black',
+            icon: 'black',
             image: 'assets/projects/phobius/preview.jpg',
             title: 'Phobius',
             type: 'Film'
         },
         {
-            icon: 'White',
+            icon: 'white',
             image: 'assets/projects/acSync/preview.jpg',
             title: 'AC Sync',
             type: 'Digital'
         },
         {
-            icon: 'Black',
+            icon: 'black',
             image: 'assets/projects/zdfAspekte/preview.jpg',
             title: 'ZDF Aspekte',
             type: 'Film'
         },
         {
-            icon: 'White',
+            icon: 'white',
             image: 'assets/projects/showreel/preview.jpg',
             links: {
                 vimeo: 'https://vimeo.com/147328634'
@@ -30,7 +30,7 @@ export function getProjects(): Project[] {
             type: 'Film'
         },
         {
-            icon: 'Black',
+            icon: 'black',
             image: 'assets/projects/personalWebsite/preview.jpg',
             links: {
                 github: 'https://github.com/benedictbelz/Website'
@@ -39,7 +39,7 @@ export function getProjects(): Project[] {
             type: 'Digital'
         },
         {
-            icon: 'White',
+            icon: 'white',
             image: 'assets/projects/nanotec/preview.jpg',
             links: {
                 vimeo: 'https://vimeo.com/201318244',
@@ -50,7 +50,7 @@ export function getProjects(): Project[] {
             type: 'Film'
         },
         {
-            icon: 'White',
+            icon: 'white',
             image: 'assets/projects/droemerKnaur/preview.jpg',
             links: {
                 vimeo: 'https://vimeo.com/161849901'
@@ -62,7 +62,7 @@ export function getProjects(): Project[] {
         //     title: 'Shimmering Nightmare',
         //     type: 'Art',
         //     image: 'assets/projects/shimmeringNightmare/preview.jpg',
-        //     icon: 'Black'
+        //     icon: 'black'
         // },
     ];
 }

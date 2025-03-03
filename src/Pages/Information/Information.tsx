@@ -22,7 +22,7 @@ export class Information extends React.Component<Props, {}> {
 
     render() {
         return (
-            <Scrollbar browser={this.props.browser} color='White' id='information'>
+            <Scrollbar browser={this.props.browser} color='white' id='information'>
                 <div className='wrapper'>
                     <div id='picture'>
                         <img src='assets/interface/profile.jpg' draggable='false' />

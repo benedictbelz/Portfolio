@@ -5,20 +5,20 @@ import { Browser } from '../../@types/browser';
 import './Welcome.scss';
 
 interface Props {
-    clickEnter: Function;
+    handleEnter: Function;
     browser: Browser;
 }
 
 interface States {
-    isLoading: boolean;
-    isRendered: boolean;
+    loading: boolean;
+    rendering: boolean;
     percentage: number;
 }
 
 export class Welcome extends React.Component<Props, States> {
     state: States = {
-        isLoading: true,
-        isRendered: false,
+        loading: true,
+        rendering: false,
         percentage: 0
     };
 
@@ -26,7 +26,7 @@ export class Welcome extends React.Component<Props, States> {
         this.loadMedia();
     }
 
-    async loadMedia() {
+    private async loadMedia() {
         let images = document.images;
         const loadImages = async () =>
             await new Promise<void>(resolve => {
@@ -40,11 +40,11 @@ export class Welcome extends React.Component<Props, States> {
                         if (index !== images.length) {
                             this.setState({ percentage: Math.floor((index / images.length) * 100) });
                             setTimeout(load, 5);
-                        } else if (this.props.browser.device === 'Desktop' && !this.state.isRendered) {
+                        } else if (this.props.browser.device === 'Desktop' && !this.state.rendering) {
                             const interval = setInterval(() => {
-                                if (!this.state.isRendered) {
+                                if (!this.state.rendering) {
                                     clearInterval(interval);
-                                    this.setState({ isLoading: false, percentage: 100 });
+                                    this.setState({ loading: false, percentage: 100 });
                                 }
                             }, 50);
                         } else {
@@ -59,18 +59,18 @@ export class Welcome extends React.Component<Props, States> {
                 load();
             });
         await loadImages();
-        this.setState({ isLoading: false, percentage: 100 });
+        this.setState({ loading: false, percentage: 100 });
     }
 
     render() {
         return (
-            <div id='welcome' className={!this.state.isLoading ? 'show' : ''}>
-                <Loader color='White' isLoading={this.state.isLoading} percentage={this.state.percentage} />
+            <div id='welcome' className={!this.state.loading ? 'show' : ''}>
+                <Loader color='white' loading={this.state.loading} percentage={this.state.percentage} />
                 <div id='logo'>
                     {this.props.browser.device === 'Desktop' ? (
-                        <Logo isRendered={() => this.setState({ isRendered: true })} isLoading={this.state.isLoading} />
+                        <Logo handleRender={() => this.setState({ rendering: true })} loading={this.state.loading} />
                     ) : (
-                        !this.state.isLoading && <img src='assets/interface/logo.gif' draggable='false' />
+                        !this.state.loading && <img src='assets/interface/logo.gif' draggable='false' />
                     )}
                 </div>
                 <div id='message'>
@@ -80,7 +80,7 @@ export class Welcome extends React.Component<Props, States> {
                     <br />
                     my creative work.
                 </div>
-                <div id='enter' onClick={() => this.props.clickEnter()}>
+                <div id='enter' onClick={() => this.props.handleEnter()}>
                     <img src='assets/interface/arrowDown.png' draggable='false' />
                 </div>
             </div>

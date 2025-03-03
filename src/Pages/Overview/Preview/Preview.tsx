@@ -5,7 +5,7 @@ import './Preview.scss';
 
 interface Props {
     browser: Browser;
-    clickProject: Function;
+    handleProject: Function;
     selection: Selection;
     project: Project;
 }
@@ -17,13 +17,12 @@ export class Preview extends React.Component<Props, {}> {
                 className={[
                     'preview',
                     this.props.project.type === this.props.selection || this.props.selection === 'All' ? 'show' : '',
-                    this.props.project.icon === 'White' ? 'white' : '',
-                    this.props.project.icon === 'Black' ? 'black' : ''
+                    this.props.project.icon
                 ]
                     .filter(x => x)
                     .join(' ')}
                 onClick={() => {
-                    if (this.props.browser.device === 'Mobile') this.props.clickProject();
+                    if (this.props.browser.device === 'Mobile') this.props.handleProject();
                 }}
             >
                 <div className='previewContent'>
@@ -37,7 +36,7 @@ export class Preview extends React.Component<Props, {}> {
                             <div
                                 className='previewDescription'
                                 onClick={() => {
-                                    if (this.props.browser.device === 'Desktop') this.props.clickProject();
+                                    if (this.props.browser.device === 'Desktop') this.props.handleProject();
                                 }}
                             >
                                 <p className='uppercase'>{this.props.project.title}</p>

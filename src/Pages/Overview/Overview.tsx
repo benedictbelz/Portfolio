@@ -2,16 +2,14 @@ import * as React from 'react';
 import { Preview } from './Preview/Preview';
 import { Scrollbar } from '../../Components/Scrollbar/Scrollbar';
 import { Browser } from '../../@types/browser';
-import { Page } from '../../@types/page';
-import { Project, Selection } from '../../@types/project';
+import { Selection } from '../../@types/project';
+import { getProjects } from '../../@presets/projects';
 import './Overview.scss';
 
 interface Props {
     browser: Browser;
-    clickImprint: Function;
-    clickProject: Function;
-    currentPage: Page;
-    projects: Project[];
+    handleImprint: Function;
+    handleProject: Function;
 }
 
 interface States {
@@ -32,8 +30,8 @@ export class Overview extends React.Component<Props, States> {
         window.matchMedia('(max-width: 600px)').addEventListener('change', () => this.handleAnimation());
     }
 
-    componentDidUpdate(prevProps: any) {
-        if (this.props.currentPage === 'Overview' && prevProps.currentPage === 'Welcome') {
+    componentDidUpdate(prevProps: Props) {
+        if (this.props.browser.page === 'Overview' && prevProps.browser.page === 'Welcome') {
             this.handleAnimation();
             this.handleSelection();
         }
@@ -84,7 +82,7 @@ export class Overview extends React.Component<Props, States> {
 
     render() {
         return (
-            <Scrollbar browser={this.props.browser} color='Black' id='overview'>
+            <Scrollbar browser={this.props.browser} color='black' id='overview'>
                 <ul id='selection'>
                     {(['All', 'Digital', 'Film'] as Selection[]).map(selection => {
                         return (
@@ -105,13 +103,13 @@ export class Overview extends React.Component<Props, States> {
                     })}
                 </ul>
                 <div id='previews'>
-                    {this.props.projects.map(project => {
+                    {getProjects().map(project => {
                         return (
                             <Preview
                                 key={project.title}
                                 browser={this.props.browser}
-                                clickProject={() => {
-                                    this.props.clickProject(project);
+                                handleProject={() => {
+                                    this.props.handleProject(project);
                                 }}
                                 selection={this.state.selection}
                                 project={project}
@@ -122,7 +120,7 @@ export class Overview extends React.Component<Props, States> {
                 <div id='footer'>
                     <span>© Benedict Belz</span>
                     <span className='divider' />
-                    <span className='underline black' onClick={() => this.props.clickImprint()}>
+                    <span className='underline black' onClick={() => this.props.handleImprint()}>
                         Imprint
                     </span>
                 </div>
