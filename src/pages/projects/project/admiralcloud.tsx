@@ -48,7 +48,7 @@ export class AdmiralCloud extends React.Component {
                 <div className='image'>
                     <img src='assets/projects/admiralcloud/logo_01.jpg' />
                 </div>
-                <div className='title' data-name='Introduction'>
+                <div className='title' data-name='Where It All Began'>
                     2. Where It All Began
                 </div>
                 <div className='text'>
