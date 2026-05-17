@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { Header } from '../components/header/header';
+import { Loader } from '../components/loader/loader';
 import { Welcome } from '../pages/welcome/welcome';
 import { Imprint } from '../pages/imprint/imprint';
 import { Information } from '../pages/information/information';
@@ -9,10 +10,21 @@ import { Projects } from '../pages/projects/projects';
 import { Browser } from '../stores/browser';
 import './app.scss';
 
-class App extends React.Component {
+interface States {
+    loading: boolean;
+    percentage: number;
+}
+
+class App extends React.Component<{}, States> {
     private unsubscribe: () => void;
 
+    state: States = {
+        loading: true,
+        percentage: 0
+    };
+
     componentDidMount() {
+        this.handleLoad();
         this.unsubscribe = Browser.subscribe((state, prevState) => {
             if (state.transition !== prevState.transition || state.welcome !== prevState.welcome) {
                 this.forceUpdate();
@@ -33,6 +45,45 @@ class App extends React.Component {
 
     componentWillUnmount() {
         this.unsubscribe();
+    }
+
+    private async handleLoad() {
+        // AWAIT PROMISE
+        await new Promise(resolve => setTimeout(resolve, 500));
+        // DEFINE VARIABLES
+        let { device, page, project, welcome } = Browser.getState();
+        let images = Array.from(document.images);
+        let percentage = 0;
+        // GO THROUGH IMAGES
+        if (images.length > 0) {
+            await Promise.all(
+                images.map(
+                    img =>
+                        new Promise<void>(resolve => {
+                            const done = () => {
+                                percentage++;
+                                this.setState({ percentage: Math.floor((percentage / images.length) * 100) });
+                                resolve();
+                            };
+                            if (img.complete) {
+                                done();
+                            } else {
+                                img.onload = done;
+                                img.onerror = done;
+                            }
+                        })
+                )
+            );
+        }
+        // WAIT FOR LOGO
+        if (welcome && device === 'Desktop') {
+            await new Promise<void>(resolve => {
+                const check = () => Browser.getState().logo ? resolve() : requestAnimationFrame(check);
+                check();
+            });
+        }
+        // UPDATE STATE
+        this.setState({ loading: false, percentage: 100 });
     }
 
     render() {
@@ -57,7 +108,12 @@ class App extends React.Component {
                     .filter(x => x)
                     .join(' ')}
             >
-                {welcome && <Welcome />}
+                <Loader
+                    color={(page === 'Information' || page === 'Projects') ? 'black' : 'white'}
+                    loading={this.state.loading}
+                    percentage={this.state.percentage}
+                />
+                {welcome && <Welcome loading={this.state.loading} />}
                 <Header />
                 <Imprint />
                 <Information />

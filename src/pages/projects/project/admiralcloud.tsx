@@ -34,7 +34,7 @@ export class AdmiralCloud extends React.Component {
                     </div>
                 </div>
                 <div className='image'>
-                    <img src='assets/projects/admiralCloud/media.png' />
+                    <img src='assets/projects/admiralcloud/media.png' />
                 </div>
                 <div className='title' data-name='Introduction'>
                     1. Introduction

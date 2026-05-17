@@ -14,7 +14,7 @@ export class Header extends React.Component<{}, States> {
     };
 
     private handleLeft() {
-        window.location.reload();
+        window.location.href = window.location.pathname;
     }
 
     private handleRight() {

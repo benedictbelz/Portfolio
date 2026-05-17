@@ -7,39 +7,47 @@ import './projects.scss';
 interface States {
     loading: boolean;
     percentage: number;
-    loadedProjects: string[];
+    projects: string[];
 }
 
 export class Projects extends React.Component<{}, States> {
     private unsubscribe: () => void;
 
     state: States = {
-        loading: true,
+        loading: false,
         percentage: 0,
-        loadedProjects: []
+        projects: []
     };
 
-
     componentDidMount() {
+        // DEFINE UNSUBSCRIBE
         this.unsubscribe = Browser.subscribe((state, prevState) => {
             if (
                 state.project &&
                 state.project !== prevState.project &&
-                !this.state.loadedProjects.includes(state.project.title)
+                !this.state.projects.includes(state.project.title)
             ) {
                 setTimeout(() => {
-                    this.setState({ loading: true, loadedProjects: [state.project!.title, ...this.state.loadedProjects] });
-                    this.loadMedia();
+                    this.setState({ loading: true, projects: [state.project!.title, ...this.state.projects] });
+                    this.handleLoad();
                 });
             }
         });
+        // DEFINE PROJECT
+        const project = Browser.getState().project;
+        // IF PROJECT IS DEFINED
+        if (project) {
+            this.setState({ loading: true, projects: [project.title] }, () => {
+                this.setState({ loading: false, percentage: 100 });
+            });
+        }
     }
 
     componentWillUnmount() {
         this.unsubscribe();
     }
 
-    private async loadMedia() {
+    private async handleLoad() {
         let images = document.querySelectorAll('#projects img') as unknown as HTMLImageElement[];
         const loadImages = async () =>
             await new Promise<void>(resolve => {

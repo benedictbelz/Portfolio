@@ -1,15 +1,16 @@
 import * as React from 'react';
 import * as THREE from 'three';
+import { gsap } from 'gsap';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
-import { gsap } from 'gsap';
+import { Browser } from '../../../stores/browser';
 import './logo.scss';
 
-interface Props {
-    loading: boolean;
-    handleRender: Function;
-}
-export class Logo extends React.Component<Props, {}> {
+export class Logo extends React.Component {
+    private id: number;
+    private renderer: THREE.WebGLRenderer;
+    private mouse: (event: MouseEvent) => void;
+
     componentDidMount() {
         /******************************/
         /*          GENERAL           */
@@ -45,16 +46,23 @@ export class Logo extends React.Component<Props, {}> {
         const mtlLoader = new MTLLoader();
         mtlLoader.setPath('/assets/logo/');
         // LOAD OBJECT
+        let count = 0;
         mtlLoader.load('logoFront.mtl', material => {
             material.preload();
             objLoader.setMaterials(material);
-            objLoader.load('logoFront.obj', object => logoFront.add(object));
+            objLoader.load('logoFront.obj', object => {
+                logoFront.add(object);
+                if (++count === 2) { Browser.setState({ logo: true }); setTimeout(() => startAnimation(), 500); }
+            });
         });
         // LOAD OBJECT
         mtlLoader.load('logoBack.mtl', material => {
             material.preload();
             objLoader.setMaterials(material);
-            objLoader.load('logoBack.obj', object => logoBack.add(object));
+            objLoader.load('logoBack.obj', object => {
+                logoBack.add(object);
+                if (++count === 2) { Browser.setState({ logo: true }); setTimeout(() => startAnimation(), 500); }
+            });
         });
 
         /******************************/
@@ -62,33 +70,23 @@ export class Logo extends React.Component<Props, {}> {
         /******************************/
 
         // CREATE RENDERER
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        this.renderer = new THREE.WebGLRenderer({ antialias: true });
         // SET COLOR
-        renderer.setClearColor('#FFFFFF');
+        this.renderer.setClearColor('#FFFFFF');
         // CREATE CANVAS
-        document.getElementById('logo').appendChild(renderer.domElement);
+        document.getElementById('logo').appendChild(this.renderer.domElement);
         // RENDER
-        const render = function () {
-            // RENDER AT 60FPS
-            requestAnimationFrame(render);
-            // RENDER
-            renderer.render(scene, camera);
+        const render = () => {
+            this.id = requestAnimationFrame(render);
+            this.renderer.render(scene, camera);
         };
         render();
-        this.props.handleRender();
 
         /******************************/
         /*         ANIMATION          */
         /******************************/
 
-        const interval = setInterval(() => {
-            if (this.props.loading) {
-                clearInterval(interval);
-                setTimeout(() => startAnimation(), 500);
-            }
-        }, 50);
-
-        function startAnimation() {
+        const startAnimation = () => {
             // ANIMATE TIMELINE
             const timeline = gsap.timeline();
             timeline.to(group.rotation, { duration: 0, y: THREE.MathUtils.degToRad(30), ease: 'power2.easeOut' });
@@ -101,17 +99,26 @@ export class Logo extends React.Component<Props, {}> {
             const mouse = new THREE.Vector2();
             // ANIMATE MOUSE
             setTimeout(
-                () =>
-                    window.addEventListener('mousemove', function (event) {
+                () => {
+                    this.mouse = (event: MouseEvent) => {
                         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
                         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-                        gsap.to(group.rotation, { duration: 2, y: mouse.x / 5, ease: 'power2.easeOut' });
-                        gsap.to(logoFront.position, { duration: 2, y: -mouse.y / 20, ease: 'power2.easeOut' });
-                        gsap.to(logoBack.position, { duration: 2, y: mouse.y / 20, ease: 'power2.easeOut' });
-                    }),
+                        gsap.to(group.rotation, { duration: 1, y: mouse.x / 5, ease: 'power2.easeOut' });
+                        gsap.to(logoFront.position, { duration: 1, y: -mouse.y / 20, ease: 'power2.easeOut' });
+                        gsap.to(logoBack.position, { duration: 1, y: mouse.y / 20, ease: 'power2.easeOut' });
+                    };
+                    window.addEventListener('mousemove', this.mouse);
+                },
                 1250
             );
         }
+    }
+
+    componentWillUnmount() {
+        cancelAnimationFrame(this.id);
+        window.removeEventListener('mousemove', this.mouse);
+        this.renderer.dispose();
+        this.renderer.domElement.remove();
     }
 
     render() {

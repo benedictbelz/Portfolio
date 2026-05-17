@@ -14,7 +14,8 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			General: path.resolve(__dirname, 'src/@assets'),
+			general: path.resolve(__dirname, 'src/@assets'),
+			three: path.resolve(__dirname, 'node_modules/three'),
 		},
 		extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
 	},
