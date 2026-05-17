@@ -1,4 +1,4 @@
-@import '../../App/Variables.scss';
+@import '../../@styles/Variables.scss';
 
 #information {
     background-color: $color-black;
@@ -69,7 +69,7 @@
                     width: 100%;
                 }
 
-                @media(hover: hover) {
+                @media (hover: hover) {
                     &:hover {
                         transform: scale(1.25);
                     }

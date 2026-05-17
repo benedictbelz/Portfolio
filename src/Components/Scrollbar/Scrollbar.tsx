@@ -57,7 +57,7 @@ export class Scrollbar extends React.Component<Props, States> {
         }
         // UPDATE SCROLL
         this.setState({ scroll: percentage });
-    }
+    };
 
     render() {
         return (
@@ -68,7 +68,9 @@ export class Scrollbar extends React.Component<Props, States> {
                         <div className={['scrollbar', this.props.color].filter(x => x).join(' ')}>
                             <div style={{ transform: 'scaleY(' + this.state.scroll + ')' }} />
                         </div>
-                        <div ref={this.content} className='content'>{this.props.children}</div>
+                        <div ref={this.content} className='content'>
+                            {this.props.children}
+                        </div>
                     </>
                 )}
             </div>

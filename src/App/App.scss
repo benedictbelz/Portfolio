@@ -1,5 +1,5 @@
-@import './Fonts.scss';
-@import './Variables.scss';
+@import '../@styles/Fonts.scss';
+@import '../@styles/Variables.scss';
 
 * {
     -webkit-touch-callout: none;
@@ -41,11 +41,11 @@ p {
 }
 
 h1 {
-    font-size: $font-size-h1;
+    font-size: 32px;
 }
 
 h2 {
-    font-size: $font-size-h2;
+    font-size: 24px;
 }
 
 ul {
@@ -62,7 +62,7 @@ a {
 .uppercase {
     text-transform: uppercase;
     letter-spacing: 2.5px;
-    font-size: $font-size-s;
+    font-size: 14px;
     font-weight: $font-weight-regular;
 }
 

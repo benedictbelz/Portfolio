@@ -10,6 +10,12 @@ export function getProjects(): Project[] {
         },
         {
             icon: 'white',
+            image: 'assets/projects/admiralCloud/preview.jpg',
+            title: 'AdmiralCloud',
+            type: 'Digital'
+        },
+        {
+            icon: 'white',
             image: 'assets/projects/acSync/preview.jpg',
             title: 'AC Sync',
             type: 'Digital'

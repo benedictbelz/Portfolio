@@ -1,4 +1,4 @@
-@import '../../App/Variables.scss';
+@import '../../@styles/Variables.scss';
 
 #projects {
     background-color: $color-black;
@@ -19,6 +19,13 @@
         padding-bottom: 50px;
         width: $spacing-wrapper;
 
+        .title {
+            font-size: 36px;
+            font-weight: $font-weight-bold;
+            text-align: start;
+            width: 100%;
+        }
+
         .design {
             overflow: hidden;
             width: 100%;
@@ -38,7 +45,7 @@
                     height: 80%;
                     width: 100%;
                     padding: 0 50px;
-                    font-size: $font-size-m;
+                    font-size: 16px;
                     font-weight: $font-weight-regular;
 
                     .bold {
@@ -88,7 +95,7 @@
                 > div {
                     overflow: hidden;
                     display: flex;
-                    font-size: $font-size-xxl;
+                    font-size: 48px;
                 }
 
                 p {
@@ -142,11 +149,11 @@
 
                 .color > div:first-child,
                 .color > div:last-child .font {
-                    font-size: $font-size-xs;
+                    font-size: 12px;
                 }
 
                 .font > div {
-                    font-size: $font-size-xl;
+                    font-size: 24px;
                 }
             }
         }

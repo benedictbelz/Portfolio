@@ -108,9 +108,7 @@ export class Overview extends React.Component<Props, States> {
                             <Preview
                                 key={project.title}
                                 browser={this.props.browser}
-                                handleProject={() => {
-                                    this.props.handleProject(project);
-                                }}
+                                handleProject={() => this.props.handleProject(project)}
                                 selection={this.state.selection}
                                 project={project}
                             />

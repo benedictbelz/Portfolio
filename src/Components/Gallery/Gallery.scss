@@ -1,10 +1,9 @@
-@import '../../App/Variables.scss';
+@import '../../@styles/Variables.scss';
 
 .gallery {
     position: relative;
     overflow: hidden;
     width: 100%;
-    border-radius: $border-radius-l;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
     mask-image: radial-gradient(white, black);
 
@@ -43,7 +42,7 @@
                 transition: transform $transition-m ease;
                 transform: scale(1);
 
-                @media(hover: hover) {
+                @media (hover: hover) {
                     &:hover {
                         transform: scale(1.25);
                     }
@@ -129,7 +128,7 @@
         }
     }
 
-    @media(hover: hover) {
+    @media (hover: hover) {
         &:hover {
             .galleryClick .galleryLeft,
             .galleryClick .galleryRight {
@@ -138,7 +137,7 @@
         }
     }
 
-    @media(hover: none) {
+    @media (hover: none) {
         .galleryClick {
             display: none;
         }

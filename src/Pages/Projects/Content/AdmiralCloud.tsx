@@ -10,7 +10,7 @@ export class AdmiralCloud extends React.Component<Props, {}> {
     render() {
         return (
             <div className='wrapper'>
-                <div className='category information'>
+                <div className='information'>
                     <div>
                         <p className='uppercase'>Project</p>
                         <p>AdmiralCloud AG</p>
@@ -38,37 +38,55 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                         <p>WordPress</p>
                     </div>
                 </div>
-                <div className='category image'>
+                <div className='image'>
                     <img src='assets/projects/admiralCloud/media.png' />
                 </div>
-                <div className='category text'>
-                    <p>
-                        This website was a project for the company »AdmiralCloud AG«. Their main product is a »Digital Asset Management« which includes a media
-                        management system, a collaboration tool and additional presentation possibilities.
-                    </p>
+                <div className='title' data-name='Introduction'>
+                    1. Introduction
                 </div>
-                <div className='category image'>
+                <div className='text'>
+                    I was working as a developer and designer for the company »AdmiralCloud AG«. Their main product is a »Digital Asset Management« which can be
+                    used to store and manage assets such as images, movies, audios or documents. Among other things, it enables organizing, finding, editing and
+                    publishing assets from all over the world. My role was mainly to develop frontend and backend functionalities, as well as designing new UI
+                    and UX features and implementing the desktop application »AC Sync«.
+                </div>
+                <div className='image'>
                     <img src='assets/projects/admiralCloud/logo_01.jpg' />
                 </div>
-                <div className='category text'>
+                <div className='title' data-name='Introduction'>
+                    2. Where It All Began
+                </div>
+                <div className='text'>
+                    The company was originally part of a film production company »mmpro Media AG« which produces corporate films around the world with 1.400
+                    film crews in 126 countries. Being in the need of sharing necessary files worldwide, the company came up with its own
+                    infrastructure which soon developed into a »Digital Asset Management« also used by other customers like »Continental«, »Lufthansa«,
+                    »Techniker«, »Bilfinger«, »Vattenfall« and many more. When I joined the company the design was fairly outdated and needed some improvements
+                    in UI and UX functionalities. In this way, I conducted an inventory and documented all buttons, colors, and functionalities to identify new
+                    approaches for a future application.
+                </div>
+                <div className='image'>
+                    <img src='assets/projects/admiralCloud/analysis.png' />
+                </div>
+
+                {/* <div className='text'>
                     <p>
                         The original logo was a combination of the letters »A« and »C« forming a loop as a metaphor for the unlimited possibilities in the media
                         magagement system. Furthermore, it symbolizes a cloud as well.
                     </p>
                 </div>
-                <div className='category image'>
+                <div className='image'>
                     <img src='assets/projects/admiralCloud/logo_02.jpg' />
                 </div>
-                <div className='category text'>
+                <div className='text'>
                     <p>
                         We wanted to modernize the logo to improve readibility. In this way, both letters should be clearly legible and the overall look
                         appearing and straightforward. I tried different color palettes and played around with different shapes.
                     </p>
                 </div>
-                <div className='category image'>
+                <div className='image'>
                     <img src='assets/projects/admiralCloud/logo_03.jpg' />
                 </div>
-                <div className='category text'>
+                <div className='text'>
                     <p>
                         We decided to go with the most simple approach and created a colorful and flat version of the logo. This has enabled us to use the logo
                         for various purposes, be it marketing brochures, the website or product branding.
@@ -94,13 +112,13 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                     <img src='assets/projects/admiralCloud/infoGraphic_17.gif' />
                     <img src='assets/projects/admiralCloud/infoGraphic_18.gif' />
                 </Gallery>
-                <div className='category text'>
+                <div className='text'>
                     <p>
                         I animated several infographics to illustrate the different features of the product. All the individual graphics are attached at the
                         upper side of each page to offer a quick understanding. We chose the »GIF« format to ensure an accurate representation of each color.
                     </p>
                 </div>
-                <div className='category design'>
+                <div className='design'>
                     <div className='color'>
                         <div style={{ color: '#FFFFFF', background: '#19324B' }}>
                             <div>
@@ -262,24 +280,24 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                         <p>1234567890!"#€%()=/@</p>
                     </div>
                 </div>
-                <div className='category text'>
+                <div className='text'>
                     <p>
                         We used a dark blue and a soft grey as fundamental colors and introduced a light blue and juicy orange as accent colors. The font for
                         the website is »Arial« which ensures an easy readibility.
                     </p>
                 </div>
-                <div className='category image'>
+                <div className='image'>
                     <img src='assets/projects/admiralCloud/admiralCloud_01.jpg' />
                 </div>
-                <div className='category text'>
+                <div className='text'>
                     <p>
                         All pages contain the same navigation and header which also introduce the particular functionality of the product. The whole concept is
                         orientated torwards »Flat Design« which offers clarity and a simple comprehension.
                     </p>
                 </div>
-                <div className='category image'>
+                <div className='image'>
                     <img src='assets/projects/admiralCloud/admiralCloud_02.jpg' />
-                </div>
+                </div> */}
             </div>
         );
     }

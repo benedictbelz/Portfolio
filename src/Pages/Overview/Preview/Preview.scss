@@ -1,4 +1,4 @@
-@import '../../../App/Variables.scss';
+@import '../../../@styles/Variables.scss';
 
 .preview {
     cursor: pointer;
@@ -11,6 +11,7 @@
         overflow: hidden;
         transition: transform $transition-s ease;
         transform: scale(1);
+        border-radius: 5px;
 
         .previewLabel {
             box-sizing: border-box;
@@ -38,6 +39,8 @@
             overflow: hidden;
             transition: background-color $transition-s ease;
             background-color: transparent;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
 
             > p {
                 pointer-events: none;
@@ -124,29 +127,29 @@
         }
     }
 
-    @media(hover: hover) {
+    @media (hover: hover) {
         .previewLink a img:hover {
             transform: scale(1.125);
         }
-    
+
         .previewContent:hover {
             transform: scale(1.025);
-    
+
             .previewDescription {
                 background-color: $color-black-transparent;
-    
+
                 > p {
                     opacity: 1;
                     transform: scale(1);
                 }
             }
-    
+
             .previewLink a {
                 opacity: 1;
                 transform: scale(1);
             }
         }
-    
+
         &.black .previewContent:hover .previewLabel {
             transition: filter 0.25s ease;
             filter: invert(1);

@@ -1,4 +1,4 @@
-@import '../../App/Variables.scss';
+@import '../../@styles/Variables.scss';
 
 #header {
     pointer-events: none;
@@ -41,33 +41,33 @@
         }
     }
 
-    @media(hover: hover) {
+    @media (hover: hover) {
         #headerLeft:hover {
             #logoBack {
                 transform: translateX(5%);
             }
-    
+
             #logoFront {
                 transform: translateX(-5%);
             }
-    
+
             #arrowUp {
                 transform: scale(1.25);
             }
         }
-    
+
         #headerRight:hover {
             #informationFront {
                 transform: translateY(-5%);
             }
-    
+
             #arrowLeft {
                 transform: scale(1.25);
             }
-    
+
             #arrowRight {
                 transform: scale(1.25);
             }
-        } 
+        }
     }
 }
