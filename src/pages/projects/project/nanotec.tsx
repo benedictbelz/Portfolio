@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { Gallery } from '../../../components/gallery/gallery';
-import { Browser } from '../../../@types/browser';
 
-interface Props {
-    browser: Browser;
-}
-
-export class Nanotec extends React.Component<Props, {}> {
+export class Nanotec extends React.Component {
     render() {
         return (
             <div className='wrapper'>
@@ -35,7 +30,7 @@ export class Nanotec extends React.Component<Props, {}> {
                         <p>Cinema 4D</p>
                     </div>
                 </div>
-                <Gallery browser={this.props.browser}>
+                <Gallery>
                     <img src='assets/projects/nanotec/nanotec_01.jpg' />
                     <img src='assets/projects/nanotec/nanotec_02.jpg' />
                     <img src='assets/projects/nanotec/nanotec_03.jpg' />

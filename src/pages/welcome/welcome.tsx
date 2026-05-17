@@ -1,13 +1,8 @@
 import * as React from 'react';
 import { Loader } from '../../components/loader/loader';
 import { Logo } from './logo/logo';
-import { Browser } from '../../@types/browser';
+import { Browser } from '../../stores/browser';
 import './welcome.scss';
-
-interface Props {
-    handleEnter: Function;
-    browser: Browser;
-}
 
 interface States {
     loading: boolean;
@@ -15,7 +10,7 @@ interface States {
     percentage: number;
 }
 
-export class Welcome extends React.Component<Props, States> {
+export class Welcome extends React.Component<{}, States> {
     state: States = {
         loading: true,
         rendering: false,
@@ -40,7 +35,7 @@ export class Welcome extends React.Component<Props, States> {
                         if (index !== images.length) {
                             this.setState({ percentage: Math.floor((index / images.length) * 100) });
                             setTimeout(load, 5);
-                        } else if (this.props.browser.device === 'Desktop' && !this.state.rendering) {
+                        } else if (Browser.getState().device === 'Desktop' && !this.state.rendering) {
                             const interval = setInterval(() => {
                                 if (!this.state.rendering) {
                                     clearInterval(interval);
@@ -63,11 +58,14 @@ export class Welcome extends React.Component<Props, States> {
     }
 
     render() {
+        // DEFINE VARIABLES
+        const browser = Browser.getState();
+        // RETURN COMPONENT
         return (
             <div id='welcome' className={!this.state.loading ? 'show' : ''}>
                 <Loader color='white' loading={this.state.loading} percentage={this.state.percentage} />
                 <div id='logo'>
-                    {this.props.browser.device === 'Desktop' ? (
+                    {Browser.getState().device === 'Desktop' ? (
                         <Logo handleRender={() => this.setState({ rendering: true })} loading={this.state.loading} />
                     ) : (
                         !this.state.loading && <img src='assets/interface/logo.gif' draggable='false' />
@@ -80,7 +78,7 @@ export class Welcome extends React.Component<Props, States> {
                     <br />
                     my creative work.
                 </div>
-                <div id='enter' onClick={() => this.props.handleEnter()}>
+                <div id='enter' onClick={() => browser.setPage('Overview')}>
                     <img src='assets/interface/arrowDown.png' draggable='false' />
                 </div>
             </div>

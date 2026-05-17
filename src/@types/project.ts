@@ -1,4 +1,7 @@
+import * as React from 'react';
+
 export type Project = {
+    component: React.ComponentType<{}>;
     icon: 'black' | 'white';
     image: string;
     links?: {
@@ -9,6 +12,7 @@ export type Project = {
     };
     title: string;
     type: Selection;
+    url: string;
 };
 
 export type Selection = 'All' | 'Digital' | 'Film' | 'Art';

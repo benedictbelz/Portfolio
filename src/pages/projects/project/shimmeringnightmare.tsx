@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { Gallery } from '../../../components/gallery/gallery';
-import { Browser } from '../../../@types/browser';
 
-interface Props {
-    browser: Browser;
-}
-
-export class ShimmeringNightmare extends React.Component<Props, {}> {
+export class ShimmeringNightmare extends React.Component {
     render() {
         return (
             <div className='wrapper'>
@@ -24,7 +19,7 @@ export class ShimmeringNightmare extends React.Component<Props, {}> {
                         <p>Illustration</p>
                     </div>
                 </div>
-                <Gallery browser={this.props.browser}>
+                <Gallery>
                     <img src='assets/projects/shimmeringnightmare/shimmeringnightmare_01.jpg' />
                     <img src='assets/projects/shimmeringnightmare/shimmeringnightmare_02.jpg' />
                     <img src='assets/projects/shimmeringnightmare/shimmeringnightmare_03.jpg' />

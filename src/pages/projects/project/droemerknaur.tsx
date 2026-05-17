@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { Gallery } from '../../../components/gallery/gallery';
-import { Browser } from '../../../@types/browser';
 
-interface Props {
-    browser: Browser;
-}
-
-export class DroemerKnaur extends React.Component<Props, {}> {
+export class DroemerKnaur extends React.Component {
     render() {
         return (
             <div className='wrapper'>
@@ -41,7 +36,7 @@ export class DroemerKnaur extends React.Component<Props, {}> {
                         <p>Adobe Premiere</p>
                     </div>
                 </div>
-                <Gallery browser={this.props.browser}>
+                <Gallery>
                     <img src='assets/projects/droemerknaur/droemerknaur_01.jpg' />
                     <img src='assets/projects/droemerknaur/droemerknaur_02.jpg' />
                     <img src='assets/projects/droemerknaur/droemerknaur_03.jpg' />

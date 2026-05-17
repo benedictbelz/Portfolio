@@ -1,23 +1,18 @@
 import * as React from 'react';
 import { Preview } from './preview/preview';
 import { Scrollbar } from '../../components/scrollbar/scrollbar';
-import { Browser } from '../../@types/browser';
+import { Browser } from '../../stores/browser';
 import { Selection } from '../../@types/project';
 import { getProjects } from '../../@presets/projects';
 import './overview.scss';
-
-interface Props {
-    browser: Browser;
-    handleImprint: Function;
-    handleProject: Function;
-}
 
 interface States {
     selection: Selection;
 }
 
-export class Overview extends React.Component<Props, States> {
-    private timeout: any = [];
+export class Overview extends React.Component<{}, States> {
+    private timeout: ReturnType<typeof setTimeout>[] = [];
+    private unsubscribe: () => void;
 
     state: States = {
         selection: 'All'
@@ -28,13 +23,16 @@ export class Overview extends React.Component<Props, States> {
         window.matchMedia('(max-width: 1200px)').addEventListener('change', () => this.handleAnimation());
         window.matchMedia('(max-width: 900px)').addEventListener('change', () => this.handleAnimation());
         window.matchMedia('(max-width: 600px)').addEventListener('change', () => this.handleAnimation());
+        this.unsubscribe = Browser.subscribe((state, prevState) => {
+            if (state.page === 'Overview' && prevState.page === 'Welcome') {
+                this.handleAnimation();
+                this.handleSelection();
+            }
+        });
     }
 
-    componentDidUpdate(prevProps: Props) {
-        if (this.props.browser.page === 'Overview' && prevProps.browser.page === 'Welcome') {
-            this.handleAnimation();
-            this.handleSelection();
-        }
+    componentWillUnmount() {
+        this.unsubscribe();
     }
 
     private handleAnimation() {
@@ -43,7 +41,7 @@ export class Overview extends React.Component<Props, States> {
         let projects = document.querySelectorAll('.preview') as unknown as HTMLElement[];
         let selection = document.querySelectorAll('.preview.show') as unknown as HTMLElement[];
         // RESET TIMEOUT
-        this.timeout.forEach((timeout: any) => clearTimeout(timeout));
+        this.timeout.forEach(timeout => clearTimeout(timeout));
         // RESET PROJECTS
         projects.forEach(project => {
             project.classList.add('opacity');
@@ -81,8 +79,11 @@ export class Overview extends React.Component<Props, States> {
     }
 
     render() {
+        // DEFINE VARIABLES
+        const browser = Browser.getState();
+        // RETURN COMPONENT
         return (
-            <Scrollbar browser={this.props.browser} color='black' id='overview'>
+            <Scrollbar color='black' id='overview'>
                 <ul id='selection'>
                     {(['All', 'Digital', 'Film'] as Selection[]).map(selection => {
                         return (
@@ -107,8 +108,6 @@ export class Overview extends React.Component<Props, States> {
                         return (
                             <Preview
                                 key={project.title}
-                                browser={this.props.browser}
-                                handleProject={() => this.props.handleProject(project)}
                                 selection={this.state.selection}
                                 project={project}
                             />
@@ -118,7 +117,7 @@ export class Overview extends React.Component<Props, States> {
                 <div id='footer'>
                     <span>© Benedict Belz</span>
                     <span className='divider' />
-                    <span className='underline black' onClick={() => this.props.handleImprint()}>
+                    <span className='underline black' onClick={() => browser.setPage('Imprint')}>
                         Imprint
                     </span>
                 </div>

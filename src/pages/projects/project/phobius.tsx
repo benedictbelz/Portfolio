@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { Gallery } from '../../../components/gallery/gallery';
-import { Browser } from '../../../@types/browser';
 
-interface Props {
-    browser: Browser;
-}
-
-export class Phobius extends React.Component<Props, {}> {
+export class Phobius extends React.Component {
     render() {
         return (
             <div className='wrapper'>
@@ -24,7 +19,7 @@ export class Phobius extends React.Component<Props, {}> {
                         <p>Motion Design</p>
                     </div>
                 </div>
-                <Gallery browser={this.props.browser}>
+                <Gallery>
                     <img src='assets/projects/phobius/phobius_01.jpg' />
                     <img src='assets/projects/phobius/phobius_02.jpg' />
                     <img src='assets/projects/phobius/phobius_03.jpg' />

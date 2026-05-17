@@ -1,17 +1,19 @@
 import * as React from 'react';
-import { Browser } from '../../../@types/browser';
+import { Browser } from '../../../stores/browser';
 import { Project, Selection } from '../../../@types/project';
 import './preview.scss';
 
 interface Props {
-    browser: Browser;
-    handleProject: Function;
     selection: Selection;
     project: Project;
 }
 
 export class Preview extends React.Component<Props, {}> {
     render() {
+        // DEFINE VARIABLES
+        const browser = Browser.getState();
+        const device = browser.device;
+        // RETURN COMPONENT
         return (
             <div
                 className={[
@@ -22,7 +24,7 @@ export class Preview extends React.Component<Props, {}> {
                     .filter(x => x)
                     .join(' ')}
                 onClick={() => {
-                    if (this.props.browser.device === 'Mobile') this.props.handleProject();
+                    if (device === 'Mobile') browser.setProject(this.props.project);
                 }}
             >
                 <div className='previewContent'>
@@ -31,12 +33,12 @@ export class Preview extends React.Component<Props, {}> {
                         {this.props.project.type === 'Digital' && <img src='assets/interface/digital.svg' draggable='false' />}
                         {this.props.project.type === 'Film' && <img src='assets/interface/film.svg' draggable='false' />}
                     </div>
-                    {this.props.browser.device === 'Desktop' && (
+                    {device === 'Desktop' && (
                         <>
                             <div
                                 className='previewDescription'
                                 onClick={() => {
-                                    if (this.props.browser.device === 'Desktop') this.props.handleProject();
+                                    if (device === 'Desktop') browser.setProject(this.props.project);
                                 }}
                             >
                                 <p className='uppercase'>{this.props.project.title}</p>

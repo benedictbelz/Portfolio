@@ -1,4 +1,4 @@
-@import '../../@styles/variables.scss';
+@use '../../@styles/variables.scss' as *;
 
 #projects {
     background-color: $color-black;
@@ -112,6 +112,7 @@
             img {
                 display: block;
                 width: 100%;
+                border-radius: 5px;
             }
         }
 
@@ -132,6 +133,7 @@
             video {
                 display: block;
                 width: 100%;
+                border-radius: 5px;
             }
         }
     }

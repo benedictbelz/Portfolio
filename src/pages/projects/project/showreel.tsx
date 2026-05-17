@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { Gallery } from '../../../components/gallery/gallery';
-import { Browser } from '../../../@types/browser';
 
-interface Props {
-    browser: Browser;
-}
-
-export class Showreel extends React.Component<Props, {}> {
+export class Showreel extends React.Component {
     render() {
         return (
             <div className='wrapper'>
@@ -37,7 +32,7 @@ export class Showreel extends React.Component<Props, {}> {
                         <p>The Foundry Nuke</p>
                     </div>
                 </div>
-                <Gallery browser={this.props.browser}>
+                <Gallery>
                     <img src='assets/projects/showreel/showreel_01.jpg' />
                     <img src='assets/projects/showreel/showreel_02.jpg' />
                     <img src='assets/projects/showreel/showreel_03.jpg' />

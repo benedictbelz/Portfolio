@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Browser } from '../../@types/browser';
+import { Browser } from '../../stores/browser';
 import './gallery.scss';
 
 interface Props {
-    browser: Browser;
     children: React.ReactNode;
 }
 
@@ -66,6 +65,8 @@ export class Gallery extends React.Component<Props, States> {
         let active = false;
         let origin: number;
         let destination: number;
+        // DEFINE BROWSER
+        const browser = Browser.getState();
         // DEFINE START
         const start = (position: number) => {
             if (this.state.transition) {
@@ -102,14 +103,14 @@ export class Gallery extends React.Component<Props, States> {
         // DEFINE DRAG ELEMENT
         const drag: HTMLElement = this.gallery.current.querySelector('.galleryDrag');
         // IF DESKTOP
-        if (drag && this.props.browser.device === 'Desktop') {
+        if (drag && browser.device === 'Desktop') {
             drag.addEventListener('mousedown', event => start(event.clientX));
             drag.addEventListener('mousemove', event => move(event.clientX));
             drag.addEventListener('mouseup', () => end());
             drag.addEventListener('mouseout', () => end());
         }
         // IF MOBILE
-        else if (drag && this.props.browser.device === 'Mobile') {
+        else if (drag && browser.device === 'Mobile') {
             drag.addEventListener('touchstart', event => start(event.touches[0].clientX));
             drag.addEventListener('touchmove', event => move(event.touches[0].clientX));
             drag.addEventListener('touchend', () => end());

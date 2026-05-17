@@ -1,13 +1,8 @@
 import * as React from 'react';
 import { Scrollbar } from '../../components/scrollbar/scrollbar';
-import { Browser } from '../../@types/browser';
 import './information.scss';
 
-interface Props {
-    browser: Browser;
-}
-
-export class Information extends React.Component<Props, {}> {
+export class Information extends React.Component {
     private calculateAge() {
         const today = new Date();
         const birth = new Date('1991-04-09');
@@ -22,7 +17,7 @@ export class Information extends React.Component<Props, {}> {
 
     render() {
         return (
-            <Scrollbar browser={this.props.browser} color='white' id='information'>
+            <Scrollbar color='white' id='information'>
                 <div className='wrapper'>
                     <div id='picture'>
                         <img src='assets/interface/profile.jpg' draggable='false' />

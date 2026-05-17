@@ -1,4 +1,4 @@
-@import '../../@styles/variables.scss';
+@use '../../@styles/variables.scss' as *;
 
 .gallery {
     position: relative;
@@ -6,6 +6,7 @@
     width: 100%;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
     mask-image: radial-gradient(white, black);
+    border-radius: 5px;
 
     .galleryDrag {
         position: absolute;
@@ -38,7 +39,7 @@
                 pointer-events: all;
                 border-radius: 50%;
                 width: 30px;
-                box-shadow: 0 0 $box-shadow-blur * 2 $box-shadow-spread $color-black-shadow;
+                box-shadow: 0 0 20px 0px $color-black-shadow;
                 transition: transform $transition-m ease;
                 transform: scale(1);
 
@@ -73,7 +74,7 @@
             border-radius: 50%;
             height: $spacing-bullet;
             width: $spacing-bullet;
-            box-shadow: 0 0 $box-shadow-blur * 2 $box-shadow-spread $color-black-shadow;
+            box-shadow: 0 0 20px 0px $color-black-shadow;
             background-color: $color-white-transparent;
 
             &:not(:last-child) {

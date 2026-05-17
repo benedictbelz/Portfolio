@@ -1,4 +1,4 @@
-@import '../../@styles/variables.scss';
+@use '../../@styles/variables.scss' as *;
 
 #overview {
     box-sizing: border-box;
@@ -29,7 +29,7 @@
             height: $spacing-button;
             padding: 0 15px;
             font-weight: $font-weight-regular;
-            box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-shadow;
+            box-shadow: 0 0 10px 0px $color-black-shadow;
             border-radius: 2.5px;
             transition: transform $transition-s ease;
             transform: scale(1);

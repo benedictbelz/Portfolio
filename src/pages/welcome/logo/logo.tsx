@@ -24,7 +24,7 @@ export class Logo extends React.Component<Props, {}> {
         camera.position.set(20, 20, 20);
         camera.lookAt(scene.position);
         // CREATE LIGHT
-        const light = new THREE.AmbientLight(0xffffff, 1);
+        const light = new THREE.AmbientLight(0xffffff, Math.PI);
         scene.add(light);
 
         /******************************/

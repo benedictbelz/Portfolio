@@ -1,10 +1,10 @@
-@import '../../../@styles/variables.scss';
+@use '../../../@styles/variables.scss' as *;
 
 .preview {
     cursor: pointer;
     display: none;
     box-sizing: border-box;
-    box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-shadow;
+    box-shadow: 0 0 10px 0px $color-black-shadow;
 
     .previewContent {
         position: relative;

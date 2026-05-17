@@ -1,16 +1,11 @@
 import * as React from 'react';
 import { Scrollbar } from '../../components/scrollbar/scrollbar';
-import { Browser } from '../../@types/browser';
 import './imprint.scss';
 
-interface Props {
-    browser: Browser;
-}
-
-export class Imprint extends React.Component<Props, {}> {
+export class Imprint extends React.Component {
     render() {
         return (
-            <Scrollbar browser={this.props.browser} color='white' id='imprint'>
+            <Scrollbar color='white' id='imprint'>
                 <div className='wrapper'>
                     <h1>
                         Information according to

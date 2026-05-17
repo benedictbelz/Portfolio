@@ -1,23 +1,8 @@
 import * as React from 'react';
 import { Loader } from '../../components/loader/loader';
 import { Scrollbar } from '../../components/scrollbar/scrollbar';
-import { AcSync } from './content/acsync';
-import { AdmiralCloud } from './content/admiralcloud';
-import { DroemerKnaur } from './content/droemerknaur';
-import { Nanotec } from './content/nanotec';
-import { Phobius } from './content/phobius';
-import { ShimmeringNightmare } from './content/shimmeringnightmare';
-import { Showreel } from './content/showreel';
-import { Website } from './content/website';
-import { ZdfAspekte } from './content/zdfaspekte';
-import { Browser } from '../../@types/browser';
-import { Project } from '../../@types/project';
+import { Browser } from '../../stores/browser';
 import './projects.scss';
-
-interface Props {
-    browser: Browser;
-    project: Project | null;
-}
 
 interface States {
     loading: boolean;
@@ -25,24 +10,33 @@ interface States {
     loadedProjects: string[];
 }
 
-export class Projects extends React.Component<Props, States> {
+export class Projects extends React.Component<{}, States> {
+    private unsubscribe: () => void;
+
     state: States = {
         loading: true,
         percentage: 0,
         loadedProjects: []
     };
 
-    componentDidUpdate(prevProps: any) {
-        if (
-            this.props.project &&
-            ((this.props.project && !prevProps.project) || this.props.project.title !== prevProps.project.title) &&
-            !this.state.loadedProjects.includes(this.props.project.title)
-        ) {
-            setTimeout(() => {
-                this.setState({ loading: true, loadedProjects: [this.props.project.title, ...this.state.loadedProjects] });
-                this.loadMedia();
-            });
-        }
+
+    componentDidMount() {
+        this.unsubscribe = Browser.subscribe((state, prevState) => {
+            if (
+                state.project &&
+                state.project !== prevState.project &&
+                !this.state.loadedProjects.includes(state.project.title)
+            ) {
+                setTimeout(() => {
+                    this.setState({ loading: true, loadedProjects: [state.project!.title, ...this.state.loadedProjects] });
+                    this.loadMedia();
+                });
+            }
+        });
+    }
+
+    componentWillUnmount() {
+        this.unsubscribe();
     }
 
     private async loadMedia() {
@@ -75,18 +69,14 @@ export class Projects extends React.Component<Props, States> {
     }
 
     render() {
+        // DEFINE VARIABLES
+        const browser = Browser.getState();
+        const Project = browser.project?.component;
+        // RETURN COMPONENT
         return (
-            <Scrollbar browser={this.props.browser} color='white' id='projects'>
+            <Scrollbar color='white' id='projects'>
                 <Loader color='black' loading={this.state.loading} percentage={this.state.percentage} />
-                {this.props.project && this.props.project.title === 'AC Sync' && <AcSync />}
-                {this.props.project && this.props.project.title === 'AdmiralCloud' && <AdmiralCloud browser={this.props.browser} />}
-                {this.props.project && this.props.project.title === 'Droemer Knaur' && <DroemerKnaur browser={this.props.browser} />}
-                {this.props.project && this.props.project.title === 'Nanotec' && <Nanotec browser={this.props.browser} />}
-                {this.props.project && this.props.project.title === 'Personal Website' && <Website />}
-                {this.props.project && this.props.project.title === 'Phobius' && <Phobius browser={this.props.browser} />}
-                {this.props.project && this.props.project.title === 'Shimmering Nightmare' && <ShimmeringNightmare browser={this.props.browser} />}
-                {this.props.project && this.props.project.title === 'Showreel' && <Showreel browser={this.props.browser} />}
-                {this.props.project && this.props.project.title === 'ZDF Aspekte' && <ZdfAspekte browser={this.props.browser} />}
+                {Project && <Project />}
             </Scrollbar>
         );
     }

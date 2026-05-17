@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Browser } from '../../@types/browser';
+import { Browser } from '../../stores/browser';
 import './scrollbar.scss';
 
 interface Props {
-    browser: Browser;
     children: React.ReactNode;
     color: 'black' | 'white';
     id: string;
@@ -30,8 +29,11 @@ export class Scrollbar extends React.Component<Props, States> {
     }
 
     private initScrollbar() {
+        // DEFINE VARIABLES
+        const browser = Browser.getState();
+        const device = browser.device;
         // IF NO CONTENT OR MOBILE RETURN
-        if (!this.content.current || this.props.browser.device === 'Mobile') {
+        if (!this.content.current || device === 'Mobile') {
             return;
         }
         // ADD EVENT LISTENERS
@@ -60,10 +62,14 @@ export class Scrollbar extends React.Component<Props, States> {
     };
 
     render() {
+        // DEFINE VARIABLES
+        const browser = Browser.getState();
+        const device = browser.device;
+        // RETURN COMPONENT
         return (
             <div id={this.props.id}>
-                {this.props.browser.device === 'Mobile' && this.props.children}
-                {this.props.browser.device === 'Desktop' && (
+                {device === 'Mobile' && this.props.children}
+                {device === 'Desktop' && (
                     <>
                         <div className={['scrollbar', this.props.color].filter(x => x).join(' ')}>
                             <div style={{ transform: 'scaleY(' + this.state.scroll + ')' }} />

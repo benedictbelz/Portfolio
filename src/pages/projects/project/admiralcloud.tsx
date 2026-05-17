@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { Gallery } from '../../../components/gallery/gallery';
-import { Browser } from '../../../@types/browser';
 
-interface Props {
-    browser: Browser;
-}
-
-export class AdmiralCloud extends React.Component<Props, {}> {
+export class AdmiralCloud extends React.Component {
     render() {
         return (
             <div className='wrapper'>
@@ -92,7 +87,7 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                         for various purposes, be it marketing brochures, the website or product branding.
                     </p>
                 </div>
-                <Gallery browser={this.props.browser}>
+                <Gallery>
                     <img src='assets/projects/admiralcloud/infographic_01.gif' />
                     <img src='assets/projects/admiralcloud/infographic_02.gif' />
                     <img src='assets/projects/admiralcloud/infographic_03.gif' />

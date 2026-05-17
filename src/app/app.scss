@@ -1,5 +1,5 @@
-@import '../@styles/fonts.scss';
-@import '../@styles/variables.scss';
+@use '../@styles/fonts.scss';
+@use '../@styles/variables.scss' as *;
 
 * {
     -webkit-touch-callout: none;
@@ -184,7 +184,7 @@ a {
                 transform-origin: left;
                 transition: transform $transition-s ease;
                 transform: scaleX(0);
-                border-radius: $border-radius-s;
+                border-radius: 5px;
             }
 
             &.black::after {

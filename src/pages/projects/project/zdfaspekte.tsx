@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { Gallery } from '../../../components/gallery/gallery';
-import { Browser } from '../../../@types/browser';
 
-interface Props {
-    browser: Browser;
-}
-
-export class ZdfAspekte extends React.Component<Props, {}> {
+export class ZdfAspekte extends React.Component {
     render() {
         return (
             <div className='wrapper'>
@@ -34,7 +29,7 @@ export class ZdfAspekte extends React.Component<Props, {}> {
                         <p>Adobe Illustrator</p>
                     </div>
                 </div>
-                <Gallery browser={this.props.browser}>
+                <Gallery>
                     <img src='assets/projects/zdfaspekte/zdfaspekte_01.jpg' />
                     <img src='assets/projects/zdfaspekte/zdfaspekte_02.jpg' />
                     <img src='assets/projects/zdfaspekte/zdfaspekte_03.jpg' />

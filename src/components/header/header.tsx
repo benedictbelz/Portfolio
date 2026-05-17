@@ -1,39 +1,49 @@
 import * as React from 'react';
-import { Browser } from '../../@types/browser';
-import { Page } from '../../@types/page';
+import { Browser } from '../../stores/browser';
 import './header.scss';
-
-interface Props {
-    browser: Browser;
-    handleLeft: Function;
-    handleRight: Function;
-}
 
 interface States {
     deactivateLeft: boolean;
     deactivateRight: boolean;
 }
 
-export class Header extends React.Component<Props, States> {
+export class Header extends React.Component<{}, States> {
     state: States = {
         deactivateLeft: false,
         deactivateRight: false
     };
 
     private handleLeft() {
-        this.props.handleLeft();
+        window.location.reload();
     }
 
     private handleRight() {
+        // IF DEACTIVATED
         if (this.state.deactivateRight) {
             return;
         }
+        // UPDATE STATE
         this.setState({ deactivateRight: true });
-        this.props.handleRight();
+        // DEFINE VARIABLES
+        const browser = Browser.getState();
+        const page = browser.page;
+        // GO TO INFORMATION
+        if (page === 'Overview') {
+            Browser.getState().setPage('Information');
+        }
+        // GO TO OVERVIEW
+        else if (page === 'Imprint' || page === 'Information' || page === 'Projects') {
+            Browser.getState().setPage('Overview');
+        }
+        // UPDATE STATE
         setTimeout(() => this.setState({ deactivateRight: false }), 1000);
     }
 
     render() {
+        // DEFINE VARIABLES
+        const browser = Browser.getState();
+        const page = browser.page;
+        // RETURN COMPONENT
         return (
             <div id='header'>
                 <div id='headerLeft' onClick={() => this.handleLeft()}>
@@ -44,25 +54,25 @@ export class Header extends React.Component<Props, States> {
                 <div id='headerRight' onClick={() => this.handleRight()}>
                     <img
                         id='informationBack'
-                        className={this.props.browser.page === 'Overview' || this.props.browser.page === 'Welcome' ? 'show' : ''}
+                        className={page === 'Overview' || page === 'Welcome' ? 'show' : ''}
                         src='assets/interface/informationBack.png'
                         draggable='false'
                     />
                     <img
                         id='informationFront'
-                        className={this.props.browser.page === 'Overview' || this.props.browser.page === 'Welcome' ? 'show' : ''}
+                        className={page === 'Overview' || page === 'Welcome' ? 'show' : ''}
                         src='assets/interface/informationFront.png'
                         draggable='false'
                     />
                     <img
                         id='arrowLeft'
-                        className={this.props.browser.page === 'Imprint' || this.props.browser.page === 'Information' ? 'show' : ''}
+                        className={page === 'Imprint' || page === 'Information' ? 'show' : ''}
                         src='assets/interface/arrowLeft.png'
                         draggable='false'
                     />
                     <img
                         id='arrowRight'
-                        className={this.props.browser.page === 'Projects' ? 'show' : ''}
+                        className={page === 'Projects' ? 'show' : ''}
                         src='assets/interface/arrowRight.png'
                         draggable='false'
                     />
