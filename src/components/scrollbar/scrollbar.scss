@@ -1,0 +1,53 @@
+@import '../../@styles/variables.scss';
+
+#app.desktop {
+    .scrollbar {
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        transition: transform $transition-l ease;
+        display: flex;
+        justify-content: flex-end;
+
+        div {
+            height: 100%;
+            width: $spacing-scrollbar;
+            transform: scale(0);
+        }
+
+        &.black div {
+            background-color: $color-black;
+        }
+
+        &.white div {
+            background-color: $color-white;
+        }
+    }
+
+    #imprint > .content,
+    #information > .content,
+    #legal > .content,
+    #overview > .content,
+    #projects > .content {
+        overflow-y: auto;
+        height: 100%;
+        width: 100%;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    html::-webkit-scrollbar,
+    #imprint > .content::-webkit-scrollbar,
+    #information > .content::-webkit-scrollbar,
+    #legal > .content::-webkit-scrollbar,
+    #overview > .content::-webkit-scrollbar,
+    #projects > .content::-webkit-scrollbar {
+        display: none;
+        background-color: transparent;
+        height: 0;
+        width: 0;
+    }
+}
