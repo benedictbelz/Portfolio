@@ -78,7 +78,7 @@ class App extends React.Component<{}, States> {
         // WAIT FOR LOGO
         if (welcome && device === 'Desktop') {
             await new Promise<void>(resolve => {
-                const check = () => Browser.getState().logo ? resolve() : requestAnimationFrame(check);
+                const check = () => (Browser.getState().logo ? resolve() : requestAnimationFrame(check));
                 check();
             });
         }
@@ -109,7 +109,7 @@ class App extends React.Component<{}, States> {
                     .join(' ')}
             >
                 <Loader
-                    color={(page === 'Information' || page === 'Projects') ? 'black' : 'white'}
+                    color={page === 'Information' || page === 'Projects' ? 'black' : 'white'}
                     loading={this.state.loading}
                     percentage={this.state.percentage}
                 />

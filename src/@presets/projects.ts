@@ -96,6 +96,6 @@ export function getProjects(): Project[] {
             image: 'assets/projects/shimmeringnightmare/preview.jpg',
             icon: 'black',
             url: 'shimmeringnightmare'
-        },
+        }
     ];
 }

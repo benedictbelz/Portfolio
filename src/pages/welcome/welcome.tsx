@@ -14,13 +14,7 @@ export class Welcome extends React.Component<Props, {}> {
         // RETURN COMPONENT
         return (
             <div id='welcome' className={this.props.loading ? '' : 'show'}>
-                <div id='logo'>
-                    {Browser.getState().device === 'Desktop' ? (
-                        <Logo />
-                    ) : (
-                        <img src='assets/interface/logo.gif' draggable='false' />
-                    )}
-                </div>
+                <div id='logo'>{Browser.getState().device === 'Desktop' ? <Logo /> : <img src='assets/interface/logo.gif' draggable='false' />}</div>
                 <div id='message'>
                     Welcome to my website.
                     <br />

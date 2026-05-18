@@ -105,13 +105,7 @@ export class Overview extends React.Component<{}, States> {
                 </ul>
                 <div id='previews'>
                     {getProjects().map(project => {
-                        return (
-                            <Preview
-                                key={project.title}
-                                selection={this.state.selection}
-                                project={project}
-                            />
-                        );
+                        return <Preview key={project.title} selection={this.state.selection} project={project} />;
                     })}
                 </div>
                 <div id='footer'>

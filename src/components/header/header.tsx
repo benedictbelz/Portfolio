@@ -70,12 +70,7 @@ export class Header extends React.Component<{}, States> {
                         src='assets/interface/arrowLeft.png'
                         draggable='false'
                     />
-                    <img
-                        id='arrowRight'
-                        className={page === 'Projects' ? 'show' : ''}
-                        src='assets/interface/arrowRight.png'
-                        draggable='false'
-                    />
+                    <img id='arrowRight' className={page === 'Projects' ? 'show' : ''} src='assets/interface/arrowRight.png' draggable='false' />
                 </div>
             </div>
         );

@@ -90,20 +90,20 @@ const initializeStore = (): Omit<Store, 'setPage' | 'setProject'> => {
     }
     // RETURN VARIABLES
     return { device, direction, height, logo, page, project, scroll, transition, type, welcome, width };
-}
+};
 
 const handleResize = () => {
     const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     Browser.setState({ height, width });
-}
+};
 
 const handleScroll = () => {
     const scroll = document.documentElement.scrollTop;
     const current = Browser.getState().scroll;
     const direction: Store['direction'] = scroll < current ? 'Up' : 'Down';
     Browser.setState({ direction, scroll });
-}
+};
 
 const handleUrl = (page: Page, project: Project | null) => {
     switch (page) {
@@ -138,5 +138,5 @@ export const Browser = create<Store>(set => {
             handleUrl('Projects', project);
             set({ project, page: 'Projects' });
         }
-    }
+    };
 });

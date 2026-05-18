@@ -27,8 +27,8 @@ export class AcSync extends React.Component<{}, {}> {
                     <div>
                         <p className='uppercase'>Technology</p>
                         <p>React</p>
-                        <p>Electron</p>
                         <p>TypeScript</p>
+                        <p>Electron</p>
                     </div>
                 </div>
                 <div className='category image'>

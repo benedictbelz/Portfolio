@@ -22,11 +22,7 @@ export class Projects extends React.Component<{}, States> {
     componentDidMount() {
         // DEFINE UNSUBSCRIBE
         this.unsubscribe = Browser.subscribe((state, prevState) => {
-            if (
-                state.project &&
-                state.project !== prevState.project &&
-                !this.state.projects.includes(state.project.title)
-            ) {
+            if (state.project && state.project !== prevState.project && !this.state.projects.includes(state.project.title)) {
                 setTimeout(() => {
                     this.setState({ loading: true, projects: [state.project!.title, ...this.state.projects] });
                     this.handleLoad();

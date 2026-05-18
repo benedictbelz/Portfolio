@@ -20,7 +20,7 @@ export class Menu extends React.Component<{}, States> {
     };
 
     componentDidMount() {
-        this.container = document.querySelector('#projects > .content')
+        this.container = document.querySelector('#projects > .content');
         this.container?.addEventListener('scroll', this.handleScroll);
         this.handleItems();
     }
@@ -45,7 +45,12 @@ export class Menu extends React.Component<{}, States> {
         // IF NO NAVIGATION OR BUTTONS
         if (!navigation || !buttons) return;
         // DEFINE OFFSET
-        const offset = buttons.getBoundingClientRect().left - navigation.getBoundingClientRect().left + navigation.scrollLeft - navigation.clientWidth / 2 + buttons.getBoundingClientRect().width / 2;
+        const offset =
+            buttons.getBoundingClientRect().left -
+            navigation.getBoundingClientRect().left +
+            navigation.scrollLeft -
+            navigation.clientWidth / 2 +
+            buttons.getBoundingClientRect().width / 2;
         // UPDATE SCROLL
         navigation.scrollTo({ left: offset, behavior: 'smooth' });
     }
@@ -83,7 +88,8 @@ export class Menu extends React.Component<{}, States> {
                         className={index === active ? 'active' : ''}
                         onClick={() => {
                             if (!this.container) return;
-                            const offset = item.element.getBoundingClientRect().top - this.container.getBoundingClientRect().top + this.container.scrollTop - 120;
+                            const offset =
+                                item.element.getBoundingClientRect().top - this.container.getBoundingClientRect().top + this.container.scrollTop - 120;
                             this.container.scrollTo({ top: offset, behavior: 'smooth' });
                         }}
                     >

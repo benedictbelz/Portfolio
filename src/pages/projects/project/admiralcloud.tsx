@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Gallery } from '../../../components/gallery/gallery';
+import { Menu } from '../../../components/menu/menu';
 
 export class AdmiralCloud extends React.Component {
     render() {
         return (
             <div className='wrapper'>
+                <Menu />
                 <div className='information'>
                     <div>
                         <p className='uppercase'>Project</p>
@@ -12,105 +14,183 @@ export class AdmiralCloud extends React.Component {
                     </div>
                     <div>
                         <p className='uppercase'>Year</p>
-                        <p>2020</p>
+                        <p>2021</p>
                     </div>
                     <div>
                         <p className='uppercase'>Role</p>
                         <p>Development</p>
-                        <p>UX Design</p>
-                        <p>UI Design</p>
+                        <p>UI/UX Design</p>
                     </div>
                     <div>
                         <p className='uppercase'>Collaboration</p>
-                        <p>Anabell Jung</p>
+                        <p>Julius Eckert</p>
                         <p>Daniel Züwerink</p>
                     </div>
                     <div>
                         <p className='uppercase'>Technology</p>
-                        <p>CSS</p>
-                        <p>HTML</p>
-                        <p>JavaScript</p>
-                        <p>WordPress</p>
+                        <p>React</p>
+                        <p>TypeScript</p>
+                        <p>Electron</p>
                     </div>
                 </div>
                 <div className='image'>
                     <img src='assets/projects/admiralcloud/media.png' />
                 </div>
-                <div className='title' data-name='Introduction'>
+                <div className='title' data-name='1. Introduction'>
                     1. Introduction
                 </div>
                 <div className='text'>
-                    I was working as a developer and designer for the company »AdmiralCloud AG«. Their main product is a »Digital Asset Management« which can be
-                    used to store and manage assets such as images, movies, audios or documents. Among other things, it enables organizing, finding, editing and
-                    publishing assets from all over the world. My role was mainly to develop frontend and backend functionalities, as well as designing new UI
-                    and UX features and implementing the desktop application »AC Sync«.
+                    I worked as designer and later as fullstack developer for the company »AdmiralCloud AG«. The main product is a »Digital Asset Management«
+                    which can be used to store and manage assets such as images, movies, audios or documents. Among other things, it enables organizing,
+                    finding, editing and publishing assets from all over the world. My role was to develop frontend and backend functionalities, as well as
+                    designing new UI/UX features and implementing the desktop application »AC Sync«.
                 </div>
-                <div className='image'>
-                    <img src='assets/projects/admiralcloud/logo_01.jpg' />
-                </div>
-                <div className='title' data-name='Where It All Began'>
+                <div className='title' data-name='2. Where It All Began'>
                     2. Where It All Began
                 </div>
+                <div className='image'>
+                    <img src='assets/projects/admiralcloud/client_old_01.jpg' />
+                </div>
                 <div className='text'>
-                    The company was originally part of a film production company »mmpro Media AG« which produces corporate films around the world with 1.400
-                    film crews in 126 countries. Being in the need of sharing necessary files worldwide, the company came up with its own
-                    infrastructure which soon developed into a »Digital Asset Management« also used by other customers like »Continental«, »Lufthansa«,
-                    »Techniker«, »Bilfinger«, »Vattenfall« and many more. When I joined the company the design was fairly outdated and needed some improvements
-                    in UI and UX functionalities. In this way, I conducted an inventory and documented all buttons, colors, and functionalities to identify new
-                    approaches for a future application.
+                    The company was originally part of the film production company »mmpro Media AG« which produced corporate movies around the world with 1.400
+                    film crews in 126 countries. Being in the need of sharing necessary files worldwide, the company came up with its own infrastructure which
+                    soon developed into a »Digital Asset Management« also used by other customers like »Continental«, »Lufthansa«, »Techniker«, »Bilfinger«,
+                    »Vattenfall« and many more.
                 </div>
                 <div className='image'>
-                    <img src='assets/projects/admiralcloud/analysis.png' />
+                    <img src='assets/projects/admiralcloud/client_old_02.jpg' />
                 </div>
-
-                {/* <div className='text'>
-                    <p>
-                        The original logo was a combination of the letters »A« and »C« forming a loop as a metaphor for the unlimited possibilities in the media
-                        magagement system. Furthermore, it symbolizes a cloud as well.
-                    </p>
+                <div className='text'>
+                    When I joined the company the design was fairly outdated and needed some improvements and better UI/UX functionalities. In this way, I
+                    conducted an inventory and documented all buttons, colors, and functionalities to identify new approaches for a future application. The
+                    existing elements lacked consistency and required a more unified visual language. As part of the same process, the logo was redesigned as
+                    well.
                 </div>
                 <div className='image'>
-                    <img src='assets/projects/admiralcloud/logo_02.jpg' />
+                    <img src='assets/projects/admiralcloud/client_old_03.jpg' />
                 </div>
-                <div className='text'>
-                    <p>
-                        We wanted to modernize the logo to improve readibility. In this way, both letters should be clearly legible and the overall look
-                        appearing and straightforward. I tried different color palettes and played around with different shapes.
-                    </p>
+                <div className='title' data-name='3. A New Design'>
+                    3. A New Design
                 </div>
                 <div className='image'>
-                    <img src='assets/projects/admiralcloud/logo_03.jpg' />
+                    <img src='assets/projects/admiralcloud/client_new_01.jpg' />
                 </div>
                 <div className='text'>
+                    From there, we took a step back and rethought the whole application. All interfaces were brought in line with a consistent design, which
+                    made navigating the product a lot more straightforward and gave users a clearer picture of what was going on. On the development side, the
+                    code was refactored and components were reused across the whole application, which made it feel more consistent.
+                </div>
+                <div className='image'>
+                    <img src='assets/projects/admiralcloud/client_new_02.jpg' />
+                </div>
+                <div className='text'>
+                    We also reworked the menu and revisited several features to improve the UX flow, which brought more structure and made everything work
+                    better together. The video below gives an impression of the new design.
+                </div>
+                <div className='category video'>
+                    <video
+                        src='assets/projects/admiralcloud/client_new_03.mp4'
+                        preload='metadata'
+                        poster='assets/projects/admiralcloud/client_new_03.jpg'
+                        controls
+                        disablePictureInPicture
+                        controlsList='nodownload noremoteplayback'
+                    />
+                </div>
+                <div className='text'>
+                    Some features came directly from customer feedback as they needed solutions for very specific needs. One of them was a workflow feature,
+                    which allowed assets to pass different stages, giving them more control. Each feature required changes with varying complexity in both the
+                    frontend and backend.
+                </div>
+                <div className='category video'>
+                    <video
+                        src='assets/projects/admiralcloud/client_new_04.mp4'
+                        preload='metadata'
+                        poster='assets/projects/admiralcloud/client_new_04.jpg'
+                        controls
+                        disablePictureInPicture
+                        controlsList='nodownload noremoteplayback'
+                    />
+                </div>
+                <div className='text'>
+                    An other tool was the MediaHub which offered a more tailored experience of asset management for end users. For this we introduced a drag and
+                    drop system and a folder structure to share assets in a clean, organized way.
+                </div>
+                <div className='category video'>
+                    <video
+                        src='assets/projects/admiralcloud/client_new_05.mp4'
+                        preload='metadata'
+                        poster='assets/projects/admiralcloud/client_new_05.jpg'
+                        controls
+                        disablePictureInPicture
+                        controlsList='nodownload noremoteplayback'
+                    />
+                </div>
+                <div className='title' data-name='4. AC Sync'>
+                    4. AC Sync
+                </div>
+                <div className='category text'>
                     <p>
-                        We decided to go with the most simple approach and created a colorful and flat version of the logo. This has enabled us to use the logo
-                        for various purposes, be it marketing brochures, the website or product branding.
+                        To provide a better integration we developed »AC Sync«, which synchronizes data from the »Digital Asset Management« to a desktop device
+                        so that customers can access and edit files independently of their network connection. This was developed for MacOS and Windows and
+                        works in a way like »Dropbox« which offers custom functionalities like creating »Download« or »Upload« folders.
                     </p>
                 </div>
-                <Gallery>
-                    <img src='assets/projects/admiralcloud/infographic_01.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_02.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_03.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_04.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_05.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_06.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_07.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_08.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_09.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_10.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_11.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_12.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_13.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_14.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_15.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_16.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_17.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_18.gif' />
-                </Gallery>
+                <div className='category video'>
+                    <video
+                        src='assets/projects/admiralcloud/acsync_01.mp4'
+                        preload='metadata'
+                        poster='assets/projects/admiralcloud/acsync_01.jpg'
+                        controls
+                        disablePictureInPicture
+                        controlsList='nodownload noremoteplayback'
+                    />
+                </div>
+                <div className='category text'>
+                    <p>
+                        The »Upload« folders allow customizations like »Tags« and »Security Groups« to structure uploaded files accordingly in the »Digital
+                        Asset Management«. Futhermore, it's possible to let »AC Sync« upload all files from the folder periodically in a time span of one
+                        minute, one hour or one day. All files are scanned beforehad and uploaded only when they are not already inlcuded in the »Digital Asset
+                        Management« or have been changed manually by the user.
+                    </p>
+                </div>
+                <div className='category video'>
+                    <video
+                        src='assets/projects/admiralcloud/acsync_02.mp4'
+                        preload='metadata'
+                        poster='assets/projects/admiralcloud/acsync_02.jpg'
+                        controls
+                        disablePictureInPicture
+                        controlsList='nodownload noremoteplayback'
+                    />
+                </div>
+                <div className='category text'>
+                    <p>
+                        The »Download« folders allow filter options like »Dates«, »Names« or »Types« to download files accordingly for each folder. If changes
+                        have been made in the »Digital Asset Management« the files get updated or replaced automatically. As for »Upload« folders, it's possible
+                        to check for updates periodically in a time span of one minute, one hour or one day. The »Digital Asset Management« also provides a
+                        feature to open specific files automatically in a preferred software like »Adobe Photoshop« or »Microsoft Excel« to edit them easily on
+                        the go.
+                    </p>
+                </div>
+                <div className='category video'>
+                    <video
+                        src='assets/projects/admiralcloud/acsync_03.mp4'
+                        preload='metadata'
+                        poster='assets/projects/admiralcloud/acsync_03.jpg'
+                        controls
+                        disablePictureInPicture
+                        controlsList='nodownload noremoteplayback'
+                    />
+                </div>
+                <div className='title' data-name='5. Colors'>
+                    5. Colors
+                </div>
                 <div className='text'>
                     <p>
-                        I animated several infographics to illustrate the different features of the product. All the individual graphics are attached at the
-                        upper side of each page to offer a quick understanding. We chose the »GIF« format to ensure an accurate representation of each color.
+                        We used a dark blue and a soft grey as fundamental colors and introduced a light blue and juicy orange as accent colors. The darker
+                        tones kept the interface focused, while the accent colors were used to highlight key actions and states. The font for the application
+                        was »Roboto« which ensured an easy readibility.
                     </p>
                 </div>
                 <div className='design'>
@@ -262,8 +342,8 @@ export class AdmiralCloud extends React.Component {
                             <div style={{ background: '#FFFFFF' }}></div>
                         </div>
                     </div>
-                    <div className='font' style={{ fontFamily: 'Arial, Helvetica Neue, sans-serif', color: '#19324B' }}>
-                        <p>Arial</p>
+                    <div className='font' style={{ fontFamily: 'Roboto, Helvetica Neue, sans-serif', color: '#19324B' }}>
+                        <p>Roboto</p>
                         <div>
                             <p style={{ fontWeight: 100 }}>Aa</p>
                             <p style={{ fontWeight: 300 }}>Bb</p>
@@ -275,24 +355,65 @@ export class AdmiralCloud extends React.Component {
                         <p>1234567890!"#€%()=/@</p>
                     </div>
                 </div>
-                <div className='text'>
-                    <p>
-                        We used a dark blue and a soft grey as fundamental colors and introduced a light blue and juicy orange as accent colors. The font for
-                        the website is »Arial« which ensures an easy readibility.
-                    </p>
-                </div>
-                <div className='image'>
-                    <img src='assets/projects/admiralcloud/admiralcloud_01.jpg' />
+                <div className='title' data-name='6. Logo'>
+                    6. Logo
                 </div>
                 <div className='text'>
                     <p>
-                        All pages contain the same navigation and header which also introduce the particular functionality of the product. The whole concept is
-                        orientated torwards »Flat Design« which offers clarity and a simple comprehension.
+                        The original logo was a combination of the letters »A« and »C« forming a loop as a metaphor for the unlimited possibilities of the
+                        »Digital Asset Management«.
                     </p>
                 </div>
                 <div className='image'>
-                    <img src='assets/projects/admiralcloud/admiralcloud_02.jpg' />
-                </div> */}
+                    <img src='assets/projects/admiralcloud/logo_01.jpg' />
+                </div>
+                <div className='text'>
+                    <p>
+                        We wanted to modernize the logo to improve readibility. In this way, both letters should be clearly legible and the overall look
+                        appearing and straightforward. I tried different color palettes and played around with different shapes.
+                    </p>
+                </div>
+                <div className='image'>
+                    <img src='assets/projects/admiralcloud/logo_02.jpg' />
+                </div>
+                <div className='text'>
+                    <p>
+                        We decided to go with the most simple approach and created a colorful and flat version of the logo. This has enabled us to use the logo
+                        for various purposes, be it marketing brochures, the website or product branding.
+                    </p>
+                </div>
+                <div className='image'>
+                    <img src='assets/projects/admiralcloud/logo_03.jpg' />
+                </div>
+                <div className='title' data-name='7. Infographics'>
+                    7. Infographics
+                </div>
+                <div className='text'>
+                    <p>
+                        I animated several infographics to illustrate the different features of the application. All the individual graphics were used
+                        throughout the website to offer a quick understanding of the product.
+                    </p>
+                </div>
+                <Gallery>
+                    <img src='assets/projects/admiralcloud/infographic_01.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_02.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_03.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_04.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_05.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_06.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_07.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_08.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_09.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_10.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_11.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_12.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_13.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_14.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_15.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_16.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_17.gif' />
+                    <img src='assets/projects/admiralcloud/infographic_18.gif' />
+                </Gallery>
             </div>
         );
     }

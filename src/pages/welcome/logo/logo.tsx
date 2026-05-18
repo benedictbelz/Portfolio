@@ -52,7 +52,10 @@ export class Logo extends React.Component {
             objLoader.setMaterials(material);
             objLoader.load('logoFront.obj', object => {
                 logoFront.add(object);
-                if (++count === 2) { Browser.setState({ logo: true }); setTimeout(() => startAnimation(), 500); }
+                if (++count === 2) {
+                    Browser.setState({ logo: true });
+                    setTimeout(() => startAnimation(), 500);
+                }
             });
         });
         // LOAD OBJECT
@@ -61,7 +64,10 @@ export class Logo extends React.Component {
             objLoader.setMaterials(material);
             objLoader.load('logoBack.obj', object => {
                 logoBack.add(object);
-                if (++count === 2) { Browser.setState({ logo: true }); setTimeout(() => startAnimation(), 500); }
+                if (++count === 2) {
+                    Browser.setState({ logo: true });
+                    setTimeout(() => startAnimation(), 500);
+                }
             });
         });
 
@@ -98,20 +104,17 @@ export class Logo extends React.Component {
             // CREATE MOUSE
             const mouse = new THREE.Vector2();
             // ANIMATE MOUSE
-            setTimeout(
-                () => {
-                    this.mouse = (event: MouseEvent) => {
-                        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-                        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-                        gsap.to(group.rotation, { duration: 1, y: mouse.x / 5, ease: 'power2.easeOut' });
-                        gsap.to(logoFront.position, { duration: 1, y: -mouse.y / 20, ease: 'power2.easeOut' });
-                        gsap.to(logoBack.position, { duration: 1, y: mouse.y / 20, ease: 'power2.easeOut' });
-                    };
-                    window.addEventListener('mousemove', this.mouse);
-                },
-                1250
-            );
-        }
+            setTimeout(() => {
+                this.mouse = (event: MouseEvent) => {
+                    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+                    gsap.to(group.rotation, { duration: 1, y: mouse.x / 5, ease: 'power2.easeOut' });
+                    gsap.to(logoFront.position, { duration: 1, y: -mouse.y / 20, ease: 'power2.easeOut' });
+                    gsap.to(logoBack.position, { duration: 1, y: mouse.y / 20, ease: 'power2.easeOut' });
+                };
+                window.addEventListener('mousemove', this.mouse);
+            }, 1250);
+        };
     }
 
     componentWillUnmount() {
