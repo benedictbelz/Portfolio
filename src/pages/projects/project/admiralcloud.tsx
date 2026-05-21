@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Gallery } from '../../../components/gallery/gallery';
 import { Menu } from '../../../components/menu/menu';
 
 export class AdmiralCloud extends React.Component {
@@ -36,18 +35,14 @@ export class AdmiralCloud extends React.Component {
                 <div className='image'>
                     <img src='assets/projects/admiralcloud/media.png' />
                 </div>
-                <div className='title' data-name='1. Introduction'>
-                    1. Introduction
-                </div>
+                <div className='title'>1. Introduction</div>
                 <div className='text'>
                     I worked as designer and later as fullstack developer for the company »AdmiralCloud AG«. The main product is a »Digital Asset Management«
                     which can be used to store and manage assets such as images, movies, audios or documents. Among other things, it enables organizing,
                     finding, editing and publishing assets from all over the world. My role was to develop frontend and backend functionalities, as well as
                     designing new UI/UX features and implementing the desktop application »AC Sync«.
                 </div>
-                <div className='title' data-name='2. Where It All Began'>
-                    2. Where It All Began
-                </div>
+                <div className='title'>2. Where It All Began</div>
                 <div className='image'>
                     <img src='assets/projects/admiralcloud/client_old_01.jpg' />
                 </div>
@@ -69,16 +64,14 @@ export class AdmiralCloud extends React.Component {
                 <div className='image'>
                     <img src='assets/projects/admiralcloud/client_old_03.jpg' />
                 </div>
-                <div className='title' data-name='3. A New Design'>
-                    3. A New Design
-                </div>
+                <div className='title'>3. New Design</div>
                 <div className='image'>
                     <img src='assets/projects/admiralcloud/client_new_01.jpg' />
                 </div>
                 <div className='text'>
                     From there, we took a step back and rethought the whole application. All interfaces were brought in line with a consistent design, which
-                    made navigating the product a lot more straightforward and gave users a clearer picture of what was going on. On the development side, the
-                    code was refactored and components were reused across the whole application, which made it feel more consistent.
+                    made navigating the product a lot more straightforward and gave users a clearer picture of what was going on. From a development
+                    perspective, the code was refactored and components were reused across the whole application, which made it feel more consistent.
                 </div>
                 <div className='image'>
                     <img src='assets/projects/admiralcloud/client_new_02.jpg' />
@@ -98,9 +91,9 @@ export class AdmiralCloud extends React.Component {
                     />
                 </div>
                 <div className='text'>
-                    Some features came directly from customer feedback as they needed solutions for very specific needs. One of them was a workflow feature,
-                    which allowed assets to pass different stages, giving them more control. Each feature required changes with varying complexity in both the
-                    frontend and backend.
+                    Some features came directly from customer feedback as they needed solutions for very specific needs. One of them was for instance a workflow
+                    feature, which allowed assets to pass different stages, giving the customers more control. Depending on the feature, changes ranged from
+                    minor adjustments to major reworks, sometimes on the frontend, sometimes on the backend, and often on both.
                 </div>
                 <div className='category video'>
                     <video
@@ -126,14 +119,12 @@ export class AdmiralCloud extends React.Component {
                         controlsList='nodownload noremoteplayback'
                     />
                 </div>
-                <div className='title' data-name='4. AC Sync'>
-                    4. AC Sync
-                </div>
+                <div className='title'>4. AC Sync</div>
                 <div className='category text'>
                     <p>
-                        To provide a better integration we developed »AC Sync«, which synchronizes data from the »Digital Asset Management« to a desktop device
-                        so that customers can access and edit files independently of their network connection. This was developed for MacOS and Windows and
-                        works in a way like »Dropbox« which offers custom functionalities like creating »Download« or »Upload« folders.
+                        To provide a better integration we developed »AC Sync«, which synchronized data from the »Digital Asset Management« to a desktop device
+                        so that customers could access and edit files without relying on an internet connection. This was developed for MacOS and Windows and
+                        worked in a way like »Dropbox« which offered custom functionalities like creating »Download« or »Upload« folders.
                     </p>
                 </div>
                 <div className='category video'>
@@ -148,10 +139,10 @@ export class AdmiralCloud extends React.Component {
                 </div>
                 <div className='category text'>
                     <p>
-                        The »Upload« folders allow customizations like »Tags« and »Security Groups« to structure uploaded files accordingly in the »Digital
-                        Asset Management«. Futhermore, it's possible to let »AC Sync« upload all files from the folder periodically in a time span of one
-                        minute, one hour or one day. All files are scanned beforehad and uploaded only when they are not already inlcuded in the »Digital Asset
-                        Management« or have been changed manually by the user.
+                        The »Upload« folders allowed customizations like »Tags« and »Security Groups« to structure files accordingly in the »Digital Asset
+                        Management«. Futhermore, a feature allowed »AC Sync« to upload all files from the folder periodically in a time span of one minute, one
+                        hour or one day. All files were scanned beforehand and uploaded only when they were not already inlcuded in the »Digital Asset
+                        Management«.
                     </p>
                 </div>
                 <div className='category video'>
@@ -166,11 +157,11 @@ export class AdmiralCloud extends React.Component {
                 </div>
                 <div className='category text'>
                     <p>
-                        The »Download« folders allow filter options like »Dates«, »Names« or »Types« to download files accordingly for each folder. If changes
-                        have been made in the »Digital Asset Management« the files get updated or replaced automatically. As for »Upload« folders, it's possible
-                        to check for updates periodically in a time span of one minute, one hour or one day. The »Digital Asset Management« also provides a
-                        feature to open specific files automatically in a preferred software like »Adobe Photoshop« or »Microsoft Excel« to edit them easily on
-                        the go.
+                        The »Download« folders allowed filter options like »Dates«, »Names« or »Types« to download files accordingly to each folder. If changes
+                        have been made in the »Digital Asset Management« the files got updated or replaced automatically. As the same for »Upload« folders, it
+                        was possible to check for updates periodically in a time span of one minute, one hour or one day. The »Digital Asset Management« also
+                        provided a feature to open specific files automatically in a preferred software like »Adobe Photoshop« or »Microsoft Excel« to edit them
+                        easily on the fly.
                     </p>
                 </div>
                 <div className='category video'>
@@ -183,14 +174,12 @@ export class AdmiralCloud extends React.Component {
                         controlsList='nodownload noremoteplayback'
                     />
                 </div>
-                <div className='title' data-name='5. Colors'>
-                    5. Colors
-                </div>
+                <div className='title'>5. Colors</div>
                 <div className='text'>
                     <p>
                         We used a dark blue and a soft grey as fundamental colors and introduced a light blue and juicy orange as accent colors. The darker
-                        tones kept the interface focused, while the accent colors were used to highlight key actions and states. The font for the application
-                        was »Roboto« which ensured an easy readibility.
+                        tones kept the interface focused, while the accent colors were used to highlight key actions and states. The fonts of all applications
+                        were »Roboto« which ensured an easy readibility.
                     </p>
                 </div>
                 <div className='design'>
@@ -355,9 +344,7 @@ export class AdmiralCloud extends React.Component {
                         <p>1234567890!"#€%()=/@</p>
                     </div>
                 </div>
-                <div className='title' data-name='6. Logo'>
-                    6. Logo
-                </div>
+                <div className='title'>6. Logo</div>
                 <div className='text'>
                     <p>
                         The original logo was a combination of the letters »A« and »C« forming a loop as a metaphor for the unlimited possibilities of the
@@ -369,7 +356,7 @@ export class AdmiralCloud extends React.Component {
                 </div>
                 <div className='text'>
                     <p>
-                        We wanted to modernize the logo to improve readibility. In this way, both letters should be clearly legible and the overall look
+                        We wanted to modernize the logo to improve readibility. In this way, both letters needed to be clearly legible and the overall look
                         appearing and straightforward. I tried different color palettes and played around with different shapes.
                     </p>
                 </div>
@@ -379,41 +366,12 @@ export class AdmiralCloud extends React.Component {
                 <div className='text'>
                     <p>
                         We decided to go with the most simple approach and created a colorful and flat version of the logo. This has enabled us to use the logo
-                        for various purposes, be it marketing brochures, the website or product branding.
+                        for various purposes, whether for marketing brochures, the website, or product branding.
                     </p>
                 </div>
                 <div className='image'>
                     <img src='assets/projects/admiralcloud/logo_03.jpg' />
                 </div>
-                <div className='title' data-name='7. Infographics'>
-                    7. Infographics
-                </div>
-                <div className='text'>
-                    <p>
-                        I animated several infographics to illustrate the different features of the application. All the individual graphics were used
-                        throughout the website to offer a quick understanding of the product.
-                    </p>
-                </div>
-                <Gallery>
-                    <img src='assets/projects/admiralcloud/infographic_01.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_02.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_03.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_04.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_05.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_06.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_07.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_08.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_09.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_10.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_11.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_12.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_13.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_14.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_15.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_16.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_17.gif' />
-                    <img src='assets/projects/admiralcloud/infographic_18.gif' />
-                </Gallery>
             </div>
         );
     }

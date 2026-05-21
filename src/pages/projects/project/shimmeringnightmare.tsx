@@ -12,7 +12,7 @@ export class ShimmeringNightmare extends React.Component {
                     </div>
                     <div>
                         <p className='uppercase'>Year</p>
-                        <p>2016</p>
+                        <p>2017</p>
                     </div>
                     <div>
                         <p className='uppercase'>Role</p>
@@ -48,7 +48,7 @@ export class ShimmeringNightmare extends React.Component {
                 <div className='category text'>
                     <p>
                         This project was about a little girl who discovered her father's leisure activity during the night time. From then on, everything went
-                        wrong. I printed the story and created a little book. The moral of the story is, don't leave your things lying around.
+                        wrong. I printed the story and created a little book. The moral of the story, mind what you leave lying around.
                     </p>
                 </div>
             </div>

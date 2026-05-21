@@ -85,7 +85,7 @@ export class Overview extends React.Component<{}, States> {
         return (
             <Scrollbar color='black' id='overview'>
                 <ul id='selection'>
-                    {(['All', 'Digital', 'Film'] as Selection[]).map(selection => {
+                    {(['All', 'Digital', 'Film', 'Art'] as Selection[]).map(selection => {
                         return (
                             <li
                                 key={selection}

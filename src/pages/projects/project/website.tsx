@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { Menu } from '../../../components/menu/menu';
 
 export class Website extends React.Component<{}, {}> {
     render() {
         return (
             <div className='wrapper'>
+                <Menu />
                 <div className='category information'>
                     <div>
                         <p className='uppercase'>Project</p>
@@ -11,7 +13,7 @@ export class Website extends React.Component<{}, {}> {
                     </div>
                     <div>
                         <p className='uppercase'>Year</p>
-                        <p>2019</p>
+                        <p>2020</p>
                     </div>
                     <div>
                         <p className='uppercase'>Role</p>
@@ -19,27 +21,54 @@ export class Website extends React.Component<{}, {}> {
                         <p>UX Design</p>
                         <p>UI Design</p>
                     </div>
+                    <div>
+                        <p className='uppercase'>Technology</p>
+                        <p>React</p>
+                        <p>TypeScript</p>
+                        <p>ThreeJS</p>
+                    </div>
                 </div>
                 <div className='category image'>
                     <img src='assets/projects/website/media.png' />
                 </div>
+                <div className='category title'>1. Introduction</div>
                 <div className='category text'>
                     <p>
                         It can be always a big challenge to create a personal portfolio. In the worst case, you are chasing for perfection and end up in a
                         circle of frustration. But the process is likewise about exploration and discovering new possibilities. Therefore, it can be a very
                         creative experience. I tried to keep my portfolio minimalistic and aesthetic, but also focused on the latest web technologies and
-                        user-friendliness.
+                        usability.
+                    </p>
+                </div>
+                <div className='category title'>2. Development</div>
+                <div className='category text'>
+                    <p>
+                        On the technical side, I chose TypeScript to keep the codebase reliable and maintainable as it grew. The application is built as a
+                        single page application with React, where navigation is handled through a global state rather than a traditional router. Each page is
+                        always present in the DOM and slides in or out via SCSS transforms. One of the bigger challenges was getting these transitions to behave
+                        consistently across different browsers, since subtle differences in how transforms and stacking contexts are handled can easily break
+                        the flow. Making the layout responsive and stable across devices added another layer of complexity, but ultimately resulted in a
+                        codebase I am satisfied with.
+                    </p>
+                </div>
+                <div className='category title'>3. Logo</div>
+                <div className='category text'>
+                    <p>
+                        I strived for a straightforward logo design which combined my initial letters and came up with the concept of negative space. In this
+                        case, the design would reveal two distinct versions based on the chosen background. This idea of duality carried over into the whole
+                        visual language of the website. All other elements were styled in a similar fashion and wherever clarity was required, a single color
+                        was sufficient. For the welcome screen, the logo was additionally modelled in 3D and brought to life using ThreeJS.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/personalwebsite/logo.jpg' />
+                    <img src='assets/projects/website/logo.jpg' />
                 </div>
+                <div className='category title'>4. Colors</div>
                 <div className='category text'>
                     <p>
-                        I strived for a straightforward logo design which combined my initial letters and came up with the concept of negative space which
-                        reoccurred on the whole webpage. In this case, the design would unfold two possible versions based on its chosen background. All other
-                        elements were styled similarly to fit the whole presentation. If it was required to retain clarity, I decided to go with one single
-                        color.
+                        I used a brighter black to soften the hard contrast between both opposites. Furthermore, I used a monochrome palette, so the focus would
+                        rest for the most part on the portrayed works themselves. Finally, I went with »Helvetica« because of its simplicity which blended in
+                        the whole visual concept.
                     </p>
                 </div>
                 <div className='category design'>
@@ -92,13 +121,6 @@ export class Website extends React.Component<{}, {}> {
                         <p>abcdefghijklmnopqrstuvwxyz</p>
                         <p>1234567890!"#€%()=/@</p>
                     </div>
-                </div>
-                <div className='category text'>
-                    <p>
-                        I used a brighter black to soften the hard contrast between both opposites. Furthermore, I used a monochrome palette, so the focus would
-                        rest for the most part on the portrayed works themselves. Finally, I went with »Helvetica« because of its simplicity which blended in
-                        the whole visual concept.
-                    </p>
                 </div>
             </div>
         );

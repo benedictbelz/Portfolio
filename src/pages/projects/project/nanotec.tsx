@@ -12,7 +12,7 @@ export class Nanotec extends React.Component {
                     </div>
                     <div>
                         <p className='uppercase'>Year</p>
-                        <p>2017</p>
+                        <p>2018</p>
                     </div>
                     <div>
                         <p className='uppercase'>Role</p>
@@ -41,7 +41,7 @@ export class Nanotec extends React.Component {
                 </Gallery>
                 <div className='category text'>
                     <p>
-                        This project was about showing customers the functioning principle of a stepper motor. It was necessary to picture all details of the
+                        This project aimed to explain the operating principle of a stepper motor to customers. It was necessary to picture all details of the
                         individual parts to understand the physical laws which influence the conversion of electrical energy into mechanical energy.
                         Additionally, we developed multiple animations to show all individual parts and the montage of the whole motor which can be viewed on
                         the corporate webpage.

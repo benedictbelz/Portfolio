@@ -30,9 +30,9 @@ export class Menu extends React.Component<{}, States> {
     }
 
     private handleItems() {
-        const elements = document.querySelectorAll('#projects .title[data-name]');
+        const elements = document.querySelectorAll('#projects .title');
         const items: States['items'] = Array.from(elements).map(item => ({
-            name: item.getAttribute('data-name')!,
+            name: item.textContent!.trim(),
             element: item
         }));
         this.setState({ items });

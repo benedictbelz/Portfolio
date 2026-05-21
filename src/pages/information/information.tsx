@@ -54,7 +54,13 @@ export class Information extends React.Component {
                             <a title='LinkedIn' className='linkedin' href='https://www.linkedin.com/in/benedictbelz/' target='_blank' rel='noopener noreferrer'>
                                 <img src='assets/interface/linkedin.svg' draggable='false' />
                             </a>
-                            <a title='Instagram' className='instagram' href='https://www.instagram.com/benedictbelz' target='_blank' rel='noopener noreferrer'>
+                            <a
+                                title='Instagram'
+                                className='instagram'
+                                href='https://www.instagram.com/untitled.mov.jpg/'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
                                 <img src='assets/interface/instagram.svg' draggable='false' />
                             </a>
                             <a title='Vimeo' className='vimeo' href='https://vimeo.com/benedictbelz' target='_blank' rel='noopener noreferrer'>

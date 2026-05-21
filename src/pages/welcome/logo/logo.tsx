@@ -120,6 +120,7 @@ export class Logo extends React.Component {
     componentWillUnmount() {
         cancelAnimationFrame(this.id);
         window.removeEventListener('mousemove', this.mouse);
+        this.renderer.forceContextLoss();
         this.renderer.dispose();
         this.renderer.domElement.remove();
     }

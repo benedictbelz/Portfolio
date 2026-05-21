@@ -38,7 +38,7 @@ export class ZdfAspekte extends React.Component {
                 <div className='category text'>
                     <p>
                         This project was developed for the television show »ZDF Aspekte«. It's about the ongoing debate in Germany about the headscarf ban which
-                        is a quite controverse topic. The clip tries to show the current legal situation in Germany and its future prospects.
+                        is a quite controversial topic. The clip tries to show the current legal situation in Germany and its future prospects.
                     </p>
                 </div>
                 <div className='category video'>

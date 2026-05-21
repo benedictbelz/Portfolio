@@ -1,6 +1,6 @@
-import { AcSync } from '../pages/projects/project/acsync';
 import { AdmiralCloud } from '../pages/projects/project/admiralcloud';
 import { DroemerKnaur } from '../pages/projects/project/droemerknaur';
+import { Ebenrieder } from '../pages/projects/project/ebenrieder';
 import { Nanotec } from '../pages/projects/project/nanotec';
 import { Phobius } from '../pages/projects/project/phobius';
 import { ShimmeringNightmare } from '../pages/projects/project/shimmeringnightmare';
@@ -12,28 +12,37 @@ import { Project } from '../@types/project';
 export function getProjects(): Project[] {
     return [
         {
-            component: Phobius,
-            icon: 'black',
-            image: 'assets/projects/phobius/preview.jpg',
-            title: 'Phobius',
-            type: 'Film',
-            url: 'phobius'
+            component: Ebenrieder,
+            icon: 'white',
+            image: 'assets/projects/ebenrieder/preview.jpg',
+            links: {
+                www: 'https://www.ebenrieder.de'
+            },
+            title: 'Ebenrieder',
+            type: 'Digital',
+            url: 'ebenrieder'
         },
         {
             component: AdmiralCloud,
             icon: 'white',
             image: 'assets/projects/admiralcloud/preview.jpg',
+            links: {
+                www: 'https://www.admiralcloud.com'
+            },
             title: 'AdmiralCloud',
             type: 'Digital',
             url: 'admiralcloud'
         },
         {
-            component: AcSync,
-            icon: 'white',
-            image: 'assets/projects/acsync/preview.jpg',
-            title: 'AC Sync',
-            type: 'Digital',
-            url: 'acsync'
+            component: Phobius,
+            icon: 'black',
+            image: 'assets/projects/phobius/preview.jpg',
+            links: {
+                www: 'https://phobius.at'
+            },
+            title: 'Phobius',
+            type: 'Film',
+            url: 'phobius'
         },
         {
             component: ZdfAspekte,

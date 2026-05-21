@@ -26,8 +26,8 @@ export class Phobius extends React.Component {
                 </Gallery>
                 <div className='category text'>
                     <p>
-                        This project was developed for the psychological centre »Phobius« where people are able to treat anxiety and panic disorders. The
-                        company needed simple animations for social media campaigns to provide a digital library for all cases of anxiety disorders.
+                        This project was developed for the therapy centre »Phobius« where people are able to treat anxiety and panic disorders. The company
+                        needed simple animations for social media campaigns to provide a digital library for all cases of anxiety disorders.
                     </p>
                 </div>
                 <div className='category video'>
@@ -41,7 +41,9 @@ export class Phobius extends React.Component {
                     />
                 </div>
                 <div className='category text'>
-                    <p>The intro introduced each anxiety disorder, while the outro provided additional information to contact the psychological centre.</p>
+                    <p>
+                        Every animation started with an overview of each anxiety disorder and ended with additional information to contact the therapy centre.
+                    </p>
                 </div>
                 <div className='category video'>
                     <video
