@@ -15,8 +15,7 @@
         transition:
             padding $transition-s ease,
             width $transition-s ease;
-        padding-top: $spacing-header;
-        padding-bottom: 50px;
+        padding: $spacing-header 25px 50px 25px;
         width: $spacing-wrapper;
 
         .title {

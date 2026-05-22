@@ -52,3 +52,14 @@
         width: 0;
     }
 }
+
+#app.mobile {
+    #imprint > .content,
+    #information > .content,
+    #overview > .content,
+    #projects > .content {
+        overflow-y: auto;
+        height: 100%;
+        width: 100%;
+    }
+}

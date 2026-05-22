@@ -21,14 +21,12 @@ export class Menu extends React.Component<{}, States> {
 
     componentDidMount() {
         this.container = document.querySelector('#projects > .content');
+        this.container?.addEventListener('scroll', this.handleScroll);
         this.handleItems();
-        if (this.container) this.container.addEventListener('scroll', this.handleScroll);
-        else window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
-        if (this.container) this.container.removeEventListener('scroll', this.handleScroll);
-        else window.removeEventListener('scroll', this.handleScroll);
+        this.container?.removeEventListener('scroll', this.handleScroll);
     }
 
     private handleItems() {
@@ -89,14 +87,9 @@ export class Menu extends React.Component<{}, States> {
                         ref={this.buttons[index]}
                         className={index === active ? 'active' : ''}
                         onClick={() => {
-                            if (this.container) {
-                                const offset =
-                                    item.element.getBoundingClientRect().top - this.container.getBoundingClientRect().top + this.container.scrollTop - 120;
-                                this.container.scrollTo({ top: offset, behavior: 'smooth' });
-                            } else {
-                                const offset = item.element.getBoundingClientRect().top + window.scrollY - 120;
-                                window.scrollTo({ top: offset, behavior: 'smooth' });
-                            }
+                            if (!this.container) return;
+                            const offset = item.element.getBoundingClientRect().top - this.container.getBoundingClientRect().top + this.container.scrollTop - 120;
+                            this.container.scrollTo({ top: offset, behavior: 'smooth' });
                         }}
                     >
                         {item.name}

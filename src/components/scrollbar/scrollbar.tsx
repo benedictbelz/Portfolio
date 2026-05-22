@@ -68,17 +68,14 @@ export class Scrollbar extends React.Component<Props, States> {
         // RETURN COMPONENT
         return (
             <div id={this.props.id}>
-                {device === 'Mobile' && this.props.children}
                 {device === 'Desktop' && (
-                    <>
-                        <div className={['scrollbar', this.props.color].filter(x => x).join(' ')}>
-                            <div style={{ transform: 'scaleY(' + this.state.scroll + ')' }} />
-                        </div>
-                        <div ref={this.content} className='content'>
-                            {this.props.children}
-                        </div>
-                    </>
+                    <div className={['scrollbar', this.props.color].filter(x => x).join(' ')}>
+                        <div style={{ transform: 'scaleY(' + this.state.scroll + ')' }} />
+                    </div>
                 )}
+                <div ref={this.content} className='content'>
+                    {this.props.children}
+                </div>
             </div>
         );
     }

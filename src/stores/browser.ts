@@ -40,6 +40,7 @@ const initializeStore = (): Omit<Store, 'setPage' | 'setProject'> => {
     } else {
         device = 'Desktop';
     }
+    //device = 'Mobile'
     // INITIALIZE DIRECTION
     direction = 'None';
     // INITIALIZE HEIGHT & WIDTH
