@@ -25,9 +25,14 @@
         text-align: left;
         transition: color $transition-s ease;
 
-        &.active,
-        &:hover {
+        &.active {
             color: $color-white;
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                color: $color-white;
+            }
         }
     }
 
