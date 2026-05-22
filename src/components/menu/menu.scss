@@ -1,6 +1,7 @@
 @use '../../@styles/variables.scss' as *;
 
 .menu {
+    box-sizing: border-box;
     position: absolute;
     bottom: 50px;
     left: 50px;
