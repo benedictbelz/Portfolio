@@ -36,8 +36,7 @@ export class Website extends React.Component<{}, {}> {
                     <p>
                         It can be always a big challenge to create a personal portfolio. In the worst case, you are chasing for perfection and end up in a
                         circle of frustration. But the process is likewise about exploration and discovering new possibilities. Therefore, it can be a very
-                        creative experience. I tried to keep my portfolio minimalistic and aesthetic, but also focused on the latest web technologies and
-                        usability.
+                        creative experience. I tried to keep my portfolio minimalistic and aesthetic, but also focused on latest web technologies and usability.
                     </p>
                 </div>
                 <div className='category title'>2. Development</div>
@@ -66,7 +65,7 @@ export class Website extends React.Component<{}, {}> {
                 <div className='category title'>4. Colors</div>
                 <div className='category text'>
                     <p>
-                        I used a brighter black to soften the hard contrast between both opposites. Furthermore, I used a monochrome palette, so the focus would
+                        I used a brighter black to soften the hard contrast between both colors. Furthermore, I used a monochrome palette, so the focus would
                         rest for the most part on the portrayed works themselves. Finally, I went with »Helvetica« because of its simplicity which blended in
                         the whole visual concept.
                     </p>

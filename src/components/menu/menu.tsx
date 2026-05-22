@@ -21,12 +21,14 @@ export class Menu extends React.Component<{}, States> {
 
     componentDidMount() {
         this.container = document.querySelector('#projects > .content');
-        this.container?.addEventListener('scroll', this.handleScroll);
         this.handleItems();
+        if (this.container) this.container.addEventListener('scroll', this.handleScroll);
+        else window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
-        this.container?.removeEventListener('scroll', this.handleScroll);
+        if (this.container) this.container.removeEventListener('scroll', this.handleScroll);
+        else window.removeEventListener('scroll', this.handleScroll);
     }
 
     private handleItems() {
@@ -59,12 +61,12 @@ export class Menu extends React.Component<{}, States> {
         // DEFINE VARIABLES
         let { items } = this.state;
         let active = 0;
-        let container = this.container.getBoundingClientRect().top;
+        let top = this.container ? this.container.getBoundingClientRect().top : 0;
         // IF NO ITEMS
-        if (!items.length || !this.container) return;
+        if (!items.length) return;
         // GO THROUGH ITEMS
         for (let index = 0; index < items.length; index++) {
-            const scroll = items[index].element.getBoundingClientRect().top - container;
+            const scroll = items[index].element.getBoundingClientRect().top - top;
             if (scroll <= 150) active = index;
         }
         // UPDATE STATE
@@ -87,10 +89,14 @@ export class Menu extends React.Component<{}, States> {
                         ref={this.buttons[index]}
                         className={index === active ? 'active' : ''}
                         onClick={() => {
-                            if (!this.container) return;
-                            const offset =
-                                item.element.getBoundingClientRect().top - this.container.getBoundingClientRect().top + this.container.scrollTop - 120;
-                            this.container.scrollTo({ top: offset, behavior: 'smooth' });
+                            if (this.container) {
+                                const offset =
+                                    item.element.getBoundingClientRect().top - this.container.getBoundingClientRect().top + this.container.scrollTop - 120;
+                                this.container.scrollTo({ top: offset, behavior: 'smooth' });
+                            } else {
+                                const offset = item.element.getBoundingClientRect().top + window.scrollY - 120;
+                                window.scrollTo({ top: offset, behavior: 'smooth' });
+                            }
                         }}
                     >
                         {item.name}

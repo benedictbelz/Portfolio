@@ -47,9 +47,9 @@ export class DroemerKnaur extends React.Component {
                 <div className='category text'>
                     <p>
                         This project was developed for the German publishing house »Droemer Knaur«. It aimed to demonstrate the internal production process of a
-                        book and an e-book. I established two sidekick characters which would run through all necessary steps from the writing process to the
-                        final publication. For demonstration purposes, the client decided to use the author Sebastian Fitzek and his recently published book
-                        »Das Paket«. The artwork is mostly a homage to the show »Karambolage« which is part of the television channel »Arte«.
+                        book and an e-book. I established two sidekick characters which run through all necessary steps from the writing process to the final
+                        publication. For demonstration purposes, the client decided to use the author Sebastian Fitzek and his recently published book »Das
+                        Paket«. The artwork is mostly a homage to the show »Karambolage« which is part of the television channel »Arte«.
                     </p>
                 </div>
                 <div className='category video'>

@@ -104,9 +104,9 @@ export class Ebenrieder extends React.Component {
                     The frontend was built with React and TypeScript. Overall the implementation went quite smoothly, but the galleries turned out to be the
                     most time consuming part. The challenge was ensuring consistent behavior across all browsers while keeping the component generic enough to
                     work with any number of images. I integrated Google Maps and styled it accordingly to fit the visual identity of the website. Optional
-                    tracking tools were added as well to get a better picture of how many visitors navigate the website and where they spend the most time. For
-                    state management I went with Zustand, which I extended with some additional logic to avoid unnecessary rerenderings and allow an easy
-                    integration with all components.
+                    tracking tools were added as well to get a better picture of how many visitors would navigate the website and where they would spend the
+                    most time. For state management I went with Zustand, which I extended with some additional logic to avoid unnecessary rerenderings and allow
+                    an easy integration with all related components.
                 </div>
                 <div className='image'>
                     <img src='assets/projects/ebenrieder/ebenrieder_02.jpg' />
@@ -119,7 +119,7 @@ export class Ebenrieder extends React.Component {
                     The backend runs on NodeJS, ExpressJS and TypeScript, with a PostgreSQL database, accessed via Sequelize. The database covers everything
                     from events, customers and medias to tokens, payments, invoices and settings. The custom built CMS gives access to the backend and handles
                     the daily operations of the business. Media can be transcoded and uploaded directly to the server, and events can be created, edited and
-                    managed without relying on any external platforms. Through the integration with the payment provider Mollie, guests can pay directly on the
+                    managed without relying on external platforms. Through the integration with the payment provider Mollie, guests can pay directly on the
                     website via PayPal, Apple Pay and other common methods.
                 </div>
                 <div className='image'>

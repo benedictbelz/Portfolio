@@ -42,7 +42,8 @@ export class Phobius extends React.Component {
                 </div>
                 <div className='category text'>
                     <p>
-                        Every animation started with an overview of each anxiety disorder and ended with additional information to contact the therapy centre.
+                        Every animation started with an overview of each anxiety disorder and ended with additional information to contact the therapy centre. I
+                        carried over the visual language of the corporate website, with flat colors to keep the animations clean and focused.
                     </p>
                 </div>
                 <div className='category video'>

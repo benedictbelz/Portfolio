@@ -106,8 +106,8 @@ export class AdmiralCloud extends React.Component {
                     />
                 </div>
                 <div className='text'>
-                    An other tool was the MediaHub which offered a more tailored experience of asset management for end users. For this we introduced a drag and
-                    drop system and a folder structure to share assets in a clean, organized way.
+                    An other tool was the MediaHub which offered a more tailored experience of an asset management for end users. For this we introduced a drag
+                    and drop system and a folder structure to share assets in a clean, organized way.
                 </div>
                 <div className='category video'>
                     <video
