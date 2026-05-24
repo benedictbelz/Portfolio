@@ -27,13 +27,6 @@
 		<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/152x152.png">
 		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/180x180.png">
 	</head>
-	<script>
-		var params = new URLSearchParams(location.search).get('page');
-		if (params === 'information' || params === 'projects' || params === 'imprint') {
-			document.documentElement.style.backgroundColor = 'rgb(20,20,20)';
-			setTimeout(() => { document.documentElement.style.backgroundColor = ''; }, 1000);
-		}
-	</script>
 	<body>
 		<div id="root"></div>
 	</body>
