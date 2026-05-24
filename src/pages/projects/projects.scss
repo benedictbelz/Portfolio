@@ -165,6 +165,12 @@
         }
     }
 
+    @media (max-width: $media-m) {
+        .content.menu .wrapper {
+            padding-bottom: 75px;
+        }
+    }
+
     @media (max-width: $media-s) {
         .wrapper {
             width: 100%;

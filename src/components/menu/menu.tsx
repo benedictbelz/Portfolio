@@ -21,11 +21,13 @@ export class Menu extends React.Component<{}, States> {
 
     componentDidMount() {
         this.container = document.querySelector('#projects > .content');
+        this.container?.classList.add('menu');
         this.container?.addEventListener('scroll', this.handleScroll);
         this.handleItems();
     }
 
     componentWillUnmount() {
+        this.container?.classList.remove('menu');
         this.container?.removeEventListener('scroll', this.handleScroll);
     }
 
@@ -80,7 +82,7 @@ export class Menu extends React.Component<{}, States> {
         this.buttons = items.map((_, index) => this.buttons[index] ?? React.createRef());
         // RETURN COMPONENT
         return (
-            <div className='menu' ref={this.navigation}>
+            <div id='menu' ref={this.navigation}>
                 {items.map((item, index) => (
                     <button
                         key={index}
